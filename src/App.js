@@ -5,15 +5,15 @@ import Home from './pages/Home';
 import Root from './Root'
 import About from "./pages/About";
 import Products from './pages/Products';
-import ProductDetails from './pages/ProductDetails';
+import ProductDetailsPage from './pages/ProductDetailsPage';
 import Basket from './pages/Basket';
-
+ 
 
 const appRouter = createBrowserRouter(createRoutesFromElements( 
   <Route path='/' element={ <Root/> } >
       <Route path='home' element={ <Home/> } />
       <Route path='products' element={ <Products/> } />
-      <Route path="product-details" element={ <ProductDetails/> } />
+      <Route path="product-details-page/:stone" element={ <ProductDetailsPage/> } />
       <Route path="about" element={ <About/> } />
       <Route path='basket' element={ <Basket/> } />
       {/* <Route path='donate' element={ <Donate/> } /> */}

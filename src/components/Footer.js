@@ -10,6 +10,7 @@ function Footer () {
             <Link to="about"> About </Link>
             <Link to="donate"> Donate </Link>
             <Link to="home"> Home </Link>
+
         </>
     )
 }
