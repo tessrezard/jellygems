@@ -1,7 +1,81 @@
-.BluePillContainer{
-    background-color: rgb(172, 207, 255);
+
+.pickAPill{
+    position: absolute;
+    top: 25%;
+    left: 160px;
 }
 
-.RedPillContainer{
-    background-color: rgba(240, 77, 77, 0.666);
+.PillsPages {
+    position: absolute;
+    height: 100vh;
+    top: 35%;
+    left: 10px;
+    right: 10px;
+    padding: 10px;
+    margin: 10px;
+} 
+
+.pillPageBlue {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* z-index: 1; */
+}
+.pillPageRed {
+    position: absolute;
+    top: 0;
+    left: 0px; 
+    /* z-index: 1; */
+
+} 
+
+
+.pillPageContainer{
+    height: 150px;
+    display: flex;
+    flex-flow: column;
+}
+
+
+.BluePillColor{
+    background-color: rgb(178, 209, 253);
+}
+.RedPillColor{
+    background-color: rgb(231, 140, 140);
+}
+
+.BluePillPosition{
+    left: 100px;
+}
+.RedPillPosition{
+    left: 200px;
+}
+
+.PillContainer {
+    width: 80%;
+    border-radius: 18px;
+    border-collapse: separate; 
+    display: flex;
+    flex-flow: column;
+}
+
+
+.pill {
+    /* ADD BACKGROUND COLOUR WITH SEPERATECLASS */
+    width: 80px;
+    height: 43px;
+    position: relative;
+    top: 0;
+    border-radius: 20px 20px 20px 20px ; 
+}
+
+.insidePillContainer {
+    margin: 3%;
+    padding: 10px;
+    height: fit-content;
+    width: 90vw;
+    position: absolute;
+    top: 35px;
+    object-fit: cover;
+    border-radius: 10px; 
 }

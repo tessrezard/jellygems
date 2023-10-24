@@ -37,7 +37,6 @@ function Products() {
                 ))}
                 {Object.keys(jellyGemsObj).forEach((stone) => {
                     <h1>{jellyGemsObj[stone]}</h1>
-                    console.log(jellyGemsObj[stone].brief);
                 })}
             </div>
             <h1>This is the products page</h1>
