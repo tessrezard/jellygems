@@ -18,12 +18,12 @@
 
 .gridProductContainer{
     display: flex;
-    flex-flow: column;
+    /* flex-flow: column; */
     justify-content: center;
     margin: 10px;
     margin-top: 25px;
     padding: 5px;
-    width: 400px;
+    width: 380px;
     height: 380px;
     background-color: rgb(157, 161, 205);
     border-top-right-radius: 5%;
@@ -32,7 +32,7 @@
 
 .arch {
     border: 2px solid white;
-    width: 300px;
+    width: 280px;
     height: 350px;
     border-top-right-radius: 50%;
     border-top-left-radius: 50%;
@@ -57,9 +57,83 @@
     background-color: rgb(157, 161, 205);
     border-right: 2px solid white;
     border-left: 2px solid white;
-    width: 300px;
+    width: 280px;
     position: relative;
+    top: -7px;
     right: 2px;
     /* text-orientation: sideways;
     writing-mode: vertical-rl; */
+}
+
+.keyWordContainer {
+    width: 50px;
+    
+}
+
+.keyWords{
+    font-family: 'Luminari-Regular';
+    font-size: 25px;
+    color: #f1ede9;
+}
+
+.keyWordsLeft {
+    transform: rotate(0.75turn);
+    position: relative;
+    left: 1px;
+}
+
+.keyWordsRight {
+    transform: rotate(0.25turn);
+    position: relative;
+    right: 1px;
+}
+
+.topLEFTWord{
+    top: 15px;
+}
+.bottomLEFTWord{
+    top: 90px;
+}
+.cornerLEFTStar{
+    position: relative;
+    top: -10px;
+    left: 42px;
+    font-size: 20px;
+    color: #f1ede9;
+}
+.topLEFTStar {
+    position: relative;
+    top: 0px;
+    left: 20px;
+    font-size: 30px;
+    color: #f1ede9;
+}
+
+
+
+.topRIGHTWord{
+    top: 7px;
+}
+.bottomRIGHTWord{
+    top: 50px;
+}
+.cornerRIGHTStar{
+    position: relative;
+    top: -10px;
+    right: 45px;
+    font-size: 20px;
+    color: #f1ede9;
+}
+.topRIGHTStar{
+    position: relative;
+    top: 0px;
+    right: 12px;
+    font-size: 30px;
+    color: #f1ede9;
+}
+
+.bottomStar {
+    position: relative;
+    top: 80px;
+    color: #f1ede9;
 }
