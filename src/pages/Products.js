@@ -2,10 +2,12 @@ import React from 'react'
 import { useParams, Link } from 'react-router-dom';
 import jellyGemsObj from '../JellyGemsObjects';
 import GridProduct from '../components/GridProduct';
+import Banner from '../components/Banner';
+import styles from '../styles/Products.module.css'
+
 
 function Products() {
 
-    const { stone } = useParams('stone');
 
     const stones = Object.keys(jellyGemsObj);
     console.log(stones);
@@ -18,12 +20,14 @@ function Products() {
 
     return (
         <div>
-            <div >
+            <Banner/>
+            <div className={styles.productsGrid}>
                 {stones.map(stone => (
                     <Link
                         key={stone}
                         to={`/product-details-page/${stone}`}
                         className="pet"
+                        style={{textDecoration: 'none'}}
                     >
                         <GridProduct
                             name={jellyGemsObj[stone].name}
