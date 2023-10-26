@@ -3,9 +3,7 @@ import React, { useEffect, useState } from 'react';
 import jellyGemsObj from '../JellyGemsObjects';
 import { useParams, Link } from 'react-router-dom';
 import styles from '../styles/ProductDetailsPage.module.css';
-
-import pairimg from '../images/mockups/closeUp-pairImg-sapphire-quartz.jpg';
-console.log(pairimg);
+import AddToBasket from '../components/AddToBasket';
 
 
 
@@ -36,17 +34,28 @@ function ProductDetailsPage() {
 
     return (
         <div className={styles.container}>
-            <div className={styles.heroImgContainer}>
-                <img src={stoneHeroImg} className={styles.heroImg} />
+            <div className={styles.container}>
+                <div className={styles.heroImgContainer}>
+                    <img src={stoneHeroImg} className={styles.heroImg} />
+                </div>
+                <div className={styles.infoContainer}>
+                    <div className={styles.info}>
+                        <h1>{stoneName}</h1>
+                        <p>{stoneBrief}</p>
+                        <p>{stoneDescription}</p>
+                        <p>{stoneKeyWords}</p>
+                    </div>
+                    <div className={styles.AddToBasketContainer}>
+                        < AddToBasket name={stoneName}/>
+                    </div>
+                </div>
             </div>
-            <div className={styles.infoContainer}>
-                <h1>{stoneName}</h1>
-                <p>{stoneBrief}</p>
-                <p>{stoneDescription}</p>
-                <p>{stoneKeyWords}</p>
-            </div>
-            <div>
-                <img src={stonePairImg} className={styles.heroImg} />
+
+            <div className={styles.pairsWellWithContainer}>
+                <h2>Pairs well with : </h2>
+                <div className={styles.pairImgContainer}>
+                    <img src={stonePairImg} className={styles.pairImg} />
+                </div>
 
             </div>
         </div>

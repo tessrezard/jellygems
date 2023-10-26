@@ -7,13 +7,52 @@
 
 .heroImgContainer{
     width: 40%;
+    background-color: #949ac6 ;
+    border-radius: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heroImg{ 
+    width: 80%;
+    margin: 1%;
+    height: 95%;
 }
 
 .infoContainer {
     width: 60%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
 }
 
 
-.heroImg{ 
-    width: 100%;
+h2 {
+    font-family: 'Luminari-Regular';
+    color: #949ac6;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+    margin-top: 1em;
+    margin-bottom: 0;
+}
+
+
+.pairsWellWithContainer{
+    margin: 5%;
+
+}
+.pairImgContainer{
+
+}
+.pairImg {
+    width: 80%;
+    margin: 1%;
+    height: 95%;
+}
+
+.AddToBasketContainer{
+    display: flex;
+    justify-content: center;
 }

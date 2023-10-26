@@ -1,0 +1,77 @@
+.container {
+    background-color: rgba(240, 248, 255, 0.544);
+    height: 200px;
+    width: 500px;
+}
+.priceContainer{
+
+}
+.priceHeader{
+
+}
+.price{
+    display: flex;
+    flex-flow: row;
+}
+
+.shoppingChoices{
+    display: flex;
+    flex-flow: column;
+}
+.currencyLabel{
+    font-size: 14px;
+}
+
+.select{
+    border: 2px solid #949ac6;
+    background-color: hwb(27 96% 0%);
+    border-radius: 3px;
+    width: 100px;
+    margin: auto;
+    margin-bottom: 3%;
+}
+
+.select:focus{
+    outline: 1px solid rgba(194, 141, 255, 0.806);
+    border-radius: 3px;
+}
+.priceContainer{
+    width: 150px;
+    justify-content: center;
+}
+
+.priceHeader{
+    font-family: 'Luminari-Regular';
+    font-size: smaller;
+}
+
+.price{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+
+}
+.currency {
+    font-family: 'Luminari-Regular';
+    margin: 3px;
+}
+
+.inputQuantity{
+    width: 40px;
+    height: 30px;
+    font-size: large;
+    text-align: center;
+}
+
+
+.submitButton{
+    background-color: #949ac6;
+    border: 5px outset #c4c9f1 ;
+    font-size: 0.75em;
+
+}
+
+.submitButton:active{
+    background-color: #848bba;
+    border: 5px inset #c4c9f1 ;
+}
