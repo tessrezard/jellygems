@@ -1,0 +1,72 @@
+.headerContainer {
+    width: 100vw;
+    height: 100px;
+    background-image: url('../images/misc/purpleStrip.jpg');
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+
+    justify-content: center;
+    margin-bottom: 2%;
+}
+
+.siteTitle  {
+    color: #f1ede9;
+    font-family: 'Luminari-Regular';
+    font-size: 50px;
+    margin: 10px;
+    padding: 0;
+    text-decoration: none;
+    width: 40%
+  }
+  
+  
+
+.navContainer {
+    color: #f1ede9;
+    width: 45%;
+    display: flex;
+    justify-content: space-around;
+    padding-right: 5%;
+    margin-top: 3%;
+}
+.navItem {
+    color: #f1ede9;
+    font-size: 1.25em;
+    transition: all 200ms;
+    text-decoration: none;
+}
+
+
+
+.activeNav {
+    color: #ffffff;
+    font-size: 1.35em;
+    border-bottom: 2px solid #ffffff;
+    position: relative;
+    bottom: 2px;
+}
+
+ul {
+    list-style: none;
+    padding: unset;
+    margin: unset;
+  }
+  
+  Link {
+    padding: 14px;
+    transition: all linear 0.3s;
+  }
+  
+  li:hover {
+    background: gray;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  .dropdown-menu {
+    background: #fff;
+    box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.05);
+    transition: all linear 0.3s;
+  }

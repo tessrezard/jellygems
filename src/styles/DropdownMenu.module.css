@@ -1,0 +1,35 @@
+
+  
+  .dropdownMenu {
+    position: relative;
+    background: #fff;
+    box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.05);
+    transition: all linear 0.3s;
+    border-top: 5px solid #949ac6;
+  }
+
+  .dropItem {
+    display:  list-item;
+    height:  28px;
+    width : 68.125px;
+    padding : 14px;
+    font-size: 1em;
+    font-family : -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    text-align:  center;
+    color : #949ac6;
+    transition-delay:  0s;
+    transition-duration:  0.3s;
+    transition-property:  all;
+    transition-timing-function:  linear;
+    -webkit-font-smoothing:  antialiased;
+    list-style-image:  none;
+    list-style-position:  outside;
+    list-style-type:  none;
+    text-decoration: none;
+  }
+
+  .dropItem:hover {
+    background: #7a7d97;
+    cursor: pointer;
+    color: #fff;
+  }

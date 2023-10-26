@@ -1,0 +1,14 @@
+.footerContainer {
+    width: 100vw;
+    height: 100px;
+    background-image: url('../images/misc/purpleStrip.jpg');
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-around;
+}

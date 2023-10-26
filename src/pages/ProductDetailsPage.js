@@ -10,7 +10,7 @@ function ProductDetailsPage() {
 
     useEffect (() => {
         const getStoneInfo = () => {
-            console.log(jellyGemsObj.stone.name)
+            // console.log(jellyGemsObj.stone.name)
         }
     }, [stone])
 

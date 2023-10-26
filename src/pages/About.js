@@ -35,7 +35,7 @@ function About() {
 
     return (
         <div>
-            <p className={styles.pickAPill}> pick a pill ;) </p>
+            <p className={styles.pickAPill}> pick a pill 😎 </p>
 
             <div className={styles.PillsPages} >
                 { pill === 'blue' ? (

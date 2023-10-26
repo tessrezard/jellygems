@@ -10,7 +10,7 @@ function Products() {
 
 
     const stones = Object.keys(jellyGemsObj);
-    console.log(stones);
+    // console.log(stones);
 
 
     if (!jellyGemsObj) {

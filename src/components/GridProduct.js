@@ -5,15 +5,15 @@ import styles from '../styles/Products.module.css'
 function GridProduct({name, description, brief, keyWords, heroImg, pairImg}) {
 
     const sortedKeyWords = keyWords.sort((a, b) => a.length - b.length);
-    console.log(sortedKeyWords);
+    // console.log(sortedKeyWords);
     let shortestWords = sortedKeyWords.slice(0, 4);
-    console.log(shortestWords);
+    // console.log(shortestWords);
 
     const [word1, word2, word3, word4] = shortestWords;
     
     const keyWordsSorted = keyWords.join('✦');
 
-    console.log(keyWordsSorted);
+    // console.log(keyWordsSorted);
 
     return (
         <>

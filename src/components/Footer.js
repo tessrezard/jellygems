@@ -1,15 +1,45 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import styles from '../styles/Footer.module.css';
+import headerStyles from '../styles/Header.module.css';
 
 
-function Footer () {
+function Footer() {
+
+    const location = useLocation();
+
     return (
         <>
-            <Link to="products"> Products </Link>
-            <Link to="basket"> Basket </Link>
-            <Link to="about"> About </Link>
-            <Link to="donate"> Donate </Link>
-            <Link to="home"> Home </Link>
+            <div className={styles.footerContainer}>
+                <Link
+                    to="home"
+                    className={`${headerStyles.navItem} ${location.pathname === '/home' ? headerStyles.activeNav : ''}`}
+                    > Home
+                </Link>
+                <Link 
+                    to="products"
+                    className={`${headerStyles.navItem} ${location.pathname === '/products' ? headerStyles.activeNav : ''}`}
+                    > Products 
+                </Link>
+                <Link 
+                    to="basket"
+                    className={`${headerStyles.navItem} ${location.pathname === '/basket' ? headerStyles.activeNav : ''}`}
+                    > Basket 
+                </Link>
+                <Link 
+                    to="about"
+                    className={`${headerStyles.navItem} ${location.pathname === '/about' ? headerStyles.activeNav : ''}`}
+                    > About 
+                </Link>
+                <Link 
+                    to="donate"
+                    className={`${headerStyles.navItem} ${location.pathname === '/donate' ? headerStyles.activeNav : ''}`}
+                    > Donate 
+                </Link>
+
+            </div>
+
+
 
         </>
     )
