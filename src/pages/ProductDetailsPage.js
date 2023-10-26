@@ -2,22 +2,53 @@
 import React, { useEffect, useState } from 'react';
 import jellyGemsObj from '../JellyGemsObjects';
 import { useParams, Link } from 'react-router-dom';
+import styles from '../styles/ProductDetailsPage.module.css';
+
+import pairimg from '../images/mockups/closeUp-pairImg-sapphire-quartz.jpg';
+console.log(pairimg);
 
 
 
 function ProductDetailsPage() {
     const {stone} = useParams('stone');
-
-    useEffect (() => {
-        const getStoneInfo = () => {
-            // console.log(jellyGemsObj.stone.name)
+    let stoneId;
+    const isThereASlash = () => {
+        if (stone.substring(0) === '/') {
+            stoneId = stone.substring(1).toLowerCase();
         }
-    }, [stone])
+         else if (stone.charAt(0) === ':') {
+            stoneId = stone.substring(1).toLowerCase();
+        } else {
+            stoneId = stone.toLowerCase();
+        }
+        
+    }
+    isThereASlash();
 
+    const  stoneName = jellyGemsObj[stoneId]?.name;
+    const stoneDescription = jellyGemsObj[stoneId]?.description;
+    const stoneBrief = jellyGemsObj[stoneId]?.brief;
+    const stoneKeyWords = jellyGemsObj[stoneId]?.keyWords;
+    const stoneHeroImg = jellyGemsObj[stoneId]?.heroImg;
+    const stonePairImg = jellyGemsObj[stoneId]?.pairImg;
+
+    console.log()
 
     return (
-        <div>
-            <h1>This is the {stone} product details page</h1>
+        <div className={styles.container}>
+            <div className={styles.heroImgContainer}>
+                <img src={stoneHeroImg} className={styles.heroImg} />
+            </div>
+            <div className={styles.infoContainer}>
+                <h1>{stoneName}</h1>
+                <p>{stoneBrief}</p>
+                <p>{stoneDescription}</p>
+                <p>{stoneKeyWords}</p>
+            </div>
+            <div>
+                <img src={stonePairImg} className={styles.heroImg} />
+
+            </div>
         </div>
     )
 }
