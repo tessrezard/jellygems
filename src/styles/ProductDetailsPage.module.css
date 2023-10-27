@@ -1,12 +1,12 @@
 .container {
     display: flex;
     flex-flow: row wrap;
-    padding: 2%;
-    margin: 2%;
+    margin: auto;
 }
 
 .heroImgContainer{
-    width: 40%;
+    width: 35vw;
+    height: 55vw;
     background-color: #949ac6 ;
     border-radius: 3%;
     display: flex;
@@ -15,13 +15,12 @@
 }
 
 .heroImg{ 
-    width: 80%;
-    margin: 1%;
-    height: 95%;
+    width: 30vw;
+    height: 50vw;
 }
 
 .infoContainer {
-    width: 60%;
+    width: 48vw;
     display: flex;
     flex-flow: column;
     justify-content: center;

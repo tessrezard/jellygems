@@ -4,7 +4,12 @@ import jellyGemsObj from '../JellyGemsObjects';
 import { useParams, Link } from 'react-router-dom';
 import styles from '../styles/ProductDetailsPage.module.css';
 import AddToBasket from '../components/AddToBasket';
-
+import amb from '../images/artwork/Amber.jpg';
+import ame from '../images/artwork/Amethyst.jpg';
+import eme from '../images/artwork/Emerald.jpg';
+import rub from '../images/artwork/Ruby.jpg';
+import quart from '../images/artwork/Quartz.jpg';
+import sapp from '../images/artwork/Sapphire.jpg';
 
 
 function ProductDetailsPage() {
@@ -30,23 +35,42 @@ function ProductDetailsPage() {
     const stoneHeroImg = jellyGemsObj[stoneId]?.heroImg;
     const stonePairImg = jellyGemsObj[stoneId]?.pairImg;
 
-    console.log()
+        console.log(stoneName);
+
+    const artworkImg = () => {
+        switch (stoneName) {
+            case ('Amber'):
+                return amb;
+            case ('Amethysts'):
+                return ame;
+            case ('Emeralds'):
+                return eme;
+            case ('Rubies'):
+                return rub;
+            case ('Sapphires'):
+                return sapp;
+            case ('Rose Quartz'):
+                return quart;
+            }
+    }
+
 
     return (
         <div className={styles.container}>
             <div className={styles.container}>
                 <div className={styles.heroImgContainer}>
-                    <img src={stoneHeroImg} className={styles.heroImg} />
+                    <img src={artworkImg()} className={styles.heroImg} />
                 </div>
+                
                 <div className={styles.infoContainer}>
+                <AddToBasket name={stoneName}/>
+
                     <div className={styles.info}>
-                        <h1>{stoneName}</h1>
                         <p>{stoneBrief}</p>
                         <p>{stoneDescription}</p>
                         <p>{stoneKeyWords}</p>
                     </div>
                     <div className={styles.AddToBasketContainer}>
-                        < AddToBasket name={stoneName}/>
                     </div>
                 </div>
             </div>

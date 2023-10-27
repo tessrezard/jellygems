@@ -22,7 +22,8 @@ const jellyGemsObj  = {
             description: 'Amber is in fact tree resin that can range in from 30 to 90 minnion years old! This resin is generally found in ancient evergreen trees. Amber is the stone of courage, and has long been given to travellers to keep them safe on long journeys.', 
             brief: 'Symbol of courgage, safe travels and adventures.',
             keyWords: ['courage', 'travel', 'adventure', 'strength', 'feeling of safety', 'trust'],
-            heroImg: '/static/media/Amber.95c9b5f5fc2e06140515.jpg',
+            // heroImg: '/static/media/Amber.95c9b5f5fc2e06140515.jpg',
+            heroImg: 'Amber.jpg',
             pairImg: '/static/media/closeUp-pairImg-emerald-amber.e9d78fa3faaffe3c8f2c.jpg',
             pouchMockupImg: '../images/amber/pouchMockupImg',
         },
@@ -57,7 +58,7 @@ const jellyGemsObj  = {
             pouchMockupImg: '../images/sapphire/pouchMockupImg',
         },
         quartz : {
-            name: 'Rose Quartz ',
+            name: 'Rose Quartz',
             id: 'Quartz',
             description: 'Rose Quartz is the stone of unconditional love, and is tied to emotional healing and is thought to inspire compassion.', 
             brief: 'Symbol of emotional healing and unconditional love.',

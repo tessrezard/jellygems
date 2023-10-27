@@ -1,27 +1,29 @@
 import React, { useState } from "react";
 import styles from '../styles/AddToBasket.module.css';
 import { Link } from "react-router-dom";
+import PopUpAddedToBasket from "./PopUpAddedToBasket";
 
 const AddToBasket = ({ name }) => {
 
-    const [currency, setCurrency] = useState('wish');
+    const [currency, setCurrency] = useState('Wish');
     const [quantity, setQuantity] = useState(1);
+    const [justAdded, setJustAdded] = useState(false);
 
     function handleSettingCurrency(e) {
         e.preventDefault();
         const chosenCurrency = e.target.value;
         switch (chosenCurrency) {
-            case 'wishes':
-                setCurrency('wish');
+            case 'Wishes':
+                setCurrency('Wish');
                 break;
-            case 'secrets':
-                setCurrency('secret');
+            case 'Secrets':
+                setCurrency('Secret');
                 break;
-            case 'promises':
-                setCurrency('promise');
+            case 'Promises':
+                setCurrency('Promise');
                 break;
             default:
-                setCurrency('wishe')
+                setCurrency('Wish')
         }
     }
 
@@ -33,72 +35,84 @@ const AddToBasket = ({ name }) => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log('submit??');
         const addToBasket = {
             'quantity': quantity,
             'type': name,
             'currency': currency
         }
-
         // console.log(addToBasket);
-        console.log(e);
-        console.log();
-        // window.localStorage.setItem('in Basket', addToBasket);
+        if (window.localStorage.getItem('total-quantity')) {
+            const currentTotal = window.localStorage.getItem('total-quantity');
+            const newTotal = (parseInt(currentTotal) + parseInt(quantity));
+            window.localStorage.setItem('total-quantity', newTotal);
+        } else {
+            window.localStorage.setItem('total-quantity', quantity);
+            const startShoppingCartTimer = Date.now();
 
+        }
+        console.log(window.localStorage.getItem('total-quantity'));
+        setJustAdded(true);
     }
 
-    console.log(name);
+    if (justAdded) {
+        setTimeout(() => setJustAdded(false), 5000 )
+    }
+
 
     return (
         <div className={styles.container}>
-            <h2>{name} Jelly Gems</h2>
+    
+            <h1>{name} Jelly Gems</h1>
+
             <div className={styles.priceContainer}>
+
                 <div className={styles.priceHeader}>
-                    Price :
+                    <p>Price : </p>
                 </div>
                 <div className={styles.price}>
                     <p className={styles.currency}> 1 </p>
-                    <p className={styles.currency}> {currency}✨ </p>
-                    <p>(0.5714 {currency}/ 100g)</p>
+                    <p className={styles.currency}> {currency} ✨ </p>
                 </div>
+                <p className={styles.pricePerGram}>(0.5714 {currency}/ 100g)</p>
+
+            </div>
 
 
-                <div>
+                <div className={styles.formContainer}>
                     <form role='shoppingChoices' className={styles.shoppingChoices} >
-                        <label htmlFor="currencyChoice" className={styles.currencyLabel}>Select currency</label>
+                        <label htmlFor="currencyChoice" className={styles.formLabel}>Currency:</label>
                         <select
                             name="currencyChoice"
                             id="currencyChoice"
                             className={styles.select}
                             onChange={handleSettingCurrency} >
-                            <option value="wishes">wishes</option>
-                            <option value="secrets">secrets</option>
-                            <option value="promises">promises</option>
+                            <option value="Wishes">Wishes</option>
+                            <option value="Secrets">Secrets</option>
+                            <option value="Promises">Promises</option>
                         </select>
-                        <label htmlFor="selectQuantity" className={styles.currencyLabel}>Select quantity: </label>
+                        <label htmlFor="selectQuantity" className={styles.formLabel}>Quantity: </label>
                         <input
                             type='number'
                             defaultValue='1'
                             min='1'
+                            max='10'
                             name="selectQuantity"
                             id="selectQuantity"
                             className={styles.inputQuantity}
                             onChange={handleSettingQuantity} />
-                        {/* <input
-                        type='submit'
-                        name="submit"
-                        id="submit"
-                        value='submit'
-                        className={styles.submitButton}
-                        onChange={handleSubmit} /> */}
-                    </form>
 
+                    </form>
                     <div
                         className={styles.submitButton}
-                        onClick={handleSubmit}>Add to Basket</div>
+                        onClick={handleSubmit}>
+                            <p className={styles.submitText}>
+                                Add to Basket
+                            </p>
+                    </div>
+                    {justAdded ? <PopUpAddedToBasket type='added to basket'/> : <></>}
+
                 </div>
 
-            </div>
         </div>
     );
 };

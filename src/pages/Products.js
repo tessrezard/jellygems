@@ -43,7 +43,6 @@ function Products() {
                     <h1>{jellyGemsObj[stone]}</h1>
                 })}
             </div>
-            <h1>This is the products page</h1>
 
         </div>
     )

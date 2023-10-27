@@ -1,48 +1,27 @@
 .container {
-    background-color: rgba(240, 248, 255, 0.544);
-    height: 200px;
+    /* background-color: rgba(198, 228, 255, 0.544); */
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.priceContainer{
     width: 500px;
-}
-.priceContainer{
-
-}
-.priceHeader{
-
-}
-.price{
     display: flex;
-    flex-flow: row;
-}
-
-.shoppingChoices{
-    display: flex;
-    flex-flow: column;
-}
-.currencyLabel{
-    font-size: 14px;
-}
-
-.select{
-    border: 2px solid #949ac6;
-    background-color: hwb(27 96% 0%);
-    border-radius: 3px;
-    width: 100px;
-    margin: auto;
-    margin-bottom: 3%;
-}
-
-.select:focus{
-    outline: 1px solid rgba(194, 141, 255, 0.806);
-    border-radius: 3px;
-}
-.priceContainer{
-    width: 150px;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 3%;
+    color: #646da2;
 }
 
 .priceHeader{
     font-family: 'Luminari-Regular';
     font-size: smaller;
+    margin-right: 8px;
+    margin-top: 4px;
+    width: 3em;
+
 }
 
 .price{
@@ -53,22 +32,80 @@
 }
 .currency {
     font-family: 'Luminari-Regular';
-    margin: 3px;
+    margin-right: 7px;
+}
+
+.pricePerGram{
+    font-size: 12px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+
+.formContainer{
+    margin-left: 1em;
+    
+
+}
+
+
+.shoppingChoices{
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.formLabel{
+    font-size: 16px;
+    padding: 1px;;
+}
+
+.select{
+    border: 2px solid #949ac6;
+    background-color: #f1ede9;
+    border-radius: 3px;
+    width: 100px;
+    /* margin: auto; */
+    margin-bottom: 3%;
+    font-family: 'Luminari-Regular';
+    font-size: 0.75em;
+
+}
+
+.select:focus{
+    outline: 1px solid rgba(194, 141, 255, 0.806);
+    border-radius: 3px;
 }
 
 .inputQuantity{
-    width: 40px;
-    height: 30px;
+    background-color: #f1ede9;
+
+    width: 60px;
+    height: 50px;
     font-size: large;
     text-align: center;
+    font-family: 'Luminari-Regular';
+    border: 2px solid #949ac6;
+
 }
 
+.inputQuantity:focus{
+    outline: 1px solid rgba(194, 141, 255, 0.806);
+    border-radius: 3px;
+}
 
 .submitButton{
     background-color: #949ac6;
-    border: 5px outset #c4c9f1 ;
-    font-size: 0.75em;
+    border: 5px outset #c4c9f1;
+    font-size: 1em;
+    margin: 3%;
+    height: 50px;
+}
 
+.submitText{
+    margin-top: 1.5%;
+    margin-bottom: 1%;
 }
 
 .submitButton:active{
