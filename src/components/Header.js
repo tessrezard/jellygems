@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import styles from '../styles/Header.module.css';
 import DropdownMenu from "./DropdownMenu";
+import InBasketIcon from "./InBasketIcon";
 
 
 function Header () {
@@ -54,6 +55,7 @@ function Header () {
                         >
                              Basket 
                         </NavLink>
+                        <InBasketIcon/>
                     </div>
                     
                     <div>

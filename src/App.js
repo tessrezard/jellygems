@@ -8,6 +8,9 @@ import About from "./pages/About";
 import Products from './pages/Products';
 import ProductDetailsPage from './pages/ProductDetailsPage';
 import Basket from './pages/Basket';
+import Checkout from './pages/Checkout';
+import { MyProvider } from './MyContext';
+
  
 
 const appRouter = createBrowserRouter(createRoutesFromElements( 
@@ -17,6 +20,8 @@ const appRouter = createBrowserRouter(createRoutesFromElements(
       <Route path="product-details-page/:stone" element={ <ProductDetailsPage/> } />
       <Route path="about" element={ <About/> } />
       <Route path='basket' element={ <Basket/> } />
+      <Route path='checkout' element={ <Checkout/> } />
+
       {/* <Route path='donate' element={ <Donate/> } /> */}
   </Route>
   ));
@@ -26,7 +31,9 @@ function App() {
   
   return (
     <div className="App">
-      <RouterProvider router={appRouter}/>
+      <MyProvider>
+        <RouterProvider router={appRouter}/>
+      </MyProvider>
     </div>
   );
 }

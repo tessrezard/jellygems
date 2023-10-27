@@ -1,0 +1,18 @@
+
+.iconContainer{
+    position: relative;
+    bottom: 45px;
+    left: 65px;
+    display: flex;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+
+.icon {
+    text-align: center;
+    position: relative;
+    bottom: 14px;
+    left: 7.5px;
+}
