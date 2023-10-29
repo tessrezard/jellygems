@@ -3,6 +3,7 @@ import styles from '../styles/AddToBasket.module.css';
 import { Link } from "react-router-dom";
 import PopUpAddedToBasket from "./PopUpAddedToBasket";
 import { useMyContext } from '../MyContext';
+import InfoIcon from "./InfoIcon";
 
 const AddToBasket = ({ name }) => {
 
@@ -10,6 +11,11 @@ const AddToBasket = ({ name }) => {
     const [currency, setCurrency] = useState('Wish');
     // const [quantity, setQuantity] = useState(1);
     const [justAdded, setJustAdded] = useState(false);
+    const [currencyAdjustmentInfo, setCurrencyAdjustmentInfo] = useState(false);
+    //automatically close into window after 5 seconds
+    if (currencyAdjustmentInfo) {
+        setTimeout(() => setCurrencyAdjustmentInfo(false), 13000)
+    }
 
     const [chosenQuantity, setChosenQuanity] = useState(1);
     const { quantity, setQuantity,
@@ -119,6 +125,11 @@ const AddToBasket = ({ name }) => {
         setTimeout(() => setJustAdded(false), 5000)
     }
 
+    // prevent reload when you hit 'enter' when choosing quantity
+    const handleFormSubmit = (event) => {
+          event.preventDefault(); 
+        }
+
 
     return (
         <div className={styles.container}>
@@ -140,7 +151,7 @@ const AddToBasket = ({ name }) => {
 
 
             <div className={styles.formContainer}>
-                <form role='shoppingChoices' className={styles.shoppingChoices} >
+                <form role='shoppingChoices' className={styles.shoppingChoices} onSubmit={handleFormSubmit}>
                     <label htmlFor="currencyChoice" className={styles.formLabel}>Currency:</label>
                     <select
                         name="currencyChoice"
@@ -151,6 +162,16 @@ const AddToBasket = ({ name }) => {
                         <option value="Secrets">Secrets</option>
                         <option value="Promises">Promises</option>
                     </select>
+                    <div onClick={() => setCurrencyAdjustmentInfo(!currencyAdjustmentInfo) }>
+                        <InfoIcon/> 
+                        {currencyAdjustmentInfo? (<div className={styles.currencyAdjustmentInfo}>
+                            Currencies:
+        The currecies we trade in are wishes, secrets and promises. 
+        Unfortunately we are unable to accept any other currecies at this time. 
+        Know we are working towards brigning new currencies to our company, 
+        including gossip and firstborns. Sadly the brexit red tape has been slowing this process. 
+                        </div>): (<></>)}
+                        </div>
                     <label htmlFor="selectQuantity" className={styles.formLabel}>Quantity: </label>
                     <input
                         type='number'

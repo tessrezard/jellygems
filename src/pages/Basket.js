@@ -1,9 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useMyContext } from '../MyContext';
 import { Link } from "react-router-dom";
 import styles from '../styles/Basket.module.css';
+import InfoIcon from '../components/InfoIcon';
 
 function Basket() {
+    const [currencyAdjustmentInfo, setCurrencyAdjustmentInfo] = useState(false);
+    //automatically close into window after 5 seconds
+    if (currencyAdjustmentInfo) {
+        setTimeout(() => setCurrencyAdjustmentInfo(false), 5000)
+    }
+    console.log(currencyAdjustmentInfo);
+
 
     const { quantity, setQuantity, 
         emeraldQuant, setEmeraldQuant,
@@ -17,7 +25,7 @@ function Basket() {
         secretsTotal, setSecretsTotal
         } = useMyContext();
 
-        const compareCurrencies = () => {
+    const compareCurrencies = () => {
             const currencies = [
                 {'wishesTotal': wishesTotal}, 
                 {'promisesTotal': promisesTotal}, 
@@ -35,10 +43,9 @@ function Basket() {
             return topCurrency;
         }
 
-        console.log(compareCurrencies());
+    console.log(compareCurrencies());
 
     const handleReduce = (stoneQuant, setStoneQuant) => {
-
         console.log('stoneQuant', stoneQuant);
         if (stoneQuant > 0 ){
         const oneLess = stoneQuant - 1 ;
@@ -66,11 +73,8 @@ function Basket() {
             default: 
                 break;
         }
-
-
     }
 
-    
     return (
         <div>
             <h1>This is the Basket page</h1>
@@ -162,36 +166,12 @@ function Basket() {
 
             </ul>
 
+            {quantity? (
+            <>
+            <div className={styles.totalToPayHeaderContainer}>
+                <h4>Total to pay:</h4> 
+            </div>
 
-            {/* <p>You have added {amberQuant} Amber</p>
-            <p>You have added {amethystQuant} Amethysts</p>
-            <p>You have added {emeraldQuant} Emeralds</p>
-            <p>You have added {rubyQuant} Rubies</p>
-            <p>You have added {sapphireQuant} Sapphires</p>
-            <p>You have added {quartzQuant} Quartz</p> */}
-
-
-
-
-{/* 
-            <div className={styles.bothButtonsContainer}>
-                <div  className={styles.buttonContainer}>
-                    <div className={styles.button} >
-                        <p className={styles.buttonText}> - </p>
-                    </div>
-                </div>
-
-                <div  className={styles.buttonContainer}>
-                    <div className={styles.button}>
-                        <p className={styles.buttonText}> + </p>
-                    </div>
-                </div>
-            </div> */}
-
-
-            {/* <p>This will cost you {wishesTotal} Wishes, {promisesTotal} Promises, and {secretsTotal} Secrets</p> */}
-
-            <h4>Total to pay:</h4> 
             <ul>
                 {wishesTotal? <li>{wishesTotal} Wishes</li> : <></> }
                 {promisesTotal? <li>{promisesTotal} Promises</li> : <></> }
@@ -201,6 +181,9 @@ function Basket() {
             <Link to="/checkout" style={{textDecoration: 'none'}}>
                          Proceed to Checkout 
                 </Link>
+            </> ) : (<></>)
+            }
+            
         </div>
     )
 }

@@ -41,7 +41,8 @@
     height: 50px;
     background-color: #949ac6;
     background-color: #b8bde7;
-    border: 5px outset #c4c9f1;    top: 10px;
+    border: 5px outset #c4c9f1;
+    top: 10px;
     right: 10px;
     z-index: 5;
     cursor: pointer;

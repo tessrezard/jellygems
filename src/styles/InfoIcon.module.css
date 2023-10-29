@@ -1,0 +1,17 @@
+.infoIconContainer{
+    display: inline;
+}
+
+.infoIconI {
+    color: #7e87d2;
+    border: 2px solid #8b93e1;
+    background-color: #e7e9fd;
+    border-radius: 50%;
+    width: 22px;
+    height: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    padding-top: 2px;
+    cursor: pointer;
+    text-align: center;
+}
