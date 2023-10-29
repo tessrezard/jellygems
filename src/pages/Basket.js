@@ -28,11 +28,17 @@ function Basket() {
                 const bValue = Object.values(b)[0]; // extract value from the second object
                 return bValue - aValue;
             });
-            console.log(sortedCurrencies)
+            // console.log(sortedCurrencies)
+            // console.log(Object.keys(sortedCurrencies[0])[0]);
+            const topCurrency = Object.keys(sortedCurrencies[0])[0];
+            console.log(typeof topCurrency);
+            return topCurrency;
         }
-        compareCurrencies()
+
+        console.log(compareCurrencies());
 
     const handleReduce = (stoneQuant, setStoneQuant) => {
+
         console.log('stoneQuant', stoneQuant);
         if (stoneQuant > 0 ){
         const oneLess = stoneQuant - 1 ;
@@ -40,6 +46,27 @@ function Basket() {
         const newTotalQuant = quantity - 1 ;
         setQuantity(newTotalQuant);
         }
+        console.log(compareCurrencies());
+        switch (compareCurrencies()){
+            case ('wishesTotal'):
+                const newWishTotal = wishesTotal - 1;
+                console.log('newWishTotal', newWishTotal);
+                setWishesTotal(newWishTotal);
+                break;
+            case ('promisesTotal'):
+                const newPromiseTotal = promisesTotal - 1;
+                console.log('newPromiseTotal', newPromiseTotal);
+                setPromisesTotal(newPromiseTotal);
+                break;
+            case ('secretsTotal'):
+                const newSecretTotal = secretsTotal - 1;
+                console.log('newSecretTotal', newSecretTotal);
+                setSecretsTotal(newSecretTotal);
+                break;
+            default: 
+                break;
+        }
+
 
     }
 
