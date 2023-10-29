@@ -1,0 +1,53 @@
+
+.liContainer {
+    display: flex;
+    flex-flow: row;
+    width: 60vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.bothButtonsContainer{
+    display: flex;
+    flex-flow: row;
+}
+
+.buttonContainer{
+    width: 50px;
+    height: 50px;
+    margin: 3px;
+
+}
+
+
+.button {
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #b8bde7;
+    border: 5px outset #c4c9f1;
+    cursor: pointer;
+    transition: all 300ms;
+    position: relative;
+    top: 1px;
+    left: 1px;
+}
+
+.button:active {
+    background-color: #8d92bc;
+    width: 35px;
+    height: 35px;
+    position: relative;
+    top:5px;
+    left: 5px;
+    transition: all 500ms;
+
+
+}
+
+.buttonText{
+    margin: 0;
+}
