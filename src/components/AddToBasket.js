@@ -182,7 +182,6 @@ const AddToBasket = ({ name }) => {
                         id="selectQuantity"
                         className={styles.inputQuantity}
                         onChange={handleSettingQuantity} />
-
                 </form>
                 <div
                     className={styles.submitButton}

@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useMyContext } from '../MyContext';
-
+import InfoIcon from '../components/InfoIcon';
+import styles from '../styles/Checkout.module.css'
 function Checkout() {
 
-    const { quantity, setQuantity, 
+    const [deliveryInfo, setDeliveryInfo] = useState(false);
+
+    const { quantity, setQuantity,
         emeraldQuant, setEmeraldQuant,
         rubyQuant, setRubyQuant,
         amberQuant, setAmberQuant,
@@ -13,29 +16,97 @@ function Checkout() {
         wishesTotal, setWishesTotal,
         promisesTotal, setPromisesTotal,
         secretsTotal, setSecretsTotal
-        } = useMyContext();
+    } = useMyContext();
 
 
     return (
-        <div>
-            <p>In the checkout!</p>
-            {/* <h1>This is the Basket page</h1>
-            <p>there are {quantity} items in your basket</p>
-            <p>You have added {amberQuant} Amber</p>
-            <p>You have added {amethystQuant} Amethysts</p>
-            <p>You have added {emeraldQuant} Emeralds</p>
-            <p>You have added {rubyQuant} Rubies</p>
-            <p>You have added {sapphireQuant} Sapphires</p>
-            <p>You have added {quartzQuant} Quartz</p>*/}
+        <>
+            <h2>Checkout</h2>
 
+            <div className={styles.CheckoutPageContainer}>
 
-            <h4>Subtotal:</h4> 
-            <ul>
-                {wishesTotal? <li>{wishesTotal} Wishes</li> : <></> }
-                {promisesTotal? <li>{promisesTotal} Promises</li> : <></> }
-                {secretsTotal? <li>{secretsTotal} Secrets</li> : <></> }
-            </ul>
-        </div>
+                <div>
+                    <h3>Make payment</h3>
+                    <form>
+                        {wishesTotal ? (
+                            <div >
+                                {[...Array(wishesTotal)].map((_, index) => (
+                                    <>
+                                        <p className={styles.paymentHeader}>
+                                            Wish {index + 1}
+                                        </p>
+                                        <input
+                                            type='text'
+                                            className={`${styles.wishPayment} ${styles.SingleCurrencyPayment}`}
+                                            key={index}
+                                            />
+                                    </>
+                                ))}
+                            </div>
+                        ) : <></>}
+
+                        {promisesTotal ? (
+                            <div >
+                                {[...Array(promisesTotal)].map((_, index) => (
+                                    <>
+                                        <p className={styles.paymentHeader}>
+                                            Promise {index + 1}
+                                        </p>
+                                        <input
+                                            type='text'
+                                            className={`${styles.promisePayment} ${styles.SingleCurrencyPayment}`}
+                                            key={index} 
+                                            />
+                                    </>
+                                ))}
+                            </div>
+                        ) : <></>}
+
+                        {secretsTotal ? (
+                            <div >
+                                {[...Array(secretsTotal)].map((_, index) => (
+                                    <>
+                                    <p className={styles.paymentHeader}>
+                                        Secret {index + 1}
+                                    </p>
+                                    <input
+                                        type='text'
+                                        className={`${styles.secretPayment} ${styles.SingleCurrencyPayment}`}
+                                        key={index} />
+                                </>
+                                ))}
+                            </div>
+                        ) : <></>}
+
+                    </form>
+                </div>
+
+                <div>
+                    <p>Delivery: <strong>free delivery</strong></p>
+                    <div onClick={() => setDeliveryInfo(!deliveryInfo)}>
+                        <InfoIcon />
+                        {deliveryInfo ? (<div className={styles.currencyAdjustmentInfo}>
+                            <p>
+                                We pride ourselves on our instantaneous <strong> free delivery</strong>. <br />
+                                Dispatch is immidiate, though please note that speed of delivery may depend on the imagination of the customer. <br />
+                                Unfortunatly this is our of our control,
+                                though we will endevour to get your imaginary parcel to you as quickly as possible.
+                            </p>
+                        </div>) : (<></>)}
+                    </div>
+
+                    <h4>Subtotal for your {quantity} items:</h4>
+                    <ul className={styles.pricesToPay}>
+                        {wishesTotal ? <li> ✧ {wishesTotal} Wishes</li> : <></>}
+                        {promisesTotal ? <li> ✧ {promisesTotal} Promises</li> : <></>}
+                        {secretsTotal ? <li> ✧ {secretsTotal} Secrets</li> : <></>}
+                    </ul>
+                </div>
+
+            </div>
+
+        </>
+
     )
 }
 
