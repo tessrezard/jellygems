@@ -1,10 +1,44 @@
 
+.basketPageContainer{
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+.basketContainer{
+    background-color: #fffdfb;
+    width: clamp(27rem , 40vw, 50rem) ;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin: 5px;
+
+}
+
+.subtotalContainer{
+    background-color: #fffdfb;
+    width: 40vw;
+    margin: 5px;
+    display: flex;
+    flex-flow: column;
+
+}
+
+
+.listInBasket{
+
+    margin: auto;
+}
 .liContainer {
     display: flex;
     flex-flow: row;
-    width: 60vw;
-    justify-content: center;
+    width: 390px;
+    height: 120px;
+    justify-content: flex-start;
     align-items: center;
+    border: 3px solid #c4c9f1;
+    padding: 9px;
+    margin: 4px;
 }
 
 .bothButtonsContainer{
@@ -13,22 +47,23 @@
 }
 
 .buttonContainer{
-    width: 50px;
-    height: 50px;
-    margin: 3px;
-
+    width: 30px;
+    height: 30px;
+    margin-bottom: 4px;
+    margin-top: 3px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 
 .button {
-    border: 1px solid black;
-    width: 40px;
-    height: 40px;
+    width: 22px;
+    height: 22px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #b8bde7;
-    border: 5px outset #c4c9f1;
+    border: 3px outset #c4c9f1;
     cursor: pointer;
     transition: all 300ms;
     position: relative;
@@ -38,18 +73,18 @@
 
 .button:active {
     background-color: #8d92bc;
-    width: 35px;
-    height: 35px;
+    width: 15px;
+    height: 15px;
     position: relative;
-    top:5px;
+    top: 5px;
     left: 5px;
-    transition: all 500ms;
-
-
+    transition: all 200ms;
 }
 
 .buttonText{
     margin: 0;
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .totalToPayHeaderContainer{
@@ -58,11 +93,103 @@
     justify-content: center;
 }
 
-.currencyAdjustmentInfo{
+/* .currencyAdjustmentInfo{
     position: relative;
     left: 30px;
     bottom: 40px;
     border: 2px solid #8d92bc;
     background-color: #e7e9fd;
     padding: 2%;
+} */
+
+
+.stoneImgContainer{
+    margin-right: 10px;
+
+}
+.stoneImg {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    object-position: 0 -32px ;
+    border: 2px solid  #acb1e5;
+
+}
+
+.quantityContainer{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid  #8d92bc;
+    width: 120px;
+    margin: auto;
+}
+
+.quantity {
+    color: #5e6498;
+    font-family: 'Luminari-Regular';
+    font-weight: 700;
+    /* text-shadow:  1px 1px   #050717; */
+    font-size: 22px;
+}
+
+
+.itemLi {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+}
+
+
+.itemName{
+    margin: 0;
+    font-size: 23px;
+}
+
+
+li:hover {
+    background-color: inherit;
+    color: inherit;
+}
+
+.quantHeader {
+    margin-top: 10px;
+    margin-bottom: 3px;
+    font-size: 17px;
+}
+
+
+.pricesToPay {
+
+    border: 3px solid #c4c9f1;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    padding: 3%;
+}
+
+.proceedToCheckout{ 
+    color: #3a4078;
+    border: 3px solid #c4c9f1;
+    background-color: #d4d9ff;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2%;
+    border-radius: 20px;
+    transition: all 520ms;
+}
+
+.proceedToCheckout:hover{ 
+    color: #f5f6ff;
+    background-color: #a0a6d4;
+    border: 3px solid #c4c9f1;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2%;
+    border-radius: 20px;
 }
