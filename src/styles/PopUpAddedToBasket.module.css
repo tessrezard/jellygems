@@ -5,8 +5,7 @@
     top: 0;
     left: 0;
     z-index: 3;
-    transition: all 2
-    00ms;
+    transition: all 100ms;
 }
 
 .visible{
@@ -17,7 +16,7 @@
 }
 
 .popUpContainer {
-    transition: all 200ms;
+    transition: all 100ms;
     width: 30vw;
     height: 20vh;
     position: fixed;

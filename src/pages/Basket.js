@@ -16,7 +16,6 @@ function Basket() {
     if (currencyAdjustmentInfo) {
         setTimeout(() => setCurrencyAdjustmentInfo(false), 5000)
     }
-    console.log(currencyAdjustmentInfo);
 
 
     const { quantity, setQuantity,
@@ -46,7 +45,7 @@ function Basket() {
         // console.log(sortedCurrencies)
         // console.log(Object.keys(sortedCurrencies[0])[0]);
         const topCurrency = Object.keys(sortedCurrencies[0])[0];
-        console.log(typeof topCurrency);
+        // console.log(typeof topCurrency);
         return topCurrency;
     }
 
@@ -62,40 +61,39 @@ function Basket() {
             const bValue = Object.values(b)[0];
             return bValue - aValue;
         });
-        console.log('sortedCurrencies',sortedCurrencies);
-
+        // console.log('sortedCurrencies', sortedCurrencies);
         const bottomCurrency = Object.keys(sortedCurrencies[2])[0];
-        console.log('typeof bottomCurrency',typeof bottomCurrency);
+        // console.log('typeof bottomCurrency', typeof bottomCurrency);
         return bottomCurrency;
     }
 
 
-    console.log('getBottomCurrency', getBottomCurrency());
+    // console.log('getBottomCurrency()', getBottomCurrency());
 
 
     const handleReduce = (stoneQuant, setStoneQuant) => {
-        console.log('stoneQuant', stoneQuant);
+        // console.log('stoneQuant', stoneQuant);
         if (stoneQuant > 0) {
             const oneLess = stoneQuant - 1;
             setStoneQuant(oneLess);
             const newTotalQuant = quantity - 1;
             setQuantity(newTotalQuant);
         }
-        console.log(getTopCurrency());
+        console.log('getTopCurrency()', getTopCurrency());
         switch (getTopCurrency()) {
             case ('wishesTotal'):
                 const newWishTotal = wishesTotal - 1;
-                console.log('newWishTotal', newWishTotal);
+                // console.log('newWishTotal', newWishTotal);
                 setWishesTotal(newWishTotal);
                 break;
             case ('promisesTotal'):
                 const newPromiseTotal = promisesTotal - 1;
-                console.log('newPromiseTotal', newPromiseTotal);
+                // console.log('newPromiseTotal', newPromiseTotal);
                 setPromisesTotal(newPromiseTotal);
                 break;
             case ('secretsTotal'):
                 const newSecretTotal = secretsTotal - 1;
-                console.log('newSecretTotal', newSecretTotal);
+                // console.log('newSecretTotal', newSecretTotal);
                 setSecretsTotal(newSecretTotal);
                 break;
             default:
@@ -104,33 +102,89 @@ function Basket() {
     }
 
     const handleIncrease = (stoneQuant, setStoneQuant) => {
-        console.log('stoneQuant', stoneQuant);
+        // console.log('stoneQuant', stoneQuant);
         if (stoneQuant > 0) {
             const oneMore = stoneQuant + 1;
             setStoneQuant(oneMore);
             const newTotalQuant = quantity + 1;
             setQuantity(newTotalQuant);
         }
-        console.log(getBottomCurrency());
         switch (getBottomCurrency()) {
             case ('wishesTotal'):
                 const newWishTotal = wishesTotal + 1;
-                console.log('newWishTotal', newWishTotal);
+                // console.log('newWishTotal', newWishTotal);
                 setWishesTotal(newWishTotal);
                 break;
             case ('promisesTotal'):
                 const newPromiseTotal = promisesTotal + 1;
-                console.log('newPromiseTotal', newPromiseTotal);
+                // console.log('newPromiseTotal', newPromiseTotal);
                 setPromisesTotal(newPromiseTotal);
                 break;
             case ('secretsTotal'):
                 const newSecretTotal = secretsTotal + 1;
-                console.log('newSecretTotal', newSecretTotal);
+                // console.log('newSecretTotal', newSecretTotal);
                 setSecretsTotal(newSecretTotal);
                 break;
             default:
                 break;
         }
+    }
+
+
+    const handleRemove = (stoneQuant, setStoneQuant) => {
+
+        const quantToReduce = stoneQuant;
+        let newWishTotal = wishesTotal;
+        let newPromiseTotal = promisesTotal;
+        let newSecretTotal = secretsTotal;
+
+        if (stoneQuant > 0) {
+            const newTotalQuant = quantity - stoneQuant;
+            setStoneQuant(0);
+            setQuantity(newTotalQuant);
+        }
+
+        for (let x = quantToReduce; x > 0; x--) {
+
+            console.log('getTopCurrency()', getTopCurrency());
+            switch (getTopCurrency()) {
+                case 'wishesTotal':
+                    if (newWishTotal > 0) {
+                        newWishTotal -= 1;
+                    } else if (newPromiseTotal > 0) {
+                        newPromiseTotal -= 1;
+                    } else if (newSecretTotal > 0) {
+                        newSecretTotal -= 1;
+                    }
+                    break;
+                case 'promisesTotal':
+                    if (newPromiseTotal > 0) {
+                        newPromiseTotal -= 1;
+                    } else if (newWishTotal > 0) {
+                        newWishTotal -= 1;
+                    } else if (newSecretTotal > 0) {
+                        newSecretTotal -= 1;
+                    }
+                    break;
+                case 'secretsTotal':
+                    if (newSecretTotal > 0) {
+                        newSecretTotal -= 1;
+                    } else if (newWishTotal > 0) {
+                        newWishTotal -= 1;
+                    } else if (newPromiseTotal > 0) {
+                        newPromiseTotal -= 1;
+                    }
+                    break;
+                default:
+                    break;
+            }
+            console.log('x', x)
+        }
+
+        setWishesTotal(newWishTotal);
+        setSecretsTotal(newSecretTotal);
+        setPromisesTotal(newPromiseTotal);
+
     }
 
 
@@ -170,6 +224,12 @@ function Basket() {
                                     </div>
                                 </div>
                             </li>
+                            <div className={styles.removeItemConainer}>
+                                <div className={styles.removeItem} onClick={() => handleRemove(amberQuant, setAmberQuant)}>
+                                    <p style={{ margin: 0, paddingBottom: 2 }}>x</p>
+                                </div>
+                            </div>
+
                         </div>
                     ) : <></>}
 
@@ -200,6 +260,11 @@ function Basket() {
                                     </div>
                                 </div>
                             </li>
+                            <div className={styles.removeItemConainer}>
+                                <div className={styles.removeItem} onClick={() => handleRemove(amethystQuant, setAmethystQuant)}>
+                                    <p style={{ margin: 0, paddingBottom: 2 }}>x</p>
+                                </div>
+                            </div>
                         </div>
                     ) : <></>}
 
@@ -230,6 +295,11 @@ function Basket() {
                                     </div>
                                 </div>
                             </li>
+                            <div className={styles.removeItemConainer}>
+                                <div className={styles.removeItem} onClick={() => handleRemove(emeraldQuant, setEmeraldQuant)}>
+                                    <p style={{ margin: 0, paddingBottom: 2 }}>x</p>
+                                </div>
+                            </div>
                         </div>
                     ) : <></>}
 
@@ -260,6 +330,11 @@ function Basket() {
                                     </div>
                                 </div>
                             </li>
+                            <div className={styles.removeItemConainer}>
+                                <div className={styles.removeItem} onClick={() => handleRemove(rubyQuant, setRubyQuant)}>
+                                    <p style={{ margin: 0, paddingBottom: 2 }}>x</p>
+                                </div>
+                            </div>
                         </div>
                     ) : <></>}
 
@@ -290,6 +365,11 @@ function Basket() {
                                     </div>
                                 </div>
                             </li>
+                            <div className={styles.removeItemConainer}>
+                                <div className={styles.removeItem} onClick={() => handleRemove(sapphireQuant, setSapphireQuant)}>
+                                    <p style={{ margin: 0, paddingBottom: 2 }}>x</p>
+                                </div>
+                            </div>
                         </div>
                     ) : <></>}
 
@@ -320,6 +400,11 @@ function Basket() {
                                     </div>
                                 </div>
                             </li>
+                            <div className={styles.removeItemConainer}>
+                                <div className={styles.removeItem} onClick={() => handleRemove(quartzQuant, setQuartzQuant)}>
+                                    <p style={{ margin: 0, paddingBottom: 2 }}>x</p>
+                                </div>
+                            </div>
                         </div>
                     ) : <></>}
 

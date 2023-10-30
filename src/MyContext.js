@@ -4,7 +4,7 @@ const MyContext = createContext();
 
 export const MyProvider = ({ children }) => {
   const [quantity, setQuantity] = useState(0); // Set your initial state here
-  console.log('Quantity in Context:', quantity);
+  // console.log('Quantity in Context:', quantity);
 
   const [emeraldQuant, setEmeraldQuant] = useState(0);
   const [rubyQuant, setRubyQuant] = useState(0);
@@ -17,7 +17,7 @@ export const MyProvider = ({ children }) => {
   const [promisesTotal, setPromisesTotal] = useState(0);
   const [secretsTotal, setSecretsTotal] = useState(0);
 
-  console.log('emeraldQuant in Context:', emeraldQuant);
+  // console.log('emeraldQuant in Context:', emeraldQuant);
 
 
 
