@@ -1,20 +1,35 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useRoutes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-
+import About from "./pages/About";
+import Products from './pages/Products';
+import ProductDetailsPage from './pages/ProductDetailsPage';
+import Basket from './pages/Basket';
+import Checkout from './pages/Checkout';
 
 const Root = () => {
 
-    console.log('Outlet: ', !Outlet);
+
+    const routes = [
+        // { path: 'home', element: <Home /> },
+        { path: 'products', element: <Products /> },
+        { path: 'product-details-page/:stone', element: <ProductDetailsPage /> },
+        { path: 'about', element: <About /> },
+        { path: 'basket', element: <Basket /> },
+        { path: 'checkout', element: <Checkout /> },
+        // Add more route configurations as needed
+      ];
+    const routeElement = useRoutes(routes);
+
 
     return (
         <>
             <Header/>
             <div className="App-main">
-                {!Outlet ? <Outlet/> : <Home/>}
-                <Outlet />
+                {routeElement || <Home />} {/* Render Home if no routes match */}
+                {/* <Outlet /> */}
             </div>
             <Footer/>
         </>
