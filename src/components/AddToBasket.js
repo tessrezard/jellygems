@@ -11,11 +11,11 @@ const AddToBasket = ({ name }) => {
     const [currency, setCurrency] = useState('Wish');
     // const [quantity, setQuantity] = useState(1);
     const [justAdded, setJustAdded] = useState(false);
-    const [currencyAdjustmentInfo, setCurrencyAdjustmentInfo] = useState(false);
+    const [currencyInfo, setCurrencyInfo] = useState(false);
     //automatically close into window after 5 seconds
-    if (currencyAdjustmentInfo) {
-        setTimeout(() => setCurrencyAdjustmentInfo(false), 13000)
-    }
+    // if (currencyAdjustmentInfo) {
+    //     setTimeout(() => setCurrencyAdjustmentInfo(false), 13000)
+    // }
 
     const [chosenQuantity, setChosenQuanity] = useState(1);
     const { quantity, setQuantity,
@@ -118,12 +118,8 @@ const AddToBasket = ({ name }) => {
         //     window.localStorage.setItem('total-quantity', quantity);
         // }
         // console.log('in local storage: ',  window.localStorage.getItem('total-quantity'));
-        setJustAdded(true);
     }
 
-    if (justAdded) {
-        setTimeout(() => setJustAdded(false), 5000)
-    }
 
     // prevent reload when you hit 'enter' when choosing quantity
     const handleFormSubmit = (event) => {
@@ -162,9 +158,9 @@ const AddToBasket = ({ name }) => {
                         <option value="Secrets">Secrets</option>
                         <option value="Promises">Promises</option>
                     </select>
-                    <div onClick={() => setCurrencyAdjustmentInfo(!currencyAdjustmentInfo) }>
+                    <div onClick={() => setCurrencyInfo(!currencyInfo) }>
                         <InfoIcon/> 
-                        {currencyAdjustmentInfo? (<div className={styles.currencyAdjustmentInfo}>
+                        {currencyInfo? (<div className={styles.currencyAdjustmentInfo}>
                             Currencies:
         The currecies we trade in are wishes, secrets and promises. 
         Unfortunately we are unable to accept any other currecies at this time. 

@@ -62,7 +62,7 @@ const jellyGemsObj  = {
             id: 'Quartz',
             description: 'Rose Quartz is the stone of unconditional love, and is tied to emotional healing and is thought to inspire compassion.', 
             brief: 'Symbol of emotional healing and unconditional love.',
-            keyWords: ['courage', 'travel', 'adventure', 'strength', 'feeling of safety', 'trust'],
+            keyWords: ['love', 'healing', 'compassion', 'balance', 'joy'],
             heroImg: '/static/media/Quartz.525ecb0d2c8a4193becd.jpg',
             pairImg: '/static/media/closeUp-pairImg-sapphire-quartz.8aa45a074f4ec6ddb930.jpg',
             pouchMockupImg: '../images/quartz/pouchMockupImg',

@@ -412,10 +412,11 @@ function Basket() {
                 </ul>
             </div>
 
-            <div className={styles.subtotalContainer}>
 
                 {quantity ? (
                     <>
+                        <div className={styles.subtotalContainer}>
+
                         <div className={styles.totalToPayHeaderContainer}>
                             <h2>Total to pay :</h2>
                         </div>
@@ -429,9 +430,10 @@ function Basket() {
                         <Link to="/checkout" style={{ textDecoration: 'none' }} className={styles.proceedToCheckout}>
                             Proceed to Checkout
                         </Link>
+                        </div>
+
                     </>) : (<></>)
                 }
-            </div>
 
 
         </div>

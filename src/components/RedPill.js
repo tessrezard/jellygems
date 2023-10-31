@@ -34,7 +34,7 @@ function RedPill({ handleClick }) {
                         to the vegans or Ceoliacs or to the sweets and confectionary industry.
                         However, I understand that ultimately the intentions are less important than the impact.
                         If you have found this content to be troubling or if you feel hurt by the wording I have used or the inferences I may have made,
-                        please do get in touch with me in this feedback form, I am open to conversation.
+                        please do get in touch with me, I am open to conversation.
                     </p>
                 </div>
                 {/* <FeedbackForm/> */}

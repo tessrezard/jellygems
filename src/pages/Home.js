@@ -13,8 +13,7 @@ function Home() {
 
         sweet shop. </h1>
         <p> This is a website that trades in imaginary sweets. <br/>
-    The currecies we trade in are wishes and secrets. <br/>
-    Would you like to donate? </p>
+    The currecies we trade in are wishes and secrets and promises. <br/> </p>
       </div>
     );
   }
