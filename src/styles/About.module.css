@@ -1,19 +1,58 @@
+.aboutPageContainer {
+    height: 100vh;
+    width: 100vw;
+}
 
-.pickAPill{
-    position: absolute;
-    top: 25%;
-    left: 160px;
+.pickAPill {
+    position: relative;
+    bottom: 10px;
+    left: 40px;
+    z-index: 10;
+    display: flex;
+    align-items: baseline;
+}
+
+.pickAPillHint {
+    margin: 0;
+    /* width: 150px; */
+    margin-left: 2%;
+    margin-top: auto;
+    margin-bottom: auto;
+    border: 2px solid #acb1e5;
+    background-color: #d3d6f7;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: row;
+    padding: 5px;
+    font-size: 0.75em;
+}
+
+.littlePill {
+    width: 30px;
+    height: 15px;
+    margin: auto;
+    margin-left: 10px;
+    border-radius: 10px;
+
+}
+
+.littleBluePill {
+    background-color: #8bbcfc;
+}
+
+.littleRedPill {
+    background-color: #fc8b8b;
 }
 
 .PillsPages {
-    position: absolute;
-    height: 100vh;
-    top: 35%;
-    left: 10px;
-    right: 10px;
-    padding: 10px;
-    margin: 10px;
-} 
+    position: relative;
+    height: fit-content;
+    bottom: 10px;
+    left: 3.5%;
+    /* right: 10px; */
+    margin: auto;
+
+}
 
 .pillPageBlue {
     position: absolute;
@@ -21,40 +60,45 @@
     left: 0;
     /* z-index: 1; */
 }
+
 .pillPageRed {
     position: absolute;
     top: 0;
-    left: 0px; 
+    left: 0px;
     /* z-index: 1; */
 
-} 
+}
 
 
-.pillPageContainer{
+.pillPageContainer {
     height: 150px;
     display: flex;
     flex-flow: column;
 }
 
 
-.BluePillColor{
-    background-color: rgb(178, 209, 253);
-}
-.RedPillColor{
-    background-color: rgb(231, 140, 140);
+.BluePillColor {
+    background-color: #8bbcfc;
 }
 
-.BluePillPosition{
+.RedPillColor {
+    background-color: #fc8b8b;
+
+}
+
+.BluePillPosition {
     left: 100px;
 }
-.RedPillPosition{
+
+.RedPillPosition {
     left: 200px;
 }
 
 .PillContainer {
-    width: 80%;
+    width: 90%;
+    margin: auto;
     border-radius: 18px;
-    border-collapse: separate; 
+    border-collapse: separate;
     display: flex;
     flex-flow: column;
 }
@@ -62,20 +106,20 @@
 
 .pill {
     /* ADD BACKGROUND COLOUR WITH SEPERATECLASS */
-    width: 80px;
+    width: 90px;
     height: 43px;
     position: relative;
     top: 0;
-    border-radius: 20px 20px 20px 20px ; 
+    border-radius: 20px 20px 20px 20px;
 }
 
 .insidePillContainer {
     margin: 3%;
     padding: 10px;
-    height: fit-content;
+    height: 70vh;
     width: 90vw;
     position: absolute;
     top: 35px;
     object-fit: cover;
-    border-radius: 10px; 
+    border-radius: 10px;
 }

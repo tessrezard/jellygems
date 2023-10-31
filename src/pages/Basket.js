@@ -191,236 +191,232 @@ function Basket() {
 
     return (
         <div className={styles.basketPageContainer}>
-            <div className={styles.basketContainer}>
-                <h2>Your Basket : </h2>
+            {quantity ? (
+                <>
+                    <div className={styles.basketContainer}>
+                        <h2>Your Basket : </h2>
 
-                <p>Total items : {quantity}</p>
-                <ul className={styles.listInBasket}>
+                        <p>Total items : {quantity}</p>
+                        <ul className={styles.listInBasket}>
 
 
-                    {amberQuant ? (
-                        <div className={styles.liContainer}>
-                            <div className={styles.stoneImgContainer}>
-                                <img src={amb} className={styles.stoneImg} />
-                            </div>
-                            <li className={styles.itemLi}>
-                                <h1 className={styles.itemName} >Amber Jelly Gems </h1>
-                                <p className={styles.quantHeader}>Quantity:</p>
-                                <div className={styles.quantityContainer}>
-                                    <div className={styles.bothButtonsContainer}>
-                                        <div className={styles.buttonContainer}>
-                                            <div className={styles.button} onClick={() => handleReduce(amberQuant, setAmberQuant)}>
-                                                <p className={styles.buttonText}> - </p>
+                            {amberQuant ? (
+
+                                <div className={styles.liContainer}>
+                                    <div className={styles.stoneImgContainer}>
+                                        <img src={amb} className={styles.stoneImg} />
+                                    </div>
+                                    <li className={styles.itemLi}>
+                                        <h1 className={styles.itemName} >Amber Jelly Gems </h1>
+                                        <p className={styles.quantHeader}>Quantity:</p>
+                                        <div className={styles.quantityContainer}>
+                                            <div className={styles.bothButtonsContainer}>
+                                                <div className={styles.buttonContainer}>
+                                                    <div className={styles.button} onClick={() => handleReduce(amberQuant, setAmberQuant)}>
+                                                        <p className={styles.buttonText}> - </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className={styles.quantity}> {amberQuant} </div>
+                                            <div className={styles.bothButtonsContainer}>
+                                                <div className={styles.buttonContainer}>
+                                                    <div className={styles.button} onClick={() => handleIncrease(amberQuant, setAmberQuant)}>
+                                                        <p className={styles.buttonText}> + </p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className={styles.quantity}> {amberQuant} </div>
-                                    <div className={styles.bothButtonsContainer}>
-                                        <div className={styles.buttonContainer}>
-                                            <div className={styles.button} onClick={() => handleIncrease(amberQuant, setAmberQuant)}>
-                                                <p className={styles.buttonText}> + </p>
-                                            </div>
+                                    </li>
+                                    <div className={styles.removeItemConainer}>
+                                        <div className={styles.removeItem} onClick={() => handleRemove(amberQuant, setAmberQuant)}>
+                                            <p style={{ margin: 0, paddingBottom: 2 }}>x</p>
                                         </div>
                                     </div>
+
                                 </div>
-                            </li>
-                            <div className={styles.removeItemConainer}>
-                                <div className={styles.removeItem} onClick={() => handleRemove(amberQuant, setAmberQuant)}>
-                                    <p style={{ margin: 0, paddingBottom: 2 }}>x</p>
-                                </div>
-                            </div>
-
-                        </div>
-                    ) : <></>}
+                            ) : <></>}
 
 
-                    {amethystQuant ? (
-                        <div className={styles.liContainer}>
-                            <div className={styles.stoneImgContainer}>
-                                <img src={ame} className={styles.stoneImg} />
-                            </div>
-                            <li className={styles.itemLi}>
-                                <h1 className={styles.itemName} >Amethyst Jelly Gems </h1>
-                                <p className={styles.quantHeader}>Quantity:</p>
-                                <div className={styles.quantityContainer}>
-                                    <div className={styles.bothButtonsContainer}>
-                                        <div className={styles.buttonContainer}>
-                                            <div className={styles.button} onClick={() => handleReduce(amethystQuant, setAmethystQuant)}>
-                                                <p className={styles.buttonText}> - </p>
+                            {amethystQuant ? (
+                                <div className={styles.liContainer}>
+                                    <div className={styles.stoneImgContainer}>
+                                        <img src={ame} className={styles.stoneImg} />
+                                    </div>
+                                    <li className={styles.itemLi}>
+                                        <h1 className={styles.itemName} >Amethyst Jelly Gems </h1>
+                                        <p className={styles.quantHeader}>Quantity:</p>
+                                        <div className={styles.quantityContainer}>
+                                            <div className={styles.bothButtonsContainer}>
+                                                <div className={styles.buttonContainer}>
+                                                    <div className={styles.button} onClick={() => handleReduce(amethystQuant, setAmethystQuant)}>
+                                                        <p className={styles.buttonText}> - </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className={styles.quantity}> {amethystQuant} </div>
+                                            <div className={styles.bothButtonsContainer}>
+                                                <div className={styles.buttonContainer}>
+                                                    <div className={styles.button} onClick={() => handleIncrease(amethystQuant, setAmethystQuant)}>
+                                                        <p className={styles.buttonText}> + </p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className={styles.quantity}> {amethystQuant} </div>
-                                    <div className={styles.bothButtonsContainer}>
-                                        <div className={styles.buttonContainer}>
-                                            <div className={styles.button} onClick={() => handleIncrease(amethystQuant, setAmethystQuant)}>
-                                                <p className={styles.buttonText}> + </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <div className={styles.removeItemConainer}>
-                                <div className={styles.removeItem} onClick={() => handleRemove(amethystQuant, setAmethystQuant)}>
-                                    <p style={{ margin: 0, paddingBottom: 2 }}>x</p>
-                                </div>
-                            </div>
-                        </div>
-                    ) : <></>}
-
-
-                    {emeraldQuant ? (
-                        <div className={styles.liContainer}>
-                            <div className={styles.stoneImgContainer}>
-                                <img src={eme} className={styles.stoneImg} />
-                            </div>
-                            <li className={styles.itemLi}>
-                                <h1 className={styles.itemName} >Emerald Jelly Gems </h1>
-                                <p className={styles.quantHeader}>Quantity:</p>
-                                <div className={styles.quantityContainer}>
-                                    <div className={styles.bothButtonsContainer}>
-                                        <div className={styles.buttonContainer}>
-                                            <div className={styles.button} onClick={() => handleReduce(emeraldQuant, setEmeraldQuant)}>
-                                                <p className={styles.buttonText}> - </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className={styles.quantity}> {emeraldQuant} </div>
-                                    <div className={styles.bothButtonsContainer}>
-                                        <div className={styles.buttonContainer}>
-                                            <div className={styles.button} onClick={() => handleIncrease(emeraldQuant, setEmeraldQuant)}>
-                                                <p className={styles.buttonText}> + </p>
-                                            </div>
+                                    </li>
+                                    <div className={styles.removeItemConainer}>
+                                        <div className={styles.removeItem} onClick={() => handleRemove(amethystQuant, setAmethystQuant)}>
+                                            <p style={{ margin: 0, paddingBottom: 2 }}>x</p>
                                         </div>
                                     </div>
                                 </div>
-                            </li>
-                            <div className={styles.removeItemConainer}>
-                                <div className={styles.removeItem} onClick={() => handleRemove(emeraldQuant, setEmeraldQuant)}>
-                                    <p style={{ margin: 0, paddingBottom: 2 }}>x</p>
-                                </div>
-                            </div>
-                        </div>
-                    ) : <></>}
+                            ) : <></>}
 
 
-                    {rubyQuant ? (
-                        <div className={styles.liContainer}>
-                            <div className={styles.stoneImgContainer}>
-                                <img src={rub} className={styles.stoneImg} />
-                            </div>
-                            <li className={styles.itemLi}>
-                                <h1 className={styles.itemName} >Ruby Jelly Gems </h1>
-                                <p className={styles.quantHeader}>Quantity:</p>
-                                <div className={styles.quantityContainer}>
-                                    <div className={styles.bothButtonsContainer}>
-                                        <div className={styles.buttonContainer}>
-                                            <div className={styles.button} onClick={() => handleReduce(rubyQuant, setRubyQuant)}>
-                                                <p className={styles.buttonText}> - </p>
+                            {emeraldQuant ? (
+                                <div className={styles.liContainer}>
+                                    <div className={styles.stoneImgContainer}>
+                                        <img src={eme} className={styles.stoneImg} />
+                                    </div>
+                                    <li className={styles.itemLi}>
+                                        <h1 className={styles.itemName} >Emerald Jelly Gems </h1>
+                                        <p className={styles.quantHeader}>Quantity:</p>
+                                        <div className={styles.quantityContainer}>
+                                            <div className={styles.bothButtonsContainer}>
+                                                <div className={styles.buttonContainer}>
+                                                    <div className={styles.button} onClick={() => handleReduce(emeraldQuant, setEmeraldQuant)}>
+                                                        <p className={styles.buttonText}> - </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className={styles.quantity}> {emeraldQuant} </div>
+                                            <div className={styles.bothButtonsContainer}>
+                                                <div className={styles.buttonContainer}>
+                                                    <div className={styles.button} onClick={() => handleIncrease(emeraldQuant, setEmeraldQuant)}>
+                                                        <p className={styles.buttonText}> + </p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className={styles.quantity}> {rubyQuant} </div>
-                                    <div className={styles.bothButtonsContainer}>
-                                        <div className={styles.buttonContainer}>
-                                            <div className={styles.button} onClick={() => handleIncrease(rubyQuant, setRubyQuant)}>
-                                                <p className={styles.buttonText}> + </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <div className={styles.removeItemConainer}>
-                                <div className={styles.removeItem} onClick={() => handleRemove(rubyQuant, setRubyQuant)}>
-                                    <p style={{ margin: 0, paddingBottom: 2 }}>x</p>
-                                </div>
-                            </div>
-                        </div>
-                    ) : <></>}
-
-
-                    {sapphireQuant ? (
-                        <div className={styles.liContainer}>
-                            <div className={styles.stoneImgContainer}>
-                                <img src={sapp} className={styles.stoneImg} />
-                            </div>
-                            <li className={styles.itemLi}>
-                                <h1 className={styles.itemName} >Sapphire Jelly Gems </h1>
-                                <p className={styles.quantHeader}>Quantity:</p>
-                                <div className={styles.quantityContainer}>
-                                    <div className={styles.bothButtonsContainer}>
-                                        <div className={styles.buttonContainer}>
-                                            <div className={styles.button} onClick={() => handleReduce(sapphireQuant, setSapphireQuant)}>
-                                                <p className={styles.buttonText}> - </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className={styles.quantity}> {sapphireQuant} </div>
-                                    <div className={styles.bothButtonsContainer}>
-                                        <div className={styles.buttonContainer}>
-                                            <div className={styles.button} onClick={() => handleIncrease(sapphireQuant, setSapphireQuant)}>
-                                                <p className={styles.buttonText}> + </p>
-                                            </div>
+                                    </li>
+                                    <div className={styles.removeItemConainer}>
+                                        <div className={styles.removeItem} onClick={() => handleRemove(emeraldQuant, setEmeraldQuant)}>
+                                            <p style={{ margin: 0, paddingBottom: 2 }}>x</p>
                                         </div>
                                     </div>
                                 </div>
-                            </li>
-                            <div className={styles.removeItemConainer}>
-                                <div className={styles.removeItem} onClick={() => handleRemove(sapphireQuant, setSapphireQuant)}>
-                                    <p style={{ margin: 0, paddingBottom: 2 }}>x</p>
-                                </div>
-                            </div>
-                        </div>
-                    ) : <></>}
+                            ) : <></>}
 
 
-                    {quartzQuant ? (
-                        <div className={styles.liContainer}>
-                            <div className={styles.stoneImgContainer}>
-                                <img src={quart} className={styles.stoneImg} />
-                            </div>
-                            <li className={styles.itemLi}>
-                                <h1 className={styles.itemName} >Rose Quartz Jelly Gems </h1>
-                                <p className={styles.quantHeader}>Quantity:</p>
-                                <div className={styles.quantityContainer}>
-                                    <div className={styles.bothButtonsContainer}>
-                                        <div className={styles.buttonContainer}>
-                                            <div className={styles.button} onClick={() => handleReduce(quartzQuant, setQuartzQuant)}>
-                                                <p className={styles.buttonText}> - </p>
+                            {rubyQuant ? (
+                                <div className={styles.liContainer}>
+                                    <div className={styles.stoneImgContainer}>
+                                        <img src={rub} className={styles.stoneImg} />
+                                    </div>
+                                    <li className={styles.itemLi}>
+                                        <h1 className={styles.itemName} >Ruby Jelly Gems </h1>
+                                        <p className={styles.quantHeader}>Quantity:</p>
+                                        <div className={styles.quantityContainer}>
+                                            <div className={styles.bothButtonsContainer}>
+                                                <div className={styles.buttonContainer}>
+                                                    <div className={styles.button} onClick={() => handleReduce(rubyQuant, setRubyQuant)}>
+                                                        <p className={styles.buttonText}> - </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className={styles.quantity}> {rubyQuant} </div>
+                                            <div className={styles.bothButtonsContainer}>
+                                                <div className={styles.buttonContainer}>
+                                                    <div className={styles.button} onClick={() => handleIncrease(rubyQuant, setRubyQuant)}>
+                                                        <p className={styles.buttonText}> + </p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className={styles.quantity}> {quartzQuant} </div>
-                                    <div className={styles.bothButtonsContainer}>
-                                        <div className={styles.buttonContainer}>
-                                            <div className={styles.button} onClick={() => handleIncrease(quartzQuant, setQuartzQuant)}>
-                                                <p className={styles.buttonText}> + </p>
-                                            </div>
+                                    </li>
+                                    <div className={styles.removeItemConainer}>
+                                        <div className={styles.removeItem} onClick={() => handleRemove(rubyQuant, setRubyQuant)}>
+                                            <p style={{ margin: 0, paddingBottom: 2 }}>x</p>
                                         </div>
                                     </div>
                                 </div>
-                            </li>
-                            <div className={styles.removeItemConainer}>
-                                <div className={styles.removeItem} onClick={() => handleRemove(quartzQuant, setQuartzQuant)}>
-                                    <p style={{ margin: 0, paddingBottom: 2 }}>x</p>
+                            ) : <></>}
+
+
+                            {sapphireQuant ? (
+                                <div className={styles.liContainer}>
+                                    <div className={styles.stoneImgContainer}>
+                                        <img src={sapp} className={styles.stoneImg} />
+                                    </div>
+                                    <li className={styles.itemLi}>
+                                        <h1 className={styles.itemName} >Sapphire Jelly Gems </h1>
+                                        <p className={styles.quantHeader}>Quantity:</p>
+                                        <div className={styles.quantityContainer}>
+                                            <div className={styles.bothButtonsContainer}>
+                                                <div className={styles.buttonContainer}>
+                                                    <div className={styles.button} onClick={() => handleReduce(sapphireQuant, setSapphireQuant)}>
+                                                        <p className={styles.buttonText}> - </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className={styles.quantity}> {sapphireQuant} </div>
+                                            <div className={styles.bothButtonsContainer}>
+                                                <div className={styles.buttonContainer}>
+                                                    <div className={styles.button} onClick={() => handleIncrease(sapphireQuant, setSapphireQuant)}>
+                                                        <p className={styles.buttonText}> + </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <div className={styles.removeItemConainer}>
+                                        <div className={styles.removeItem} onClick={() => handleRemove(sapphireQuant, setSapphireQuant)}>
+                                            <p style={{ margin: 0, paddingBottom: 2 }}>x</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    ) : <></>}
+                            ) : <></>}
 
 
-                </ul>
-            </div>
+                            {quartzQuant ? (
+                                <div className={styles.liContainer}>
+                                    <div className={styles.stoneImgContainer}>
+                                        <img src={quart} className={styles.stoneImg} />
+                                    </div>
+                                    <li className={styles.itemLi}>
+                                        <h1 className={styles.itemName} >Rose Quartz Jelly Gems </h1>
+                                        <p className={styles.quantHeader}>Quantity:</p>
+                                        <div className={styles.quantityContainer}>
+                                            <div className={styles.bothButtonsContainer}>
+                                                <div className={styles.buttonContainer}>
+                                                    <div className={styles.button} onClick={() => handleReduce(quartzQuant, setQuartzQuant)}>
+                                                        <p className={styles.buttonText}> - </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className={styles.quantity}> {quartzQuant} </div>
+                                            <div className={styles.bothButtonsContainer}>
+                                                <div className={styles.buttonContainer}>
+                                                    <div className={styles.button} onClick={() => handleIncrease(quartzQuant, setQuartzQuant)}>
+                                                        <p className={styles.buttonText}> + </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <div className={styles.removeItemConainer}>
+                                        <div className={styles.removeItem} onClick={() => handleRemove(quartzQuant, setQuartzQuant)}>
+                                            <p style={{ margin: 0, paddingBottom: 2 }}>x</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ) : <></>}
+                        </ul>
+                    </div>
 
-
-                {quantity ? (
-                    <>
-                        <div className={styles.subtotalContainer}>
-
+                    <div className={styles.subtotalContainer}>
                         <div className={styles.totalToPayHeaderContainer}>
                             <h2>Total to pay :</h2>
                         </div>
-
                         <ul className={styles.pricesToPay}>
                             {wishesTotal ? <li> ✧ {wishesTotal} Wishes</li> : <></>}
                             {promisesTotal ? <li> ✧ {promisesTotal} Promises</li> : <></>}
@@ -430,10 +426,17 @@ function Basket() {
                         <Link to="/checkout" style={{ textDecoration: 'none' }} className={styles.proceedToCheckout}>
                             Proceed to Checkout
                         </Link>
-                        </div>
+                    </div>
 
-                    </>) : (<></>)
-                }
+                </>) : (<>
+                <h2>Your basket is empty! <br/>
+                Big Mistake! Big. Huge!
+                        </h2>
+                    <Link to="/products" style={{ textDecoration: 'none' }} className={styles.proceedToCheckout}>
+                            I have to go shopping now.
+                    </Link>
+                </>)
+            }
 
 
         </div>

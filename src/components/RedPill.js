@@ -16,7 +16,7 @@ function RedPill({ handleClick }) {
 
 
                 <div className={`${styles.insidePillContainer}  ${styles.RedPillColor}`}>
-                    <h1>This is the RedPill component</h1>
+                    <h1>The real 'About Jelly Gems'</h1>
                     <p>
                         Are you having fun?
                         I'm Tess, a front-end web developper.

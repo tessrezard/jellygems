@@ -13,7 +13,7 @@ function BluePill ( { handleClick } ) {
                         </div>
 
                 <div className={`${styles.insidePillContainer} ${styles.BluePillColor}`}>
-                    <h1>This is the BluePill component</h1>
+                    <h1>About Jelly Gems</h1>
                     <p>
                         Jelly Gems are imaginary sweets inspired by real gemstones and their imaginary properties.
                         Founded in picturesque Oxford, our CEO set out to bring joy to the hearts of our customers.

@@ -15,7 +15,7 @@ import { MyProvider } from './MyContext';
 
 const appRouter = createBrowserRouter(createRoutesFromElements( 
   
-  <Route path='/' element={ <Root/> } >
+  <Route path='*' element={ <Root/> } >
       {/* <Route path='home' element={ <Home/> } /> */}
       <Route path='products' element={ <Products/> } />
       <Route path="product-details-page/:stone" element={ <ProductDetailsPage/> } />

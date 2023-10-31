@@ -1,7 +1,8 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import BluePill from '../components/BluePill';
 import RedPill from '../components/RedPill';
-import styles from '../styles/About.module.css' 
+import styles from '../styles/About.module.css';
+import InfoIcon from '../components/InfoIcon';
 
 // I need and onClick for the Pills. toggle between red and blue. default blue. 
 // if click on click ion either then toggle to whichever one clicked . 
@@ -11,17 +12,18 @@ import styles from '../styles/About.module.css'
 function About() {
 
     const [pill, setPill] = useState('blue');
+    const [pillInfo, setPillInfo] = useState(false);
 
     const handleRealityShift = (selectedPill) => {
         setPill(selectedPill);
         switch (selectedPill) {
-            case 'blue' :
+            case 'blue':
                 console.log('blue');
                 break;
-            case 'red' : 
+            case 'red':
                 console.log('red');
                 break;
-            default: 
+            default:
                 console.log('sorry, no pill');
 
         }
@@ -29,21 +31,36 @@ function About() {
 
     console.log('pill', pill);
 
-    useEffect( () => {
-        const pillPageBlue = document.get
-    }, [pill]);
+
 
     return (
         <div>
-            <p className={styles.pickAPill}> pick a pill 😎 </p>
 
-            <div className={styles.PillsPages} >
-                { pill === 'blue' ? (
+            {/* <p className={styles.pickAPill}> pick a pill 😎 </p> */}
+            <div className={styles.aboutPageContainer}>
+                <div className={styles.pickAPill} onClick={() => setPillInfo(!pillInfo)} >
+                    <InfoIcon onClick={() => {
+                        setPillInfo(!pillInfo);
+                        console.log('clicked infoicon')
+                    }} />
+                    {pillInfo ? (<>
+                        <div className={styles.pickAPillHint}>
+                            Pick a pill
+                            <div className={` ${styles.littlePill} ${styles.littleBluePill} `}></div>
+                            <div className={` ${styles.littlePill} ${styles.littleRedPill} `}></div>
+                        </div>
+                    </>) : (<></>)}
+                </div>
+                <div className={styles.PillsPages} >
+
+
+
+                    {pill === 'blue' ? (
                         <>
-                            <div 
-                                className={styles.pillPageBlue} 
+                            <div
+                                className={styles.pillPageBlue}
                                 id='pillPageBlue'
-                                style={{ zIndex: 1 }} 
+                                style={{ zIndex: 1 }}
                             >
                                 <BluePill handleClick={() => handleRealityShift('blue')} />
                             </div>
@@ -55,7 +72,7 @@ function About() {
                         <>
                             <div className={styles.pillPageBlue} id='pillPageBlue' >
                                 <BluePill handleClick={() => handleRealityShift('blue')} />
-                             </div>
+                            </div>
 
                             <div className={styles.pillPageRed} id='pillPageRed' >
                                 <RedPill handleClick={() => handleRealityShift('red')} />
@@ -63,9 +80,11 @@ function About() {
 
                         </>
                     )
-                }
-                
+                    }
+
+                </div>
             </div>
+
         </div>
     )
 }
