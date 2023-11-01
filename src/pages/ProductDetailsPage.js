@@ -13,29 +13,29 @@ import sapp from '../images/artwork/Sapphire.jpg';
 
 
 function ProductDetailsPage() {
-    const {stone} = useParams('stone');
+    const { stone } = useParams('stone');
     let stoneId;
     const isThereASlash = () => {
         if (stone.substring(0) === '/') {
             stoneId = stone.substring(1).toLowerCase();
         }
-         else if (stone.charAt(0) === ':') {
+        else if (stone.charAt(0) === ':') {
             stoneId = stone.substring(1).toLowerCase();
         } else {
             stoneId = stone.toLowerCase();
         }
-        
+
     }
     isThereASlash();
 
-    const  stoneName = jellyGemsObj[stoneId]?.name;
+    const stoneName = jellyGemsObj[stoneId]?.name;
     const stoneDescription = jellyGemsObj[stoneId]?.description;
     const stoneBrief = jellyGemsObj[stoneId]?.brief;
     const stoneKeyWords = jellyGemsObj[stoneId]?.keyWords;
     const stoneHeroImg = jellyGemsObj[stoneId]?.heroImg;
     const stonePairImg = jellyGemsObj[stoneId]?.pairImg;
 
-        console.log(stoneName);
+    console.log(stoneName);
 
     const artworkImg = () => {
         switch (stoneName) {
@@ -51,27 +51,28 @@ function ProductDetailsPage() {
                 return sapp;
             case ('Rose Quartz'):
                 return quart;
-            }
+        }
     }
 
 
     return (
-        <div className={styles.container}>
+        <div>
             <div className={styles.container}>
                 <div className={styles.heroImgContainer}>
                     <img src={artworkImg()} className={styles.heroImg} />
                 </div>
-                
+
                 <div className={styles.infoContainer}>
-                <AddToBasket name={stoneName}/>
+                    <div className={styles.AddToBasketContainer}>
+                        <AddToBasket name={stoneName} />
+                    </div>
 
                     <div className={styles.info}>
                         <p>{stoneBrief}</p>
                         <p>{stoneDescription}</p>
                         <p>{stoneKeyWords}</p>
                     </div>
-                    <div className={styles.AddToBasketContainer}>
-                    </div>
+
                 </div>
             </div>
 

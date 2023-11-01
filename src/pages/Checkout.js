@@ -75,7 +75,7 @@ function Checkout() {
                                 <form onSubmit={handleSubmitPayment}>
                                     <div className={styles.insideForm}>
 
-                                        <div  className={styles.inputs}>
+                                        <div className={styles.inputs}>
                                             {wishesTotal ? (
                                                 <div >
                                                     {[...Array(wishesTotal)].map((_, index) => (
@@ -129,14 +129,14 @@ function Checkout() {
                                         </div>
 
                                         <div className={styles.submitButtonContainer} >
-                                        <div className={styles.toPay}>
-                                <h4 className={styles.toPayHeader}>Subtotal for your {quantity} items:</h4>
-                                <ul className={styles.pricesToPay}>
-                                    {wishesTotal ? <li> ✧ {wishesTotal} Wishes</li> : <></>}
-                                    {promisesTotal ? <li> ✧ {promisesTotal} Promises</li> : <></>}
-                                    {secretsTotal ? <li> ✧ {secretsTotal} Secrets</li> : <></>}
-                                </ul>
-                            </div>
+                                            <div className={styles.toPay}>
+                                                <h4 className={styles.toPayHeader}>Subtotal for your {quantity} items:</h4>
+                                                <ul className={styles.pricesToPay}>
+                                                    {wishesTotal ? <li> ✧ {wishesTotal} Wishes</li> : <></>}
+                                                    {promisesTotal ? <li> ✧ {promisesTotal} Promises</li> : <></>}
+                                                    {secretsTotal ? <li> ✧ {secretsTotal} Secrets</li> : <></>}
+                                                </ul>
+                                            </div>
                                             <input type='submit' className={styles.formSubmitButton} value='Process Payment' />
                                         </div>
                                     </div>

@@ -40,13 +40,10 @@ function About() {
             <div className={styles.aboutPageContainer}>
 
                 <div className={styles.pickAPill} onClick={() => setPillInfo(!pillInfo)} >
-                    <div className={styles.InfoIcon} >
-                        <InfoIcon onClick={() => {
+                    <InfoIcon onClick={() => {
                         setPillInfo(!pillInfo);
                         console.log('clicked infoicon')
                     }} />
-                    </div>
-                    
                     {pillInfo ? (<>
                         <div className={styles.pickAPillHint}>
                             Pick a pill

@@ -6,15 +6,15 @@
     background-size: cover;
     background-position: center center;
     display: flex;
-
     justify-content: center;
     margin-bottom: 2%;
 }
 
 .siteTitle  {
     color: #f1ede9;
+    align-self: center;
     font-family: 'Luminari-Regular';
-    font-size: 50px;
+    font-size: 2.3em;
     margin: 10px;
     padding: 0;
     text-decoration: none;
@@ -27,6 +27,7 @@
     color: #f1ede9;
     width: 45%;
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-around;
     padding-right: 5%;
     margin-top: 3%;
@@ -36,6 +37,8 @@
     font-size: 1.25em;
     transition: all 200ms;
     text-decoration: none;
+    margin: 1%;
+
 }
 
 
