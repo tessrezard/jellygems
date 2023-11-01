@@ -38,11 +38,15 @@ function About() {
 
             {/* <p className={styles.pickAPill}> pick a pill 😎 </p> */}
             <div className={styles.aboutPageContainer}>
+
                 <div className={styles.pickAPill} onClick={() => setPillInfo(!pillInfo)} >
-                    <InfoIcon onClick={() => {
+                    <div className={styles.InfoIcon} >
+                        <InfoIcon onClick={() => {
                         setPillInfo(!pillInfo);
                         console.log('clicked infoicon')
                     }} />
+                    </div>
+                    
                     {pillInfo ? (<>
                         <div className={styles.pickAPillHint}>
                             Pick a pill
@@ -51,26 +55,22 @@ function About() {
                         </div>
                     </>) : (<></>)}
                 </div>
-                <div className={styles.PillsPages} >
 
 
+                <div>
 
                     {pill === 'blue' ? (
                         <>
-                            <div
-                                className={styles.pillPageBlue}
-                                id='pillPageBlue'
-                                style={{ zIndex: 1 }}
-                            >
+                            <div className={styles.pillPageBlue} style={{ zIndex: 1 }} >
                                 <BluePill handleClick={() => handleRealityShift('blue')} />
                             </div>
-                            <div className={styles.pillPageRed} id='pillPageRed' >
+                            <div className={styles.pillPageRed} >
                                 <RedPill handleClick={() => handleRealityShift('red')} />
                             </div>
                         </>
                     ) : (
                         <>
-                            <div className={styles.pillPageBlue} id='pillPageBlue' >
+                            <div className={styles.pillPageBlue} >
                                 <BluePill handleClick={() => handleRealityShift('blue')} />
                             </div>
 

@@ -1,37 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from '../styles/About.module.css';
+import pillStyles from '../styles/pillStyles.module.css'
+import DeliveryInfo from './DeliveryInfo';
+import ReturnsInfo from './ReturnsInfo';
+import CurrenciesInfo from './CurrenciesInfo';
+import HowToInfo from './HowToInfo';
 
 
-function BluePill ( { handleClick } ) {
+function BluePill({ handleClick }) {
+
+    const [deliveryInfo, setDeliveryInfo] = useState(false);
+    const [returnsPolicy, setReturnsPolicy] = useState(false);
+
     return (
         <div  >
 
             <div className={`${styles.PillContainer} `}>
 
 
-                        <div onClick={handleClick} className={`${styles.pill} ${styles.BluePillColor} ${styles.BluePillPosition}`}>
-                        </div>
+                <div onClick={handleClick} className={`${styles.pill} ${styles.BluePillColor} ${styles.BluePillPosition}`}>
+                </div>
 
-                <div className={`${styles.insidePillContainer} ${styles.BluePillColor}`}>
+                <div className={`${styles.insidePillContainer} ${styles.blueGradient} ${styles.BluePillColor}`}>
                     <h1>About Jelly Gems</h1>
-                    <p>
-                        Jelly Gems are imaginary sweets inspired by real gemstones and their imaginary properties.
-                        Founded in picturesque Oxford, our CEO set out to bring joy to the hearts of our customers.
+                    <p className={`${pillStyles.text} `}>
+                        Jelly Gems are imaginary sweets inspired by real gemstones and their imaginary properties. 
+                        <br/><br/>
+                        Founded in picturesque Oxford, our CEO set out to bring joy to the hearts of our customers.  
+                        <br/>
                         Here are Jelly Gems,
                         we are transparent and open with our customers about what they will received for their hard earned spending power:
-                        only the imaginary, ie nothing phyisical or tangible (or real?).
-                        Simply make your selection, proceed to the checkout,
-                        tell us your secret(s) or wish(es) of choice,
-                        and make the payment. Upon your completing your purchase,
-                        you shall receive your imaginary sweets instantaneously.
-                        You will recieve an email confirming your transaction and order.
-                        Know that your secrets are safe, and not being held in any database.
-                        The currecies we trade in are wishes and secrets.
-                        Unfortunately we are unable to accept any other currecies at this time.
-                        Know we are working towards brigning new currencies to our company,
-                        those at the forfront of our priodity list are unbreakable promises and second to fifth-hand gossip.
-                        Unfortunately the brexit red tape has been slowing this process.
+                        only the imaginary.
                     </p>
+                    <HowToInfo />
+                    <DeliveryInfo />
+                    <ReturnsInfo />
+                    <CurrenciesInfo />
+
+
                 </div>
                 {/* <FeedbackForm/> */}
             </div>

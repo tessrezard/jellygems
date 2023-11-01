@@ -1,111 +1,82 @@
 .aboutPageContainer {
-    height: 100vh;
+    height: 150vh;
     width: 100vw;
 }
 
-.pickAPill {
-    position: relative;
-    bottom: 10px;
-    left: 40px;
-    z-index: 10;
-    display: flex;
-    align-items: baseline;
-}
+/* --------------------------------------------------- */
+    /* HINT infoIcon and pick a pill */
+        .pickAPill {
+            /* position: relative; */
+            margin-bottom: 1px;
+            margin-top: 0px;
 
-.pickAPillHint {
-    margin: 0;
-    /* width: 150px; */
-    margin-left: 2%;
-    margin-top: auto;
-    margin-bottom: auto;
-    border: 2px solid #acb1e5;
-    background-color: #d3d6f7;
-    border-radius: 10px;
-    display: flex;
-    flex-flow: row;
-    padding: 5px;
-    font-size: 0.75em;
-}
+            margin-left: 40px;
+            z-index: 10;
+            display: flex;
+            align-items: baseline;
+        }
 
-.littlePill {
-    width: 30px;
-    height: 15px;
-    margin: auto;
-    margin-left: 10px;
-    border-radius: 10px;
 
-}
+        .pickAPillHint {
+            margin: 0;
+            margin-bottom: 5px;
 
-.littleBluePill {
-    background-color: #8bbcfc;
-}
+            /* width: 150px; */
+            margin-left: 2%;
+            margin-top: auto;
+            margin-bottom: auto;
+            border: 2px solid #acb1e5;
+            background-color: #d3d6f7;
+            border-radius: 10px;
+            display: flex;
+            flex-flow: row;
+            padding: 5px;
+            font-size: 0.75em;
+        }
 
-.littleRedPill {
-    background-color: #fc8b8b;
-}
+        .littlePill {
+            width: 30px;
+            height: 15px;
+            margin: auto;
+            margin-left: 10px;
+            border-radius: 10px;
+        }
 
-.PillsPages {
-    position: relative;
-    height: fit-content;
-    bottom: 10px;
-    left: 3.5%;
-    /* right: 10px; */
-    margin: auto;
+        .littleBluePill {
+            background-color: #8bbcfc;
+        }
 
-}
+        .littleRedPill {
+            background-color: #fc8b8b;
+        }
+/* --------------------------------------------------- */
+
 
 .pillPageBlue {
     position: absolute;
-    top: 0;
-    left: 0;
-    /* z-index: 1; */
+    /* top: 110px; */
+    left: 3.5%;
 }
 
 .pillPageRed {
     position: absolute;
-    top: 0;
-    left: 0px;
-    /* z-index: 1; */
-
+    /* bottom: 43px; */
+    left: 3.5%;
 }
 
 
-.pillPageContainer {
-    height: 150px;
-    display: flex;
-    flex-flow: column;
-}
-
-
-.BluePillColor {
-    background-color: #8bbcfc;
-}
-
-.RedPillColor {
-    background-color: #fc8b8b;
-
-}
-
+/* to offset the pills, so we can see both when the containers overlap */
 .BluePillPosition {
     left: 100px;
 }
-
 .RedPillPosition {
     left: 200px;
 }
 
-.PillContainer {
-    width: 90%;
-    margin: auto;
-    border-radius: 18px;
-    border-collapse: separate;
-    display: flex;
-    flex-flow: column;
-}
 
 
+/* The actual pills shapes */
 .pill {
-    /* ADD BACKGROUND COLOUR WITH SEPERATECLASS */
     width: 90px;
     height: 43px;
     position: relative;
@@ -113,13 +84,65 @@
     border-radius: 20px 20px 20px 20px;
 }
 
+/* Pill colours  */
+.BluePillColor {
+    background-color: #8bbcfc;
+}
+.RedPillColor {
+    background-color: #fc8b8b;
+}
+
+
+/* structure of the space in pill window  */
 .insidePillContainer {
-    margin: 3%;
     padding: 10px;
-    height: 70vh;
+    height: fit-content;
     width: 90vw;
+    height: 130vh;
     position: absolute;
     top: 35px;
     object-fit: cover;
     border-radius: 10px;
 }
+
+
+/* background colour of insidePillContainer */
+.blueGradient{
+    background-image: linear-gradient(#8bbcfc, #f1ede9);
+}
+.redGradient{
+    background-image: linear-gradient(#fc8b8b, #f1ede9);
+}
+
+
+/* --------------------------------------------------- */
+/* Red Pill content note styling  */
+    .contentInfoContainer{
+        border: 3px outset #a4abe0;
+        border-radius: 30px;
+        background-color: hsl(231, 100%, 92%);
+        margin: auto;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        width: clamp( 150px, 70%, 700px);
+        font-size: 15px;
+        transition: all;
+    }
+    .contentInfoHeaders{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .contentInfoIconContainer{
+        display: flex;
+        margin: 0;
+        margin-left: 10px;
+    }
+    .info{
+        /* width: 700px; */
+    }
+/* --------------------------------------------------- */

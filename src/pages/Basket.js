@@ -193,6 +193,21 @@ function Basket() {
         <div className={styles.basketPageContainer}>
             {quantity ? (
                 <>
+                    <div className={styles.subtotalContainer}>
+                        <div className={styles.totalToPayHeaderContainer}>
+                            <h2>Total to pay :</h2>
+                        </div>
+                        <ul className={styles.pricesToPay}>
+                            {wishesTotal ? <li> ✧ {wishesTotal} Wishes</li> : <></>}
+                            {promisesTotal ? <li> ✧ {promisesTotal} Promises</li> : <></>}
+                            {secretsTotal ? <li> ✧ {secretsTotal} Secrets</li> : <></>}
+                        </ul>
+
+                        <Link to="/checkout" style={{ textDecoration: 'none' }} className={styles.proceedToCheckout}>
+                            Proceed to Checkout
+                        </Link>
+                    </div>
+                    
                     <div className={styles.basketContainer}>
                         <h2>Your Basket : </h2>
 
@@ -413,27 +428,14 @@ function Basket() {
                         </ul>
                     </div>
 
-                    <div className={styles.subtotalContainer}>
-                        <div className={styles.totalToPayHeaderContainer}>
-                            <h2>Total to pay :</h2>
-                        </div>
-                        <ul className={styles.pricesToPay}>
-                            {wishesTotal ? <li> ✧ {wishesTotal} Wishes</li> : <></>}
-                            {promisesTotal ? <li> ✧ {promisesTotal} Promises</li> : <></>}
-                            {secretsTotal ? <li> ✧ {secretsTotal} Secrets</li> : <></>}
-                        </ul>
 
-                        <Link to="/checkout" style={{ textDecoration: 'none' }} className={styles.proceedToCheckout}>
-                            Proceed to Checkout
-                        </Link>
-                    </div>
 
                 </>) : (<>
-                <h2>Your basket is empty! <br/>
-                Big Mistake! Big. Huge!
-                        </h2>
+                    <h2>Your basket is empty! <br />
+                        Big Mistake! Big. Huge!
+                    </h2>
                     <Link to="/products" style={{ textDecoration: 'none' }} className={styles.proceedToCheckout}>
-                            I have to go shopping now.
+                        I have to go shopping now.
                     </Link>
                 </>)
             }
