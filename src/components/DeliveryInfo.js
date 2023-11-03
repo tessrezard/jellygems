@@ -32,9 +32,6 @@ function DeliveryInfo( {deliveryInfo} ) {
                         vegan gluten free gemstone-inspired imaginary sweets. <br />
                         Symbol of courgage, safe travels and adventures.
                         Amber has long been given to travellers to keep them safe on long journeys.
-                        You may find these virtues helpful in this time of turnmoil,
-                        and the Amber Jelly Gems have been said to help customers achieve up to 100%
-                        more of these virtures (survey sample size: 1).
                     </p>
                 </div>) : (<></>)}
             </div>

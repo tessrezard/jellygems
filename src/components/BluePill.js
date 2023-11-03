@@ -10,61 +10,19 @@ import HowToInfo from './HowToInfo';
 
 function BluePill({ handleClick }) {
 
-    const [howtoInfo, setHowToInfo] = useState(false);
-    const [deliveryInfo, setDeliveryInfo] = useState(false);
-    const [returnsPolicy, setReturnsPolicy] = useState(false);
-    const [currencyInfo, setCurrencyInfo] = useState(false);
+    // const [howtoInfo, setHowToInfo] = useState(false);
+    // const [deliveryInfo, setDeliveryInfo] = useState(false);
+    // const [returnsPolicy, setReturnsPolicy] = useState(false);
+    // const [currencyInfo, setCurrencyInfo] = useState(false);
 
-const handleSetDelivery = () => {
-    setDeliveryInfo(!deliveryInfo);
-    setReturnsPolicy(false);
-    setCurrencyInfo(false);
-    setHowToInfo(true)
-}
+    const [activeTab, setActiveTab] = useState(null);
 
-    const onlyOpenOne = () => {
-        if (howtoInfo) {
-            if (deliveryInfo){
-                setDeliveryInfo(false);
-            }
-            if (returnsPolicy){
-                setReturnsPolicy(false);
-            }
-            if (currencyInfo){
-                setCurrencyInfo(false);
-            }
-        }
-        if (deliveryInfo) {
-            if (howtoInfo){
-                setHowToInfo(false);
-            }
-            if (returnsPolicy){
-                setReturnsPolicy(false);
-            }
-            if (currencyInfo){
-                setCurrencyInfo(false);
-            }
-        }
-        if (deliveryInfo) {
-            setHowToInfo(false);
-            setReturnsPolicy(false);
-            setCurrencyInfo(false);
-        }
-        if (currencyInfo) {
-            setHowToInfo(false);
-            setDeliveryInfo(false);
-            setReturnsPolicy(false);
-        }
-        if (returnsPolicy) {
-            setHowToInfo(false);
-            setDeliveryInfo(false);
-            setCurrencyInfo(false);
-        }
-    }
+    const handleTabClick = (tab) => {
+        setActiveTab(tab === activeTab ? null : tab);
+    };
 
-    useEffect(() => {
-        onlyOpenOne();
-    }, [howtoInfo, deliveryInfo, returnsPolicy, currencyInfo])
+
+
 
     return (
         <div  >
@@ -86,22 +44,19 @@ const handleSetDelivery = () => {
                         we are transparent and open with our customers about what they will received for their hard earned spending power:
                         only the imaginary.
                     </p>
-                    <div onClick={() => {
-                        setHowToInfo(!howtoInfo);
 
-                        }} >
-                        <HowToInfo howtoInfo={howtoInfo} />
+                    <div onClick={() => handleTabClick('howto')}>
+                        <HowToInfo howtoInfo={activeTab === 'howto'} />
                     </div>
-                    <div onClick={() => setDeliveryInfo(!deliveryInfo)} >
-                        <DeliveryInfo deliveryInfo={deliveryInfo} />
+                    <div onClick={() => handleTabClick('delivery')}>
+                        <DeliveryInfo deliveryInfo={activeTab === 'delivery'} />
                     </div>
-                    <div onClick={() => setReturnsPolicy(!returnsPolicy)} >
-                        <ReturnsInfo returnsPolicy={returnsPolicy} />
+                    <div onClick={() => handleTabClick('returns')}>
+                        <ReturnsInfo returnsPolicy={activeTab === 'returns'} />
                     </div>
-                    <div onClick={() => setCurrencyInfo(!currencyInfo)} >
-                        <CurrenciesInfo currencyInfo={currencyInfo} />
+                    <div onClick={() => handleTabClick('currency')}>
+                        <CurrenciesInfo currencyInfo={activeTab === 'currency'} />
                     </div>
-
 
                 </div>
                 {/* <FeedbackForm/> */}
