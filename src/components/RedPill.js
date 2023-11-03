@@ -41,14 +41,14 @@ function RedPill({ handleClick }) {
                     <p>
                     On a serious note:
                         To me, this is all tougue in cheek, cute and lighthearted.
-                        I admit that i may be poking fun at the silly or weird (sometimes unwholesome) false promises that can on occasion be made in sales.
+                        I am be poking fun at false promises that are sometimes made in sales.
                         'This cream will make you look (up to) 10 years younger',
                         'this (unregulated) supplement with make you happy and healthy and kind'.
-                        I'm accutely aware of my own past and present, and likely future suspetability to such marketing.
+                        I'm accutely aware of my own suspetability to such marketing.
                         I mean no offence to the holistic health, gemstone or healthfood communities,
-                        to the vegans or Ceoliacs or to the sweets and confectionary industry.
-                        However, I understand that ultimately the intentions are less important than the impact.
-                        If you have found this content to be troubling or if you feel hurt by the wording I have used or the inferences I may have made,
+                        to the vegans, the Ceoliacs or to the sweets and confectionary industry.
+                        I understand that ultimately our intentions are less important than the impact.
+                        If you have found this content to be troubling,
                         please do get in touch with me, I am open to conversation.
                     </p>
                 </div>) : (<></>)}

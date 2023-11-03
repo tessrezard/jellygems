@@ -39,10 +39,6 @@ function BluePill({ handleClick }) {
                         Jelly Gems are imaginary sweets inspired by real gemstones and their imaginary properties.
                         <br /><br />
                         Founded in picturesque Oxford, our CEO set out to bring joy to the hearts of our customers.
-                        <br />
-                        Here are Jelly Gems,
-                        we are transparent and open with our customers about what they will received for their hard earned spending power:
-                        only the imaginary.
                     </p>
 
                     <div onClick={() => handleTabClick('howto')}>
