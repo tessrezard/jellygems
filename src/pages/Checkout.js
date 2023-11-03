@@ -61,93 +61,94 @@ function Checkout() {
                 </div>
                 ) : (
 
-                    <div className={styles.checkout}>
+                    <>
 
                         <h2>Checkout</h2>
 
+                        <div className={styles.checkoutContainer}>
+
+                            <h3>Make payment</h3>
 
 
-                        <div className={styles.paymentContainer}>
+                            <form onSubmit={handleSubmitPayment}>
+                                <div className={styles.checkoutLayout}>
 
+                                    <div className={styles.inputsContainer}>
 
-                            <div>
-                                <h3>Make payment</h3>
-                                <form onSubmit={handleSubmitPayment}>
-                                    <div className={styles.insideForm}>
-
-                                        <div className={styles.inputs}>
-                                            {wishesTotal ? (
-                                                <div >
-                                                    {[...Array(wishesTotal)].map((_, index) => (
-                                                        <>
-                                                            <p className={styles.paymentHeader}>
-                                                                Wish {index + 1}
-                                                            </p>
-                                                            <input
-                                                                type='text'
-                                                                className={`${styles.wishPayment} ${styles.SingleCurrencyPayment}`}
-                                                                key={index}
-                                                                required
-                                                            />
-                                                        </>
-                                                    ))}
-                                                </div>
-                                            ) : <></>}
-
-                                            {promisesTotal ? (
-                                                <div >
-                                                    {[...Array(promisesTotal)].map((_, index) => (
-                                                        <>
-                                                            <p className={styles.paymentHeader}>
-                                                                Promise {index + 1}
-                                                            </p>
-                                                            <input
-                                                                type='text'
-                                                                className={`${styles.promisePayment} ${styles.SingleCurrencyPayment}`}
-                                                                key={index}
-                                                            />
-                                                        </>
-                                                    ))}
-                                                </div>
-                                            ) : <></>}
-
-                                            {secretsTotal ? (
-                                                <div >
-                                                    {[...Array(secretsTotal)].map((_, index) => (
-                                                        <>
-                                                            <p className={styles.paymentHeader}>
-                                                                Secret {index + 1}
-                                                            </p>
-                                                            <input
-                                                                type='text'
-                                                                className={`${styles.secretPayment} ${styles.SingleCurrencyPayment}`}
-                                                                key={index} />
-                                                        </>
-                                                    ))}
-                                                </div>
-                                            ) : <></>}
-                                        </div>
-
-                                        <div className={styles.submitButtonContainer} >
-                                            <div className={styles.toPay}>
-                                                <h4 className={styles.toPayHeader}>Subtotal for your {quantity} items:</h4>
-                                                <ul className={styles.pricesToPay}>
-                                                    {wishesTotal ? <li> ✧ {wishesTotal} Wishes</li> : <></>}
-                                                    {promisesTotal ? <li> ✧ {promisesTotal} Promises</li> : <></>}
-                                                    {secretsTotal ? <li> ✧ {secretsTotal} Secrets</li> : <></>}
-                                                </ul>
+                                        {wishesTotal ? (
+                                            <div >
+                                                {[...Array(wishesTotal)].map((_, index) => (
+                                                    <>
+                                                        <p className={styles.paymentHeader}>
+                                                            Wish {index + 1}
+                                                            {/* <div className={styles.tickBox}> ✓ </div> */}
+                                                        </p>
+                                                        <input
+                                                            type='text'
+                                                            className={`${styles.wishPayment} ${styles.singleCurrencyPayment}`}
+                                                            key={index}
+                                                            required
+                                                        />
+                                                    </>
+                                                ))}
                                             </div>
-                                            <input type='submit' className={styles.formSubmitButton} value='Process Payment' />
-                                        </div>
+                                        ) : <></>}
+
+                                        {promisesTotal ? (
+                                            <div >
+                                                {[...Array(promisesTotal)].map((_, index) => (
+                                                    <>
+                                                        <p className={styles.paymentHeader}>
+                                                            Promise {index + 1}
+                                                        </p>
+                                                        <input
+                                                            type='text'
+                                                            className={`${styles.promisePayment} ${styles.singleCurrencyPayment}`}
+                                                            key={index}
+                                                        />
+                                                    </>
+                                                ))}
+                                            </div>
+                                        ) : <></>}
+
+                                        {secretsTotal ? (
+                                            <div >
+                                                {[...Array(secretsTotal)].map((_, index) => (
+                                                    <>
+                                                        <p className={styles.paymentHeader}>
+                                                            Secret {index + 1}
+                                                        </p>
+                                                        <input
+                                                            type='text'
+                                                            className={`${styles.secretPayment} ${styles.singleCurrencyPayment}`}
+                                                            key={index} />
+                                                    </>
+                                                ))}
+                                            </div>
+                                        ) : <></>}
+
                                     </div>
 
-                                </form>
-                            </div>
+                                    <div className={styles.submitContainer} >
+                                        <div className={styles.toPay}>
+                                            <h4 className={styles.toPayHeader}>Subtotal for your {quantity} items:</h4>
+                                            <ul className={styles.pricesToPay}>
+                                                {wishesTotal ? <li> ✧ {wishesTotal} Wishes</li> : <></>}
+                                                {promisesTotal ? <li> ✧ {promisesTotal} Promises</li> : <></>}
+                                                {secretsTotal ? <li> ✧ {secretsTotal} Secrets</li> : <></>}
+                                            </ul>
+                                        </div>
+                                        <input type='submit' className={styles.formSubmitButton} value='Process Payment' />
+                                    </div>
 
+                                </div>
+                            </form>
+
+{/* <div className={styles.tickBox} >✓</div> */}
 
 
                         </div>
-                    </div>)}
+                    </>)}
 
 
 

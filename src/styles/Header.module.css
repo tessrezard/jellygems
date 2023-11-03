@@ -32,13 +32,13 @@
     padding-right: 5%;
     margin-top: 3%;
 }
+
 .navItem {
     color: #f1ede9;
     font-size: 1.25em;
     transition: all 200ms;
     text-decoration: none;
-    margin: 1%;
-
+    margin: 3px;
 }
 
 

@@ -5,14 +5,13 @@ import InfoIcon from './InfoIcon';
 
 
 
-function ReturnsInfo() {
+function ReturnsInfo( { returnsPolicy } ) {
 
-    const [returnsPolicy, setReturnsPolicy] = useState(false);
 
     return (
         <div  >
 
-            <div onClick={() => setReturnsPolicy(!returnsPolicy)} className={styles.infoContainer} >
+            <div className={styles.infoContainer} >
                 <div className={styles.infoHeaders}>
                 <div>Returns Policy</div>
                     <div className={styles.infoIconContainer}><InfoIcon /></div>
@@ -24,7 +23,7 @@ function ReturnsInfo() {
                         to assess where such negatiity may stem from and perhaps work towards banishing
                         these thoughts and feelings with the help of your besteller: <br />
                         <Link
-                            to={'product-details-page/:Amethyst'}
+                            to={'/product-details-page/amethyst'}
                             className={styles.dropItem}
                         >Amethysts Jelly Gems
                         </Link> <br />

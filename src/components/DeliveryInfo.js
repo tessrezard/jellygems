@@ -5,17 +5,16 @@ import InfoIcon from './InfoIcon';
 
 
 
-function DeliveryInfo() {
+function DeliveryInfo( {deliveryInfo} ) {
 
-    const [deliveryInfo, setDeliveryInfo] = useState(false);
 
     return (
         <div  >
 
-            <div onClick={() => setDeliveryInfo(!deliveryInfo)} className={styles.infoContainer} >
+            <div className={styles.infoContainer} >
                 <div className={styles.infoHeaders}>
                     <div>Delivery Information</div>
-                    <div className={styles.infoIconContainer}><InfoIcon /></div>
+                    <div className={styles.infoIconContainer}> <InfoIcon /> </div>
                 </div>
 
                 {deliveryInfo ? (<div className={styles.info}>
@@ -26,7 +25,7 @@ function DeliveryInfo() {
                         though we will endevour to get your imaginary parcel to you as quickly as possible. <br />
                         If you are stuggling with impatience or with feelings of insecurity about your ability to imagine the safe and speedy delivery of your items, might we suggest you try our wonderful  <br />
                         <Link
-                            to={'product-details-page/:Amber'}
+                            to={'/product-details-page/amber'}
                             className={styles.dropItem}
                         > Amber Jelly Gems:
                         </Link> <br />

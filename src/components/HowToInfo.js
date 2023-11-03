@@ -5,14 +5,13 @@ import InfoIcon from './InfoIcon';
 
 
 
-function HowToInfo() {
+function HowToInfo( { howtoInfo } ) {
 
-    const [howtoInfo, setHowToInfo] = useState(false);
 
     return (
         <div  >
 
-            <div onClick={() => setHowToInfo(!howtoInfo)} className={styles.infoContainer} >
+            <div className={styles.infoContainer} >
                 <div className={styles.infoHeaders}>
                     <div>How to : </div>
                     <div className={styles.infoIconContainer}><InfoIcon /></div>

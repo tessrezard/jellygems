@@ -1,17 +1,72 @@
-
-.paymentContainer {
-    display: flex;
-    justify-content: space-evenly;
+/* main content below CHECKOUT heading */
+.checkoutContainer {
     width: 90vw;
     background-color: #fffdfb;
 }
 
 
-.toPay{
+
+.checkoutLayout {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row;
 
 }
 
-.toPayHeader{
+
+
+/* flex item child of checkoutLayout */
+.inputsContainer {
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    margin-bottom: 3%;
+    padding: 3%;
+
+}
+
+
+/* flex item child of checkoutLayout */
+.submitContainer {
+    width: 40vw;
+    padding: 3%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    
+}
+
+
+
+@media (max-width: 1000px) {
+
+    .checkoutLayout {
+        flex-flow: column;
+    }
+
+    .inputsContainer {
+        width: 300px;
+        margin: auto;
+    }
+
+    .submitContainer {
+        width: 300px;
+        margin: auto;
+
+    }
+
+
+    .liContainer {
+        width: 320px;
+    }
+}
+
+.toPay{
+    margin: auto;
+}
+
+.toPayHeader {
     margin: 10px;
 }
 
@@ -30,18 +85,23 @@
 
 .paymentHeader {
     margin: 0;
-    margin-top: 15px;
+    margin-top: 10px;
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    font-family: 'Luminari-Regular';
+
 }
 
-.SingleCurrencyPayment {
+/* the input box to write into */
+.singleCurrencyPayment {
     background-color: rgb(169, 216, 216);
-    margin: 5px;
-    width: 400px;
-    padding: 15px;
+    margin: auto;
+    width: 100%;
     border: 3px inset hsl(231, 100%, 95%);
 }
 
-.SingleCurrencyPayment:focus {
+.singleCurrencyPayment:focus {
     outline: 1px solid rgba(194, 141, 255, 0.806);
 }
 
@@ -59,22 +119,8 @@
 }
 
 
-.insideForm {
-    display: flex;
-    flex-flow: row wrap;
-}
 
-.inputs {
-    width: 40vw;
-}
 
-.submitButtonContainer {
-    width: 40vw;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: flex-start;
-}
 
 .formSubmitButton {
     margin-top: 10px;
@@ -98,8 +144,6 @@
 .formSubmitButton:hover {
     color: #f5f6ff;
     background-color: #a0a6d4;
-    margin-left: auto;
-    margin-right: auto;
     padding: 2%;
 }
 
@@ -111,4 +155,15 @@
     top: 2.5px;
     left: 2.5px;
 
+}
+
+.tickBox {
+    height: 20px;
+    width: 20px;
+    background-color: #d9ffc6;
+    border-radius: 50%;
+    font-family: 'Luminari-Regular';
+    font-size: 17px;
+    color: #507660;
+    margin-left: 10px;
 }

@@ -5,14 +5,13 @@ import InfoIcon from './InfoIcon';
 
 
 
-function CurrenciesInfo() {
+function CurrenciesInfo( { currencyInfo } ) {
 
-    const [currencyInfo, setCurrencyInfo] = useState(false);
 
     return (
         <div  >
 
-            <div onClick={() => setCurrencyInfo(!currencyInfo)} className={styles.infoContainer} >
+            <div className={styles.infoContainer} >
                 <div className={styles.infoHeaders}>
                     <div>Currencies</div>
                     <div className={styles.infoIconContainer}><InfoIcon /></div>
@@ -30,7 +29,7 @@ function CurrenciesInfo() {
                         Sadly the brexit red tape has been slowing this process.<br />
                         If you are feeling frustration about the state of the world, might we suggest trying our classic: <br />
                         <Link
-                            to={'product-details-page/:Quartz'}
+                            to={'/product-details-page/quartz'}
                             className={styles.dropItem}
                         > Rose Quartz Jelly Gems:
                         </Link> <br />
