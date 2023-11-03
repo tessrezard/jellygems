@@ -24,7 +24,9 @@ function HowToInfo( { howtoInfo } ) {
                         tell us your secret(s) and/or wish(es) and promise(s).<br/>
                         Upon your completing your purchase,
                         you shall receive your imaginary sweets instantaneously. <br/>
-                        Know that your payments are safe, and not being remembered anywhere. <br/> <br/>
+                        Know that your payments are safe: <br/>
+                        <strong> Your wishes, secrets and promises are not being stored. </strong>
+                        <br/> <br/>
 
                     </p>
                 </div>) : (<></>)}
