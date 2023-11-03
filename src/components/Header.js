@@ -30,7 +30,7 @@ function Header () {
                 <nav className={styles.navContainer}>
                     <div>
                     <NavLink 
-                        to="/"  
+                        to="/home"  
                         className={`${styles.navItem} ${location.pathname === '/home' ? styles.activeNav : ''}`}
                         >
                              Home 
