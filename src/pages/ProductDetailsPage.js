@@ -70,7 +70,6 @@ function ProductDetailsPage() {
                     <div className={styles.info}>
                         <p>{stoneBrief}</p>
                         <p>{stoneDescription}</p>
-                        <p>{stoneKeyWords}</p>
                     </div>
 
                 </div>
