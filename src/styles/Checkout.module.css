@@ -108,6 +108,7 @@
     margin: auto;
     width: 100%;
     border: 3px inset hsl(231, 100%, 95%);
+    height: 2rem;
 }
 
 .singleCurrencyPayment:focus {
