@@ -5,11 +5,11 @@ import InfoIcon from './InfoIcon';
 
 
 
-function HowToInfo( { howtoInfo } ) {
+function HowToInfo({ howtoInfo }) {
 
 
     return (
-        <div  >
+        <>
 
             <div className={styles.infoContainer} >
                 <div className={styles.infoHeaders}>
@@ -19,23 +19,22 @@ function HowToInfo( { howtoInfo } ) {
 
                 {howtoInfo ? (<div className={styles.info}>
                     <p>
-                    Here are Jelly Gems,
+                        Here are Jelly Gems,
                         we are transparent and open with our customers about what they will received for their hard earned spending power:
-                        only the imaginary. <br/>
-<br/>
-                    Simply make your selection, proceed to the checkout, and
-                        tell us your secret(s) and/or wish(es) and promise(s).<br/>
+                        only the imaginary. <br />
+                        <br />
+                        Simply make your selection, proceed to the checkout, and
+                        tell us your secret(s) and/or wish(es) and promise(s).<br />
                         Upon your completing your purchase,
-                        you shall receive your imaginary sweets instantaneously. <br/>
-                        Know that your payments are safe: <br/>
+                        you shall receive your imaginary sweets instantaneously. <br />
+                        Know that your payments are safe: <br />
                         <strong> Your wishes, secrets and promises are not being stored. </strong>
-                        <br/> <br/>
-
                     </p>
                 </div>) : (<></>)}
+
             </div>
 
-        </div>
+        </>
     )
 }
 

@@ -48,7 +48,7 @@ function GridProduct({name, description, brief, keyWords, heroImg, pairImg}) {
 
                 <div className={styles.arch}>
                     <div className={styles.imgAndTitle}>
-                        <img src={artworkImg()} className={styles.heroImg} />
+                        <img src={artworkImg()} className={styles.heroImg} alt={`Lead artwork for ${name}`}/>
                         <div className={styles.titleContainer}>
                             <h1 className={styles.title}>{name}</h1>
                         </div>
@@ -63,17 +63,8 @@ function GridProduct({name, description, brief, keyWords, heroImg, pairImg}) {
                     <p className={styles.bottomStar}>✦</p>
                 </div>
 
-
-
-
-
                 </div>
-
-
-
         </>
-        
-        
     )
 }
 

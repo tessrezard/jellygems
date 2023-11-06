@@ -9,13 +9,13 @@ const AddToBasket = ({ name }) => {
 
 
     const [currency, setCurrency] = useState('Wish');
-    // const [quantity, setQuantity] = useState(1);
     const [justAdded, setJustAdded] = useState(false);
     const [currencyInfo, setCurrencyInfo] = useState(false);
-    //automatically close into window after 5 seconds
-    // if (currencyAdjustmentInfo) {
-    //     setTimeout(() => setCurrencyAdjustmentInfo(false), 13000)
-    // }
+
+    //automatically close pop-up window after 5 seconds
+    if (justAdded) {
+        setTimeout(() => setJustAdded(false), 2000)
+    }
 
     const [chosenQuantity, setChosenQuanity] = useState(1);
     const { quantity, setQuantity,
@@ -30,8 +30,6 @@ const AddToBasket = ({ name }) => {
         secretsTotal, setSecretsTotal
     } = useMyContext();
 
-    // console.log('Quantity in add to basket:', quantity);
-    // console.log('typeof quantity',typeof quantity);
 
 
     function handleSettingCurrency(e) {
@@ -60,11 +58,9 @@ const AddToBasket = ({ name }) => {
 
     function handleSubmit(e) {
         e.preventDefault();
-
         //add to total quantity count
         const newQuantity = quantity + chosenQuantity;
         setQuantity(newQuantity);
-
         //add to specific curreny count
         switch (currency) {
             case ('Wish'):
@@ -80,7 +76,6 @@ const AddToBasket = ({ name }) => {
                 setSecretsTotal(newSecrets);
                 break;
         };
-
         //add quantity so specific stone count
         switch (name) {
             case ('Emeralds'):
@@ -108,89 +103,82 @@ const AddToBasket = ({ name }) => {
                 setSapphireQuant(newSapQuant);
                 break;
         };
-
-
-        // if (window.localStorage.getItem('total-quantity')) {
-        //     const currentTotal = window.localStorage.getItem('total-quantity');
-        //     const newTotal = (parseInt(currentTotal) + parseInt(quantity));
-        //     window.localStorage.setItem('total-quantity', newTotal);
-        // } else {
-        //     window.localStorage.setItem('total-quantity', quantity);
-        // }
-        // console.log('in local storage: ',  window.localStorage.getItem('total-quantity'));
+        // Just added triggers to pop up window - confirmation
+        setJustAdded(true);
     }
-
 
     // prevent reload when you hit 'enter' when choosing quantity
     const handleFormSubmit = (event) => {
-          event.preventDefault(); 
-        }
+        event.preventDefault();
+    }
 
 
     return (
-        <div className={styles.container}>
+        <>
+            <div className={styles.container}>
 
-            <h1>{name} Jelly Gems</h1>
+                <h1>{name} Jelly Gems</h1>
 
-            <div className={styles.priceContainer}>
+                <div className={styles.priceContainer}>
 
-                <div className={styles.priceHeader}>
-                    <p>Price : </p>
+                    <div className={styles.priceHeader}>
+                        <p>Price : </p>
+                    </div>
+                    <div className={styles.price}>
+                        <p className={styles.currency}> 1 </p>
+                        <p className={styles.currency}> {currency} ✨ </p>
+                    </div>
+                    <p className={styles.pricePerGram}>(0.5714 {currency}/ 100g)</p>
+
                 </div>
-                <div className={styles.price}>
-                    <p className={styles.currency}> 1 </p>
-                    <p className={styles.currency}> {currency} ✨ </p>
-                </div>
-                <p className={styles.pricePerGram}>(0.5714 {currency}/ 100g)</p>
-
-            </div>
 
 
-            <div className={styles.formContainer}>
-                <form role='shoppingChoices' className={styles.shoppingChoices} onSubmit={handleFormSubmit}>
-                    <label htmlFor="currencyChoice" className={styles.formLabel}>Currency:</label>
-                    <select
-                        name="currencyChoice"
-                        id="currencyChoice"
-                        className={styles.select}
-                        onChange={handleSettingCurrency} >
-                        <option value="Wishes">Wishes</option>
-                        <option value="Secrets">Secrets</option>
-                        <option value="Promises">Promises</option>
-                    </select>
-                    <div onClick={() => setCurrencyInfo(!currencyInfo) }>
-                        <InfoIcon/> 
-                        {currencyInfo? (<div className={styles.currencyAdjustmentInfo}>
-                            Currencies:
-        The currecies we trade in are wishes, secrets and promises. 
-        Unfortunately we are unable to accept any other currecies at this time. 
-        Know we are working towards brigning new currencies to our company, 
-        including gossip and firstborns. Sadly the brexit red tape has been slowing this process. 
-                        </div>): (<></>)}
+                <div className={styles.formContainer}>
+                    <form role='shoppingChoices' className={styles.shoppingChoices} onSubmit={handleFormSubmit}>
+                        <label htmlFor="currencyChoice" className={styles.formLabel}>Currency:</label>
+                        <select
+                            name="currencyChoice"
+                            id="currencyChoice"
+                            className={styles.select}
+                            onChange={handleSettingCurrency} >
+                            <option value="Wishes">Wishes</option>
+                            <option value="Secrets">Secrets</option>
+                            <option value="Promises">Promises</option>
+                        </select>
+                        <div onClick={() => setCurrencyInfo(!currencyInfo)}>
+                            <InfoIcon />
+                            {currencyInfo ? (<div className={styles.currencyAdjustmentInfo}>
+                                Currencies:
+                                The currecies we trade in are wishes, secrets and promises.
+                                Unfortunately we are unable to accept any other currecies at this time.
+                                Know we are working towards brigning new currencies to our company,
+                                including gossip and firstborns. Sadly the brexit red tape has been slowing this process.
+                            </div>) : (<></>)}
                         </div>
-                    <label htmlFor="selectQuantity" className={styles.formLabel}>Quantity: </label>
-                    <input
-                        type='number'
-                        defaultValue='1'
-                        min='1'
-                        max='10'
-                        name="selectQuantity"
-                        id="selectQuantity"
-                        className={styles.inputQuantity}
-                        onChange={handleSettingQuantity} />
-                </form>
-                <div
-                    className={styles.submitButton}
-                    onClick={handleSubmit}>
-                    <p className={styles.submitText}>
-                        Add to Basket
-                    </p>
+                        <label htmlFor="selectQuantity" className={styles.formLabel}>Quantity: </label>
+                        <input
+                            type='number'
+                            defaultValue='1'
+                            min='1'
+                            max='10'
+                            name="selectQuantity"
+                            id="selectQuantity"
+                            className={styles.inputQuantity}
+                            onChange={handleSettingQuantity} />
+                    </form>
+                    <div
+                        className={styles.submitButton}
+                        onClick={handleSubmit}>
+                        <p className={styles.submitText}>
+                            Add to Basket
+                        </p>
+                    </div>
+                    {justAdded ? <PopUpAddedToBasket name={name} quantityAdded={chosenQuantity} /> : <></>}
+
                 </div>
-                {justAdded ? <PopUpAddedToBasket name={name} quantityAdded={chosenQuantity}/> : <></>}
 
             </div>
-
-        </div>
+        </>
     );
 };
 

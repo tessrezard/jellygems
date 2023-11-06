@@ -32,6 +32,7 @@
 .message{
     justify-content: center;
     margin: auto;
+    font-size: 1.25rem;
 }
 
 .xBox {

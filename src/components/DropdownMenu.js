@@ -6,42 +6,55 @@ const DropdownMenu = () => {
   return (
     <div className={styles.dropdownMenu}>
       <ul>
-      <Link 
+        <li>
+          <Link
             to={'product-details-page/:Amber'}
             className={styles.dropItem}
-            >Amber
-        </Link>
-        <Link 
+          >Amber
+          </Link>
+        </li>
+        <li>
+          <Link
             to={'product-details-page/:Amethyst'}
             className={styles.dropItem}
-            >Amethysts
-        </Link>
-        <Link 
+          >Amethysts
+          </Link>
+        </li>
+        <li>
+          <Link
             to={'product-details-page/:Emerald'}
             className={styles.dropItem}
-            >Emeralds
-        </Link>
-        <Link 
+          >Emeralds
+          </Link>
+        </li>
+        <li>
+          <Link
             to={'product-details-page/:Sapphire'}
             className={styles.dropItem}
-            >Sapphires
-        </Link>
-        <Link 
+          >Sapphires
+          </Link>
+        </li>
+        <li>
+          <Link
             to={'product-details-page/:Ruby'}
             className={styles.dropItem}
-            >Rubies
-        </Link>
-        <Link 
+          >Rubies
+          </Link>
+        </li>
+        <li>
+          <Link
             to={'product-details-page/:Quartz'}
             className={styles.dropItem}
-            >Rose Quartz
-        </Link>
-        <Link 
+          >Rose Quartz
+          </Link>
+        </li>
+        <li>
+          <Link
             to={'/products'}
             className={styles.dropItem}
-            >View All
-        </Link>
-
+          >View All
+          </Link>
+        </li>
       </ul>
     </div>
   );

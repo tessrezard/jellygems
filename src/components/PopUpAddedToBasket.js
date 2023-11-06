@@ -1,34 +1,31 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styles from '../styles/PopUpAddedToBasket.module.css';
 
 
-function PopUpAddedToBasket ({name, quantityAdded}) {
+function PopUpAddedToBasket({ name, quantityAdded }) {
 
     const [isVisible, setIsVisible] = useState(true);
 
-
-
-    function handleX () {
+    function handleX() {
         setIsVisible(false);
     }
 
 
-
     return (
-        
-        <div className={`${styles.wholePageContainer} ${isVisible ? styles.visible : styles.hidden}`}>
-            <div className={styles.popUpContainer}>
-                <div className={styles.message}>
-                    <p>{quantityAdded} {name} added to Basket!</p>
-                </div>
-                <div className={styles.xBox} onClick={handleX}>
-                    <p  className={styles.x}>X</p>
-                </div>
-                <div>
+        <>
+            <div className={`${styles.wholePageContainer} ${isVisible ? styles.visible : styles.hidden}`}>
+                <div className={styles.popUpContainer}>
+                    <div className={styles.message}>
+                        <p>{quantityAdded} {name} added to Basket!</p>
+                    </div>
+                    <div className={styles.xBox} onClick={handleX}>
+                        <p className={styles.x}>X</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     )
+
 };
 
 export default PopUpAddedToBasket;

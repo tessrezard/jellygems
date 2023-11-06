@@ -1,21 +1,31 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import Banner from '../components/Banner';
+import styles from '../styles/Home.module.css'
 
 
 function Home() {
-    return (
+  return (
+    <>
+      <main>
         <div>
-          <Banner/>
-        <h1>
-        The nation's favorite 
-         imaginary  
+          <Banner />
+          <h1 > 
+            The nation's favorite
+            imaginary sweet shop.
+          </h1>
+          <div >
+            <Link to="/products" style={{ textDecoration: 'none' }} className={styles.button}>
+              Shop our sweets collection
+            </Link>
+          </div>
 
-        sweet shop. </h1>
-        <p> This is a website that trades in imaginary sweets. <br/>
-    The currecies we trade in are wishes and secrets and promises. <br/> </p>
-      </div>
-    );
-  }
-  
-  export default Home;
+          <p className={styles.pText}>
+            The currencies we trade in are wishes and secrets and promises. <br /> </p>
+        </div>
+      </main>
+    </>
+  );
+}
+
+export default Home;

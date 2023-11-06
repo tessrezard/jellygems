@@ -34,8 +34,8 @@ function About() {
 
 
     return (
-        <div>
-
+        <>
+            <main>
             {/* <p className={styles.pickAPill}> pick a pill 😎 </p> */}
             <div className={styles.aboutPageContainer}>
 
@@ -81,8 +81,8 @@ function About() {
 
                 </div>
             </div>
-
-        </div>
+            </main>
+        </>
     )
 }
 

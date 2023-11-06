@@ -7,24 +7,18 @@ import headerStyles from '../styles/Header.module.css';
 function Footer() {
 
     const location = useLocation();
-    const [returnsPolicy, setReturnsPolicy] = useState(false);
 
     return (
         <>
-            <div className={styles.footerContainer}>
-
-
-                <Link
-                    to="about"
-                    className={`${headerStyles.navItem} ${location.pathname === '/about' ? headerStyles.activeNav : ''}`}
-                > About
-                </Link>
-
-
-            </div>
-
-
-
+            <footer>
+                <div className={styles.footerContainer}>
+                    <Link
+                        to="about"
+                        className={`${headerStyles.navItem} ${location.pathname === '/about' ? headerStyles.activeNav : ''}`}
+                    > About
+                    </Link>
+                </div>
+            </footer>
         </>
     )
 }

@@ -28,7 +28,8 @@ const Root = () => {
         <>
             <Header/>
             <div className="App-main">
-                {routeElement || <Home />} {/* Render Home if no routes match */}
+                {/* Render Home if no routes match */}
+                {routeElement || <Home />} 
                 {/* <Outlet /> */}
             </div>
             <Footer/>

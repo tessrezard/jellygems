@@ -179,7 +179,7 @@ li:hover {
     font-size: 17px;
 }
 
-.removeItemConainer{
+.removeItemContainer{
     align-self: flex-start;
     width: 30px;
     height: 30px;

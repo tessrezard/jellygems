@@ -56,33 +56,39 @@ function ProductDetailsPage() {
 
 
     return (
-        <div>
-            <div className={styles.container}>
-                <div className={styles.heroImgContainer}>
-                    <img src={artworkImg()} className={styles.heroImg} />
-                </div>
+        <>
+            <main>
 
-                <div className={styles.infoContainer}>
-                    <div className={styles.AddToBasketContainer}>
-                        <AddToBasket name={stoneName} />
+                <div>
+                    <div className={styles.container}>
+                        <div className={styles.heroImgContainer}>
+                            <img src={artworkImg()} className={styles.heroImg} />
+                        </div>
+
+                        <div className={styles.infoContainer}>
+                            <div className={styles.AddToBasketContainer}>
+                                <AddToBasket name={stoneName} />
+                            </div>
+
+                            <div className={styles.info}>
+                                <p>{stoneBrief}</p>
+                                <p>{stoneDescription}</p>
+                            </div>
+
+                        </div>
                     </div>
 
-                    <div className={styles.info}>
-                        <p>{stoneBrief}</p>
-                        <p>{stoneDescription}</p>
+                    <div className={styles.pairsWellWithContainer}>
+                        <h2>Pairs well with : </h2>
+                        <div className={styles.pairImgContainer}>
+                            <img src={stonePairImg} className={styles.pairImg} />
+                        </div>
+
                     </div>
-
-                </div>
-            </div>
-
-            <div className={styles.pairsWellWithContainer}>
-                <h2>Pairs well with : </h2>
-                <div className={styles.pairImgContainer}>
-                    <img src={stonePairImg} className={styles.pairImg} />
                 </div>
 
-            </div>
-        </div>
+            </main>
+        </>
     )
 }
 

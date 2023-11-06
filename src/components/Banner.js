@@ -5,7 +5,7 @@ function Banner () {
 
     return (
         <div className={styles.bannerContainer}>
-            <div className={styles.banner}/>
+            <span className={styles.banner} role="img" aria-label="Banner of mockups of the Jelly Gems packaging."/>
         </div>
     )
 };
