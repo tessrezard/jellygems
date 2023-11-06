@@ -49,7 +49,6 @@ function BluePill({ handleClick }) {
                         </div>
 
                     </div>
-                    {/* <FeedbackForm/> */}
                 </div>
         </>
     )

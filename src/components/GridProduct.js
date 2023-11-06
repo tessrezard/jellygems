@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from '../styles/Products.module.css'
 import amb from '../images/artwork/Amber.jpg';
 import ame from '../images/artwork/Amethyst.jpg';
@@ -10,7 +10,7 @@ import sapp from '../images/artwork/Sapphire.jpg';
 
 
 
-function GridProduct({name, description, brief, keyWords, heroImg, pairImg}) {
+function GridProduct({name, keyWords }) {
 
 
     const sortedKeyWords = keyWords.sort((a, b) => a.length - b.length);
@@ -39,18 +39,19 @@ function GridProduct({name, description, brief, keyWords, heroImg, pairImg}) {
             <div className={styles.gridProductContainer}>
 
                 <div className={styles.keyWordContainer}>
+                    {/* the star icons should maybe all be in <span>s?  <p>s made easier to position  */}
                     <p className={styles.cornerLEFTStar}>✦</p>
                     <p className={styles.topLEFTStar}>✦</p>
                     <p className={` ${styles.keyWordsLeft} ${styles.keyWords} ${styles.topLEFTWord} `}>{word1}</p>
                     <p className={` ${styles.keyWordsLeft} ${styles.keyWords} ${styles.bottomLEFTWord} `}>{word4}</p>
-                    <p className={styles.bottomStar}>✦</p>
+                    <span className={styles.bottomStar}>✦</span>
                 </div>
 
                 <div className={styles.arch}>
                     <div className={styles.imgAndTitle}>
                         <img src={artworkImg()} className={styles.heroImg} alt={`Lead artwork for ${name}`}/>
                         <div className={styles.titleContainer}>
-                            <h1 className={styles.title}>{name}</h1>
+                            <p className={styles.title}>{name}</p>
                         </div>
                     </div>
                 </div>
@@ -60,7 +61,7 @@ function GridProduct({name, description, brief, keyWords, heroImg, pairImg}) {
                     <p className={styles.topRIGHTStar}>✦</p>
                     <p className={ `${styles.keyWordsRight} ${styles.keyWords} ${styles.topRIGHTWord} `}>{word2}</p>
                     <p className={ `${styles.keyWordsRight} ${styles.keyWords} ${styles.bottomRIGHTWord} `}>{word3}</p>
-                    <p className={styles.bottomStar}>✦</p>
+                    <span className={styles.bottomStar}>✦</span>
                 </div>
 
                 </div>

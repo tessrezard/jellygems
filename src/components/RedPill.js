@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-
 import '../styles/roots.css';
 import styles from '../styles/About.module.css';
 import InfoIcon from './InfoIcon';
@@ -29,7 +27,7 @@ function RedPill({ handleClick }) {
                         I designed all The Jelly Gems artwork and graphics. The lead typeface is Luminari by Canada Type. <br />
                     </p>
 
-                    <div onClick={() => setContentNote(!contentNote)} className={styles.contentInfoContainer} >
+                    <div onClick={() => setContentNote(prev => !prev)} className={styles.contentInfoContainer} >
                         <div className={styles.contentInfoHeaders}>
                             <div>Content note </div>
                             <div className={styles.contentInfoIconContainer}><InfoIcon /></div>

@@ -49,11 +49,13 @@ function Checkout() {
 
     return (
         <>
+            {!paymentMade ? (<p className={styles.title}>Checkout</p>) : <></> }
+
             <main>
                 {paymentMade ?
                     (<div className={styles.confirmation}>
-                        <h2> Order confirmation: </h2>
-                        <h1>Thank you for shopping with Jelly Gems! </h1>
+                        <p  className={styles.title}> Order confirmation: </p>
+                        <p>Thank you for shopping with Jelly Gems! </p>
                         <div onClick={() => handleMoveInfoClick('delivery')}>
                             <DeliveryInfo deliveryInfo={activeTab === 'delivery'} />
                         </div>
@@ -67,11 +69,10 @@ function Checkout() {
 
                         <>
 
-                            <h2>Checkout</h2>
 
                             <div className={styles.checkoutContainer}>
 
-                                <h3>Make payment</h3>
+                                <p className={styles.makePaymentHeader}>Make payment</p>
 
 
                                 <form onSubmit={handleSubmitPayment}>
@@ -135,7 +136,7 @@ function Checkout() {
 
                                         <div className={styles.submitContainer} >
                                             <div className={styles.toPay}>
-                                                <h4 className={styles.toPayHeader}>Subtotal for your {quantity} items:</h4>
+                                                <p className={styles.toPayHeader}>Subtotal for your {quantity} item(s):</p>
                                                 <ul className={styles.pricesToPay}>
                                                     {wishesTotal ? <li> ✧ {wishesTotal} Wishes</li> : <></>}
                                                     {promisesTotal ? <li> ✧ {promisesTotal} Promises</li> : <></>}

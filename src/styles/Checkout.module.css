@@ -1,19 +1,27 @@
+.title{
+    font-family: 'Luminari-regular';
+    font-weight: 700;
+    color: #9299cf;
+    font-size: 1.5em;
+}
+
+
 /* main content below CHECKOUT heading */
 .checkoutContainer {
     width: 90vw;
     background-color: #fffdfb;
 }
 
-
-
 .checkoutLayout {
     display: flex;
     justify-content: space-around;
     flex-flow: row;
-
 }
 
-
+.makePaymentHeader{
+    font-weight: 700;
+    padding: 1rem;
+}
 
 /* flex item child of checkoutLayout */
 .inputsContainer {
@@ -68,6 +76,7 @@
 
 .toPayHeader {
     margin: 10px;
+    font-weight: 700;
 }
 
 .pricesToPay {

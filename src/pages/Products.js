@@ -40,9 +40,9 @@ function Products() {
                             />
                         </Link>
                     ))}
-                    {Object.keys(jellyGemsObj).forEach((stone) => {
-                        <h1>{jellyGemsObj[stone]}</h1>
-                    })}
+                    {/* {Object.keys(jellyGemsObj).forEach((stone) => {
+                        <p>{jellyGemsObj[stone]}</p>
+                    })} */}
                 </div>
             </main>
         </>

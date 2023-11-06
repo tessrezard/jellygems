@@ -11,11 +11,11 @@ import quart from '../images/artwork/Quartz.jpg';
 import sapp from '../images/artwork/Sapphire.jpg';
 
 function Basket() {
-    const [currencyAdjustmentInfo, setCurrencyAdjustmentInfo] = useState(false);
-    //automatically close into window after 5 seconds
-    if (currencyAdjustmentInfo) {
-        setTimeout(() => setCurrencyAdjustmentInfo(false), 5000)
-    }
+    // const [currencyAdjustmentInfo, setCurrencyAdjustmentInfo] = useState(false);
+    // //automatically close into window after 5 seconds
+    // if (currencyAdjustmentInfo) {
+    //     setTimeout(() => setCurrencyAdjustmentInfo(false), 5000)
+    // }
 
 
     const { quantity, setQuantity,
@@ -42,10 +42,7 @@ function Basket() {
             const bValue = Object.values(b)[0];
             return bValue - aValue;
         });
-        // console.log(sortedCurrencies)
-        // console.log(Object.keys(sortedCurrencies[0])[0]);
         const topCurrency = Object.keys(sortedCurrencies[0])[0];
-        // console.log(typeof topCurrency);
         return topCurrency;
     }
 
@@ -61,18 +58,14 @@ function Basket() {
             const bValue = Object.values(b)[0];
             return bValue - aValue;
         });
-        // console.log('sortedCurrencies', sortedCurrencies);
         const bottomCurrency = Object.keys(sortedCurrencies[2])[0];
-        // console.log('typeof bottomCurrency', typeof bottomCurrency);
         return bottomCurrency;
     }
 
 
-    // console.log('getBottomCurrency()', getBottomCurrency());
 
 
     const handleReduce = (stoneQuant, setStoneQuant) => {
-        // console.log('stoneQuant', stoneQuant);
         if (stoneQuant > 0) {
             const oneLess = stoneQuant - 1;
             setStoneQuant(oneLess);
@@ -83,17 +76,14 @@ function Basket() {
         switch (getTopCurrency()) {
             case ('wishesTotal'):
                 const newWishTotal = wishesTotal - 1;
-                // console.log('newWishTotal', newWishTotal);
                 setWishesTotal(newWishTotal);
                 break;
             case ('promisesTotal'):
                 const newPromiseTotal = promisesTotal - 1;
-                // console.log('newPromiseTotal', newPromiseTotal);
                 setPromisesTotal(newPromiseTotal);
                 break;
             case ('secretsTotal'):
                 const newSecretTotal = secretsTotal - 1;
-                // console.log('newSecretTotal', newSecretTotal);
                 setSecretsTotal(newSecretTotal);
                 break;
             default:
@@ -102,7 +92,6 @@ function Basket() {
     }
 
     const handleIncrease = (stoneQuant, setStoneQuant) => {
-        // console.log('stoneQuant', stoneQuant);
         if (stoneQuant > 0) {
             const oneMore = stoneQuant + 1;
             setStoneQuant(oneMore);
@@ -112,17 +101,14 @@ function Basket() {
         switch (getBottomCurrency()) {
             case ('wishesTotal'):
                 const newWishTotal = wishesTotal + 1;
-                // console.log('newWishTotal', newWishTotal);
                 setWishesTotal(newWishTotal);
                 break;
             case ('promisesTotal'):
                 const newPromiseTotal = promisesTotal + 1;
-                // console.log('newPromiseTotal', newPromiseTotal);
                 setPromisesTotal(newPromiseTotal);
                 break;
             case ('secretsTotal'):
                 const newSecretTotal = secretsTotal + 1;
-                // console.log('newSecretTotal', newSecretTotal);
                 setSecretsTotal(newSecretTotal);
                 break;
             default:
@@ -132,21 +118,16 @@ function Basket() {
 
 
     const handleRemove = (stoneQuant, setStoneQuant) => {
-
         const quantToReduce = stoneQuant;
         let newWishTotal = wishesTotal;
         let newPromiseTotal = promisesTotal;
         let newSecretTotal = secretsTotal;
-
         if (stoneQuant > 0) {
             const newTotalQuant = quantity - stoneQuant;
             setStoneQuant(0);
             setQuantity(newTotalQuant);
         }
-
         for (let x = quantToReduce; x > 0; x--) {
-
-            console.log('getTopCurrency()', getTopCurrency());
             switch (getTopCurrency()) {
                 case 'wishesTotal':
                     if (newWishTotal > 0) {
@@ -178,13 +159,10 @@ function Basket() {
                 default:
                     break;
             }
-            console.log('x', x)
         }
-
         setWishesTotal(newWishTotal);
         setSecretsTotal(newSecretTotal);
         setPromisesTotal(newPromiseTotal);
-
     }
 
 
@@ -216,6 +194,8 @@ function Basket() {
                                 <p>Total items : {quantity}</p>
                                 <ul className={styles.listInBasket}>
 
+                                    {/* I should definitely make the items in basket a component with lots of props. This is way to repetitive.
+                                    make an array with only the stoneQuants that are true, map over and make item in basket component */}
 
                                     {amberQuant ? (
 
@@ -224,7 +204,7 @@ function Basket() {
                                                 <img src={amb} className={styles.stoneImg} />
                                             </div>
                                             <li className={styles.itemLi}>
-                                                <h1 className={styles.itemName} >Amber Jelly Gems </h1>
+                                                <p className={styles.itemName} >Amber Jelly Gems </p>
                                                 <p className={styles.quantHeader}>Quantity:</p>
                                                 <div className={styles.quantityContainer}>
                                                     <div className={styles.bothButtonsContainer}>
@@ -260,7 +240,7 @@ function Basket() {
                                                 <img src={ame} className={styles.stoneImg} />
                                             </div>
                                             <li className={styles.itemLi}>
-                                                <h1 className={styles.itemName} >Amethyst Jelly Gems </h1>
+                                                <p className={styles.itemName} >Amethyst Jelly Gems </p>
                                                 <p className={styles.quantHeader}>Quantity:</p>
                                                 <div className={styles.quantityContainer}>
                                                     <div className={styles.bothButtonsContainer}>
@@ -295,7 +275,7 @@ function Basket() {
                                                 <img src={eme} className={styles.stoneImg} />
                                             </div>
                                             <li className={styles.itemLi}>
-                                                <h1 className={styles.itemName} >Emerald Jelly Gems </h1>
+                                                <p className={styles.itemName} >Emerald Jelly Gems </p>
                                                 <p className={styles.quantHeader}>Quantity:</p>
                                                 <div className={styles.quantityContainer}>
                                                     <div className={styles.bothButtonsContainer}>
@@ -330,7 +310,7 @@ function Basket() {
                                                 <img src={rub} className={styles.stoneImg} />
                                             </div>
                                             <li className={styles.itemLi}>
-                                                <h1 className={styles.itemName} >Ruby Jelly Gems </h1>
+                                                <p className={styles.itemName} >Ruby Jelly Gems </p>
                                                 <p className={styles.quantHeader}>Quantity:</p>
                                                 <div className={styles.quantityContainer}>
                                                     <div className={styles.bothButtonsContainer}>
@@ -365,7 +345,7 @@ function Basket() {
                                                 <img src={sapp} className={styles.stoneImg} />
                                             </div>
                                             <li className={styles.itemLi}>
-                                                <h1 className={styles.itemName} >Sapphire Jelly Gems </h1>
+                                                <p className={styles.itemName} >Sapphire Jelly Gems </p>
                                                 <p className={styles.quantHeader}>Quantity:</p>
                                                 <div className={styles.quantityContainer}>
                                                     <div className={styles.bothButtonsContainer}>
@@ -400,7 +380,7 @@ function Basket() {
                                                 <img src={quart} className={styles.stoneImg} />
                                             </div>
                                             <li className={styles.itemLi}>
-                                                <h1 className={styles.itemName} >Rose Quartz Jelly Gems </h1>
+                                                <p className={styles.itemName} >Rose Quartz Jelly Gems </p>
                                                 <p className={styles.quantHeader}>Quantity:</p>
                                                 <div className={styles.quantityContainer}>
                                                     <div className={styles.bothButtonsContainer}>
@@ -432,9 +412,10 @@ function Basket() {
 
 
                         </>) : (<>
-                            <h2>Your basket is empty! <br />
+                            <p className={styles.bigMistake}>
+                                Your basket is empty! <br />
                                 Big Mistake! Big. Huge!
-                            </h2>
+                            </p>
                             <Link to="/products" style={{ textDecoration: 'none' }} className={styles.proceedToCheckout}>
                                 I have to go shopping now.
                             </Link>
