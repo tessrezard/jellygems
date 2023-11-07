@@ -14,6 +14,7 @@ function PopUpAddedToBasket({ name, quantityAdded }) {
     return (
         <>
             <div className={`${styles.wholePageContainer} ${isVisible ? styles.visible : styles.hidden}`}>
+                
                 <div className={styles.popUpContainer}>
                     <div className={styles.message}>
                         <p>{quantityAdded} {name} added to Basket!</p>

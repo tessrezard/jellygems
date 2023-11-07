@@ -109,7 +109,6 @@
 
 .submitButton:active{
     background-color: #848bba;
-    border: 5px inset #c4c9f1 ;
 }
 .currencyAdjustmentInfo{
     position: relative;

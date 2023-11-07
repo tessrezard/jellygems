@@ -3,7 +3,6 @@
     justify-content: center;
     flex-flow: row-reverse wrap;
     align-content: flex-start;
-    height: 90vh;
 }
 
 .basketContainer {

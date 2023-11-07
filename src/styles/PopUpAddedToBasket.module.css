@@ -6,68 +6,86 @@
     left: 0;
     z-index: 3;
     transition: all 100ms;
+    background-color: #eaedff28;
+
 }
 
 .visible{
-    visibility: visible ;
+    visibility: visible;
 }
 .hidden{
-    visibility: hidden ;
+    visibility: hidden;
 }
 
 .popUpContainer {
     transition: all 100ms;
-    width: 30vw;
-    height: 20vh;
+    width: 250px;
     position: fixed;
     top: 30vh;
     right: 35vw;
-    box-shadow: 0px 0px 20px 20px #949ac6; /*any color you want*/
-    background-color: #dbdef0;
+    box-shadow: 12px 12px 2px 1px #6e75aeb9;
+    border: 3px solid #8089cb;
+    background-color: #a9b0e0;
     z-index: 3;
     display: flex;
+    flex-flow: column-reverse;
     justify-content: flex-end;
+    border-radius: 25px;
 }
 
 .message{
     justify-content: center;
     margin: auto;
     font-size: 1.25rem;
+    background-color: #e1e4f6;
+    border: 3px solid #8089cb;
+    border: 3px solid #fdfdff;
+    border-radius: 10px;
+    position: relative;
+    bottom: 1px;
+    margin: 10px;
+    padding: 5px;
+    color: #2f345a;
 }
 
 .xBox {
     position: relative;
-    width: 50px;
-    height: 50px;
-    background-color: #949ac6;
-    background-color: #b8bde7;
-    border: 5px outset #c4c9f1;
-    top: 10px;
-    right: 10px;
-    z-index: 5;
-    cursor: pointer;
-}
-
-.xBox:active {
-    position: relative;
-    width: 40px;
-    height: 40px;
+    top: 0.1px;
+    left: 180px;
+    width: 35px;
+    height: 35px;
     background-color: #8089cb;
-    top: 15px;
-    right: 15px;
+    background-color: #cdd1ef;
+    border: 5px outset #fdfdff;
     z-index: 5;
     cursor: pointer;
+    margin-top: 10px;
     transition: all 100ms;
 }
 
-.x{
-    margin-top: 10px;
-    margin-bottom: 2px;
-    /* font-family: 'Luminari-Regular'; */
-    color: #f1ede9;
-    font-weight: 700;
+.xBox:active {
+    top: 2px;
+    left: 182px;
+    width: 30px;
+    height: 30px;
+    background-color: #8089cb;
 }
 
+.x{
+    margin-top: 5px;
+    margin-bottom: 2px;
+    text-align: center;
+    /* font-family: 'Luminari-Regular'; */
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.25rem;
+    transition: all 100ms;
+
+}
+.x:active{
+    font-size: 1rem;
+
+}
 
 /* 
 .wholePageContainer {
