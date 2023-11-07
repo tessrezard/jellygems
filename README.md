@@ -1,6 +1,6 @@
 # Jelly Gems - Imaginary Sweet Shop
 See live [Jelly Gems](https://jellygems.netlify.app/) site at [jellygems.netlify.app](https://jellygems.netlify.app/)\
-Jelly Gems is a website that 'sells' gemstone inspired imaginary sweets. The currencies used for payments are wishes, secrets and promises.\ 
+Jelly Gems is a website that 'sells' gemstone inspired imaginary sweets. The currencies used for payments are wishes, secrets and promises. \ 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Features
@@ -8,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 React \
 React Router \
 css \
-Custom Artwork \
+Custom Artwork
 
 
 ### Thank you
