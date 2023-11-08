@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from '../styles/AddToBasket.module.css';
-import { Link } from "react-router-dom";
 import PopUpAddedToBasket from "./PopUpAddedToBasket";
 import { useMyContext } from '../MyContext';
 import InfoIcon from "./InfoIcon";
@@ -111,7 +110,6 @@ const AddToBasket = ({ name }) => {
     const handleFormSubmit = (event) => {
         event.preventDefault();
     }
-
 
     return (
         <>

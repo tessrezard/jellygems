@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Outlet, useRoutes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -22,6 +22,9 @@ const Root = () => {
         // Add more route configurations as needed
       ];
     const routeElement = useRoutes(routes);
+
+
+
 
 
     return (

@@ -72,7 +72,6 @@ function Basket() {
             const newTotalQuant = quantity - 1;
             setQuantity(newTotalQuant);
         }
-        console.log('getTopCurrency()', getTopCurrency());
         switch (getTopCurrency()) {
             case ('wishesTotal'):
                 const newWishTotal = wishesTotal - 1;
@@ -171,7 +170,8 @@ function Basket() {
         <>
             <main>
                 <div className={styles.basketPageContainer}>
-                    {quantity ? (
+                    { 
+                        quantity ? (
                         <>
                             <div className={styles.subtotalContainer}>
                                 <div className={styles.totalToPayHeaderContainer}>

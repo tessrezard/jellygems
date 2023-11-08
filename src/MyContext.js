@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 const MyContext = createContext();
 
@@ -17,9 +17,23 @@ export const MyProvider = ({ children }) => {
   const [promisesTotal, setPromisesTotal] = useState(0);
   const [secretsTotal, setSecretsTotal] = useState(0);
 
-  // console.log('emeraldQuant in Context:', emeraldQuant);
 
 
+  //set local variables : if state changes.
+  // useEffect(()=> {
+
+  //   if (parseInt(window.localStorage.getItem('quantity'))){
+  //     console.log('we still have local');
+  //   }
+
+  // }, [])
+
+  //set local variables : if state changes.
+
+  // if (!(parseInt(window.localStorage.getItem('quantity')) )< quantity) {
+  //   console.log('local < quantity');
+  //   window.localStorage.setItem('quantity', quantity);
+  // }
 
 
   return (

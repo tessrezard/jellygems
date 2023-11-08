@@ -35,7 +35,6 @@ function ProductDetailsPage() {
     const stoneHeroImg = jellyGemsObj[stoneId]?.heroImg;
     const stonePairImg = jellyGemsObj[stoneId]?.pairImg;
 
-    console.log(stoneName);
 
     const artworkImg = () => {
         switch (stoneName) {
