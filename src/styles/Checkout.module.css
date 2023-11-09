@@ -32,7 +32,6 @@
 
 /* flex item child of checkoutLayout */
 .inputsContainer {
-    width: 40vw;
     display: flex;
     justify-content: center;
     flex-flow: column;
@@ -40,7 +39,24 @@
     padding: 3%;
 
 }
+.inputANDvalidation{
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+}
 
+.tickBox {
+    height: 20px;
+    width: 20px;
+    background-color: #d9ffc6;
+    border-radius: 50%;
+    font-family: 'Luminari-Regular';
+    font-size: 17px;
+    color: #507660;
+    margin-left: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
 
 /* flex item child of checkoutLayout */
 .submitContainer {
@@ -172,15 +188,4 @@
     top: 2.5px;
     left: 2.5px;
 
-}
-
-.tickBox {
-    height: 20px;
-    width: 20px;
-    background-color: #d9ffc6;
-    border-radius: 50%;
-    font-family: 'Luminari-Regular';
-    font-size: 17px;
-    color: #507660;
-    margin-left: 10px;
 }

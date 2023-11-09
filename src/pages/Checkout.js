@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useMyContext } from '../MyContext';
 import InfoIcon from '../components/InfoIcon';
 import styles from '../styles/Checkout.module.css'
 import { Link } from "react-router-dom";
 import DeliveryInfo from '../components/DeliveryInfo';
 import ReturnsInfo from '../components/ReturnsInfo';
-
+import InputWish from '../components/InputWish';
+import InputPromise from '../components/InputPromise';
+import InputSecret from '../components/InputSecret';
 
 function Checkout() {
 
@@ -23,6 +25,10 @@ function Checkout() {
         secretsTotal, setSecretsTotal
     } = useMyContext();
 
+    const [validWishes, setValidWishes] = useState(Array(wishesTotal).fill(false));
+    const [validPromises, setValidPromises] = useState(Array(promisesTotal).fill(false));
+    const [validSecrets, setValidSecrets] = useState(Array(secretsTotal).fill(false));
+
     // state to measure if one of the info tabs has been clicked. 
     const [activeTab, setActiveTab] = useState(null);
 
@@ -30,22 +36,51 @@ function Checkout() {
         setActiveTab(tab === activeTab ? null : tab);
     };
 
+    const setAsValidWish = (index, isValid) => {
+        const updatedValidWishes = [...validWishes];
+        updatedValidWishes[index] = isValid;
+        setValidWishes(updatedValidWishes);
+    };
+
+    const setAsValidPromise = (index, isValid) => {
+        const updatedValidPromises = [...validPromises];
+        updatedValidPromises[index] = isValid;
+        setValidPromises(updatedValidPromises);
+    };
+
+    const setAsValidSecret = (index, isValid) => {
+        const updatedValidSecrets = [...validSecrets];
+        updatedValidSecrets[index] = isValid;
+        setValidSecrets(updatedValidSecrets);
+    };
+
+
+    const allInputsValid = () => {
+        return validWishes.every((isValid) => isValid) &&
+            validPromises.every((isValid) => isValid) &&
+            validSecrets.every((isValid) => isValid);
+    };
+
+
     const handleSubmitPayment = (event) => {
         event.preventDefault();
-        setPaymentMade(true);
-        setQuantity(0);
-        setEmeraldQuant(0);
-        setRubyQuant(0);
-        setAmberQuant(0);
-        setQuartzQuant(0);
-        setSapphireQuant(0);
-        setAmethystQuant(0);
-        setWishesTotal(0);
-        setPromisesTotal(0);
-        setSecretsTotal(0);
+
+        if (allInputsValid()) {
+            setPaymentMade(true);
+            setQuantity(0);
+            setEmeraldQuant(0);
+            setRubyQuant(0);
+            setAmberQuant(0);
+            setQuartzQuant(0);
+            setSapphireQuant(0);
+            setAmethystQuant(0);
+            setWishesTotal(0);
+            setPromisesTotal(0);
+            setSecretsTotal(0);
+        } else {
+            alert('Please fill out all the inputs correctly.');
+        }
     }
-
-
 
     return (
         <>
@@ -64,76 +99,43 @@ function Checkout() {
                             <div onClick={() => handleMoveInfoClick('returns')}>
                                 <ReturnsInfo returnsPolicy={activeTab === 'returns'} />
                             </div>
-
-
                         </div>
                         ) : (
-
                             <>
-
-
                                 <div className={styles.checkoutContainer}>
-
                                     <p className={styles.makePaymentHeader}>Make payment</p>
-
-
                                     <form onSubmit={handleSubmitPayment}>
                                         <div className={styles.checkoutLayout}>
-
                                             <div className={styles.inputsContainer}>
-
-                                                {wishesTotal ? (
-                                                    <div >
-                                                        {[...Array(wishesTotal)].map((_, index) => (
-                                                            <>
-                                                                <p className={styles.paymentHeader}>
-                                                                    Wish {index + 1}
-                                                                    {/* <div className={styles.tickBox}> ✓ </div> */}
-                                                                </p>
-                                                                <input
-                                                                    type='text'
-                                                                    className={`${styles.wishPayment} ${styles.singleCurrencyPayment}`}
-                                                                    key={index}
-                                                                    required
-                                                                />
-                                                            </>
-                                                        ))}
-                                                    </div>
-                                                ) : <></>}
-
-                                                {promisesTotal ? (
-                                                    <div >
-                                                        {[...Array(promisesTotal)].map((_, index) => (
-                                                            <>
-                                                                <p className={styles.paymentHeader}>
-                                                                    Promise {index + 1}
-                                                                </p>
-                                                                <input
-                                                                    type='text'
-                                                                    className={`${styles.promisePayment} ${styles.singleCurrencyPayment}`}
-                                                                    key={index}
-                                                                />
-                                                            </>
-                                                        ))}
-                                                    </div>
-                                                ) : <></>}
-
-                                                {secretsTotal ? (
-                                                    <div >
-                                                        {[...Array(secretsTotal)].map((_, index) => (
-                                                            <>
-                                                                <p className={styles.paymentHeader}>
-                                                                    Secret {index + 1}
-                                                                </p>
-                                                                <input
-                                                                    type='text'
-                                                                    className={`${styles.secretPayment} ${styles.singleCurrencyPayment}`}
-                                                                    key={index} />
-                                                            </>
-                                                        ))}
-                                                    </div>
-                                                ) : <></>}
-
+                                                <ul>
+                                                    {wishesTotal ? (
+                                                        <div >
+                                                            {[...Array(wishesTotal)].map((_, index) => (
+                                                                <li key={index}>
+                                                                    <InputWish index={index} setAsValidWish={setAsValidWish} />
+                                                                </li>
+                                                            ))}
+                                                        </div>
+                                                    ) : <></>}
+                                                    {promisesTotal ? (
+                                                        <div >
+                                                            {[...Array(promisesTotal)].map((_, index) => (
+                                                                <li key={index}>
+                                                                    <InputPromise index={index} setAsValidPromise={setAsValidPromise} />
+                                                                </li>
+                                                            ))}
+                                                        </div>
+                                                    ) : <></>}
+                                                    {secretsTotal ? (
+                                                        <div >
+                                                            {[...Array(secretsTotal)].map((_, index) => (
+                                                                <li key={index}>
+                                                                    <InputSecret index={index} setAsValidSecret={setAsValidSecret} />
+                                                                </li>
+                                                            ))}
+                                                        </div>
+                                                    ) : <></>}
+                                                </ul>
                                             </div>
 
                                             <div className={styles.submitContainer} >
@@ -145,13 +147,16 @@ function Checkout() {
                                                         {secretsTotal ? <li> ✧ {secretsTotal} Secrets</li> : <></>}
                                                     </ul>
                                                 </div>
-                                                <input type='submit' className={styles.formSubmitButton} value='Process Payment' />
+                                                <input
+                                                    type='submit'
+                                                    className={styles.formSubmitButton}
+                                                    value='Process Payment'
+                                                />
                                             </div>
 
                                         </div>
                                     </form>
 
-                                    {/* <div className={styles.tickBox} >✓</div> */}
 
                                 </div>
                             </>)}
