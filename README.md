@@ -7,6 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 React \
 React Router \
+React Context \
 css \
 Custom Artwork
 
