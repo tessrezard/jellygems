@@ -1,26 +1,22 @@
 .pageContainer{
-    /* height: 90vh; */
 }
 
+/* checkout title */
 .title{
     font-family: 'Luminari-regular';
     font-weight: 700;
     color: #9299cf;
     font-size: 1.5em;
-    margin: 0;
+    margin: auto;
+    margin-top: 1rem;
 }
 
 
 /* main content below CHECKOUT heading */
 .checkoutContainer {
-    width: 90vw;
-    background-color: #fffdfb;
-}
-
-.checkoutLayout {
-    display: flex;
-    justify-content: space-around;
-    flex-flow: row;
+    /* width: 90vw; */
+    margin: 0.25rem;
+    min-width: 260px;
 }
 
 .makePaymentHeader{
@@ -30,71 +26,43 @@
     margin-top: 1rem;
 }
 
+/* container for inputs  */
+.checkoutLayout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 /* flex item child of checkoutLayout */
+/* input type wish/prom/secret && input box && tick*/
 .inputsContainer {
     display: flex;
     justify-content: center;
     flex-flow: column;
-    margin-bottom: 3%;
-    padding: 3%;
-
-}
-.inputANDvalidation{
-    width: 40vw;
-    display: flex;
-    justify-content: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    width: 300px;
+    margin: auto;
 }
 
-.tickBox {
-    height: 20px;
-    width: 20px;
-    background-color: #d9ffc6;
-    border-radius: 50%;
-    font-family: 'Luminari-Regular';
-    font-size: 17px;
-    color: #507660;
-    margin-left: 10px;
-    margin-top: auto;
-    margin-bottom: auto;
-}
 
 /* flex item child of checkoutLayout */
 .submitContainer {
     width: 40vw;
-    padding: 3%;
     display: flex;
     flex-flow: column wrap;
-    align-items: flex-start;
-    
+    /* align-items: center; */
+    justify-content: center;
+    width: 300px;
+    margin: auto;
 }
 
 
-
-@media (max-width: 700px) {
-
-    .checkoutLayout {
-        flex-flow: column;
-    }
-
-    .inputsContainer {
-        width: 300px;
-        margin: auto;
-    }
-
-    .submitContainer {
-        width: 300px;
-        margin: auto;
-
-    }
-
-
-    .liContainer {
-        width: 320px;
-    }
-}
 
 .toPay{
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .toPayHeader {
@@ -104,53 +72,72 @@
 
 .pricesToPay {
     border: 3px solid #c4c9f1;
-    /* margin-top: 1em;
-    margin-bottom: 1em; */
-    padding: 0.5em;
+    background-color: #fffdfb;
+
+    padding: 0.5rem;
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
+    flex-flow: column wrap;
     margin-bottom: 10px;
-    width: fit-content;
-}
-
-
-.paymentHeader {
-    margin: 0;
-    margin-top: 10px;
-    font-size: 1em;
-    display: flex;
-    justify-content: center;
-    font-family: 'Luminari-Regular';
-
-}
-
-/* the input box to write into */
-.singleCurrencyPayment {
-    background-color: rgb(169, 216, 216);
+    width: 9rem;
     margin: auto;
-    width: 100%;
-    border: 3px inset hsl(231, 100%, 95%);
-    height: 2rem;
-}
-
-.singleCurrencyPayment:focus {
-    outline: 1px solid rgba(194, 141, 255, 0.806);
 }
 
 
-.wishPayment {
-    background-color: #f1ecff;
-}
+/* --------------------------------CLASSES USED IN THE CURRENCY INPUT COMPONENTS-------------------------------- */
+/* --------------------------------USED IN INDIVIDUAL CURRENCY INPUT COMPONENTS */
+        .paymentHeader {
+            margin: 0;
+            margin-top: 10px;
+            font-size: 1em;
+            font-family: 'Luminari-Regular';
+        }
 
-.promisePayment {
-    background-color: #e2d8fe;
-}
+        .inputANDvalidation{
+            width: 230px;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+        }
 
-.secretPayment {
-    background-color: #cebefb;
-}
+        .tickBox {
+            height: 20px;
+            width: 20px;
+            background-color: #d9ffc6;
+            border-radius: 50%;
+            font-family: 'Luminari-Regular';
+            font-size: 17px;
+            color: #507660;
+            margin-left: 10px;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
 
+        /* the input box to write into */
+        .singleCurrencyPayment {
+            background-color: rgb(169, 216, 216);
+            margin: auto;
+            width: 100%;
+            border: 3px inset hsl(231, 100%, 95%);
+            height: 2rem;
+        }
+
+        .singleCurrencyPayment:focus {
+            outline: 1px solid rgba(194, 141, 255, 0.806);
+        }
+
+
+        .wishPayment {
+            background-color: #f1ecff;
+        }
+
+        .promisePayment {
+            background-color: #e2d8fe;
+        }
+
+        .secretPayment {
+            background-color: #cebefb;
+        }
+/* ------------------------------------------------------------------------------------------------ */
 
 
 
@@ -189,3 +176,29 @@
     left: 2.5px;
 
 }
+
+@media (min-width: 370px){
+    .checkoutContainer {
+        width: 90vw;
+        margin: 0.25rem;
+        min-width: 260px;
+        background-color: #fffdfb;
+    }
+    .inputANDvalidation{
+        width: 280px;
+        margin: auto;
+    }
+}
+
+
+@media (min-width: 700px) {
+
+.inputANDvalidation {
+    display: flex;
+    flex-flow: row ;
+    justify-content: flex-start;
+    align-content: flex-end;
+}
+}
+
+

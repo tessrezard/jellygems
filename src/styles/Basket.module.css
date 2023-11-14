@@ -7,7 +7,9 @@
 
 .basketContainer {
     background-color: #fffdfb;
-    width: clamp(27rem, 40vw, 50rem);
+    width: clamp(280px, 40vw, 50rem);
+    width: 70vw;
+    min-width: 350px;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -17,7 +19,8 @@
 
 .subtotalContainer {
     background-color: #fffdfb;
-    width: 40vw;
+    width: 70vw;
+    min-width: 350px;
     margin: 5px;
     display: flex;
     flex-flow: column;
@@ -34,50 +37,91 @@
 .liContainer {
     display: flex;
     flex-flow: row;
-    width: 390px;
-    height: 120px;
+    /* width: 390px; */
+    width: 80%;
+    height: fit-content;
     justify-content: space-between;
     align-items: center;
     border: 3px solid #c4c9f1;
     padding: 9px;
-    margin: 4px;
+    margin: auto;
+    margin-bottom: 1rem;
 }
 
 
 
-@media (max-width: 1000px) {
-    .subtotalContainer {
-        width: 70vw;
-    }
 
-    .basketContainer {
-        /* width: 70vw; */
-    }
-
-    
-    .liContainer {
-        width: 320px;
-    }
+.totalToPayHeaderContainer {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
 }
 
+
+
+/* ------------icon image for the item in basket */
+.stoneImgContainer {
+    margin-right: 10px;
+}
+.stoneImg {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    object-position: 0 -22px;
+    border: 2px solid #acb1e5;
+}
+.stoneImg {
+    width: 100px;
+    height: 100px;
+    object-position: 0 -32px;
+}
+/* ------------*/
+
+
+.itemName {
+    margin: 0;
+    font-size: 1rem;
+    font-family: 'Luminari-regular';
+    font-weight: 700;
+}
+
+
+/* ---------- Container for buttons and quantity number------- */
+.quantityContainer {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #8d92bc;
+    width: 100px;
+    margin: auto;
+    padding: 0.5rem;
+}
+
+/* ----------number in basket------- */
+.quantity {
+    color: #5e6498;
+    font-family: 'Luminari-Regular';
+    font-weight: 700;
+    font-size: 1rem;
+    width: 2rem;
+    position: relative;
+    left: 1px;
+}
+
+/* --------------- -/+ buttons for quantity------- */
 .bothButtonsContainer {
     display: flex;
     flex-flow: row;
 }
-
 .buttonContainer {
-    width: 30px;
-    height: 30px;
-    margin-bottom: 4px;
-    margin-top: 3px;
-    margin-left: 5px;
-    margin-right: 5px;
+    width: 1.5rem;
+    height: 1.5rem;
+    
 }
-
-
 .button {
-    width: 22px;
-    height: 22px;
+    width: 1.25rem;
+    height: 1.25rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,73 +130,25 @@
     cursor: pointer;
     transition: all 300ms;
     position: relative;
-    top: 1px;
+    bottom: 0.5px;
     left: 1px;
 }
-
 .button:active {
     background-color: #8d92bc;
-    width: 15px;
-    height: 15px;
+    width: 0.85rem;
+    height: 0.85rem;
     position: relative;
-    top: 5px;
-    left: 5px;
+    top: 0.25rem;
+    left: 0.25rem;
     transition: all 200ms;
 }
-
 .buttonText {
     margin: 0;
-    font-size: 22px;
+    font-size: 1rem;
     font-weight: 600;
 }
+/* --------------- */
 
-.totalToPayHeaderContainer {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-}
-
-/* .currencyAdjustmentInfo{
-    position: relative;
-    left: 30px;
-    bottom: 40px;
-    border: 2px solid #8d92bc;
-    background-color: #e7e9fd;
-    padding: 2%;
-} */
-
-
-.stoneImgContainer {
-    margin-right: 10px;
-
-}
-
-.stoneImg {
-    width: 110px;
-    height: 110px;
-    object-fit: cover;
-    object-position: 0 -32px;
-    border: 2px solid #acb1e5;
-
-}
-
-.quantityContainer {
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #8d92bc;
-    width: 120px;
-    margin: auto;
-}
-
-.quantity {
-    color: #5e6498;
-    font-family: 'Luminari-Regular';
-    font-weight: 700;
-    /* text-shadow:  1px 1px   #050717; */
-    font-size: 22px;
-}
 
 
 .itemLi {
@@ -162,12 +158,6 @@
 }
 
 
-.itemName {
-    margin: 0;
-    font-size: 23px;
-    font-family: 'Luminari-regular';
-    font-weight: 700;
-}
 
 
 li:hover {
@@ -239,8 +229,10 @@ li:hover {
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
-    padding: 2%;
+    max-width: 300px;
+    padding: 5px;
     transition: all 520ms;
+    font-size: 1rem;
 }
 
 .proceedToCheckout:hover {
@@ -252,9 +244,118 @@ li:hover {
     padding: 2%;
 }
 
+.bigMistakeContainer{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
 .bigMistake{
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-family: 'Luminari-regular';
     font-weight: 700;
     color: #3a4078;
+    margin: 1rem;
+}
+
+.goShoppingNow{
+    width: 180px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: 'Luminari-regular';
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #3a4078;
+    border: 5px outset #c4c9f1;
+    background-color: #d4d9ff;
+    transition: all 300ms;
+    margin: auto;
+    display: flex;
+    align-content: center;
+}
+
+.goShoppingNow:active{
+    width: 160px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.goShoppingNow p{
+    margin: 0.1rem;
+}
+/* ------------------------------------------MEDIA QUERIES ------------------------------------------ */
+
+@media (min-width: 350px){
+    .liContainer{
+        width: 300px;
+    }
+    .itemName {
+        font-size: 1.35rem;
+    }
+}
+
+@media (min-width: 550px){
+    .basketContainer {
+        width: 500px;
+    }
+    .subtotalContainer {
+        width: 500px;
+    }
+    .liContainer{
+        width: 400px;
+    }
+    .quantityContainer {
+        width: 110px;
+        height: 3rem;
+    }
+    .quantity{
+        margin: 0.2rem;
+        width: 2rem;
+        font-size: 1.25rem;
+        left: 0;
+    }
+    .buttonContainer{
+        width: 2.5rem;
+        height: 2.5rem; 
+    }
+    .button {
+        width: 2rem;
+        height: 2rem;
+        top: 1px;
+        border: 3px outset #c4c9f1;
+        transition: all 300ms;
+    }
+    .button:active {
+        width: 1.5rem;
+        height: 1.5rem;
+        top: 0.29rem;
+        border: 3px outset #c4c9f1;
+        transition: all 300ms;
+    }
+}
+
+
+@media (min-width: 1000px) {
+    .basketContainer {
+        width: 700px;
+    }
+    .subtotalContainer {
+        width: 700px;
+    }
+    .liContainer {
+        width: 600px;
+        height: fit-content;
+    }
+    .stoneImgContainer {
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-right: 10px;
+    }
+    .stoneImg {
+        width: 150px;
+        height: 150px;
+        object-position: 0 -32px;
+    }
+    .itemName {
+        font-size: 2rem;
+    }
 }

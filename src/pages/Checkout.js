@@ -106,8 +106,8 @@ function Checkout() {
                                     <p className={styles.makePaymentHeader}>Make payment</p>
                                     <form onSubmit={handleSubmitPayment}>
                                         <div className={styles.checkoutLayout}>
-                                            <div className={styles.inputsContainer}>
-                                                <ul>
+                                            <div >
+                                                <ul className={styles.inputsContainer}>
                                                     {wishesTotal ? (
                                                         <div >
                                                             {[...Array(wishesTotal)].map((_, index) => (
