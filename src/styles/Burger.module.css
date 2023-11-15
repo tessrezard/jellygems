@@ -1,0 +1,189 @@
+/* ------------------------BURGER------------------------ */
+.burgerContainer {
+    /* margin: auto; */
+    width: 3rem;
+}
+
+.bar {
+    width: 2.5rem;
+    height: 0.3rem;
+    background-color: aliceblue;
+    border-radius: 1rem;
+    margin: auto;
+}
+
+.bar:nth-child(1) {
+    background-color:#f1ecff;
+    background-color: #cebefb;
+}
+.bar:nth-child(2) {
+    background-color:#e2d8fe;
+}
+.bar:nth-child(3) {
+    background-color: #cebefb;
+    background-color:#f1ecff;
+} 
+
+
+.active {
+    /* background-color: rgb(243, 172, 245); */
+    padding: 5px;
+}
+
+.burgerContainer>div:nth-child(1) {
+    /* -webkit-animation: inT 1s backwards;
+    -webkit-animation-direction: reverse; */
+    animation: toBurgerTopBar 1s backwards;
+    animation-direction: normal;
+    transform: translateY(-0.3rem);
+}
+.active>div:nth-child(1) {
+    /* -webkit-animation: outT 1s backwards;
+    -webkit-animation-direction: reverse; */
+    animation: toActiveTopBar 1s forwards;
+    animation-direction: normal;
+    transform: translateY(0.3rem) rotate(45deg) ;
+}
+
+
+.burgerContainer>div:nth-child(2) {
+    /* -webkit-animation: inM 1s backwards;
+    -webkit-animation-direction: reverse; */
+    animation: toBurgerMiddleBar 1s forwards;
+    animation-direction: normal;
+}
+.active>div:nth-child(2) {
+    /* -webkit-animation: outM 1s backwards;
+    -webkit-animation-direction: reverse; */
+    animation: toActiveMiddleBar 1s forwards;
+    animation-direction: normal;
+    transform: rotate(45deg);
+}
+
+
+
+.burgerContainer>div:nth-child(3) {
+    /* -webkit-animation: inBtm 1s backwards;
+    -webkit-animation-direction: reverse; */
+    /* animation: toBurgerBottomBar 1s forwards; */
+    transform: translateY(+0.9rem);
+    animation: toBurgerBottomBar 1s forwards;
+    animation-direction: normal;
+
+}
+.active>div:nth-child(3) {
+    /* -webkit-animation: outBtm 1s backwards;
+    -webkit-animation-direction: reverse; */
+    animation: toActiveBottomBar 1s forwards;
+    animation-direction: normal;
+    transform: translateY(-0.9rem) rotate(135deg);
+
+}
+
+/* -------------------- BURGER KEYFRAME ANIMATIONS-------------------- */
+
+/* 
+Modern browsers have widely adopted the standard @keyframes syntax, 
+so the need for the -webkit-keyframes prefix has diminished over time. 
+However, it's still common to see both versions for compatibility reasons. 
+*/
+
+
+
+@keyframes toBurgerTopBar {
+    0% {
+        transform: translateY(0px) rotate(45deg);
+    }
+    50% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-0.3rem) rotate(0deg);
+    }
+}
+@keyframes toActiveTopBar {
+    0% {
+        transform: translateY(-0.3rem) rotate(0deg);
+    }
+    50% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(0.3rem) rotate(45deg);
+    }
+}
+
+
+
+
+
+@keyframes toBurgerMiddleBar {
+    0% {
+        transform: rotate(45deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@keyframes toActiveMiddleBar {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+
+@keyframes toBurgerBottomBar {
+    0% {
+        transform: translateY(+0.3rem) rotate(135deg);
+    }
+    50% {
+        top: 0;
+        transform: translateY(0px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(+0.3rem) rotate(0deg);
+    }
+}
+
+@keyframes toActiveBottomBar {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-0.3rem) rotate(135deg);
+    }
+}
+
+
+
+
+
+
+
+
+/* @-webkit-keyframes outBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+} */
+

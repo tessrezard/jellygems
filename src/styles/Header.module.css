@@ -1,76 +1,148 @@
+/* The flex structure of the header is like this: 
+
+    <div headerContainer ROW >
+      <div titleANDwideNav COLUMN > 
+        <title siteTitle/>
+        if wide <wideNavContainer/>
+      </div titleANDwideNav COLUMN >
+      if narrow <Burger/>
+    </div headerContainer ROW >
+
+*/
+
+
 .headerContainer {
-    width: 100vw;
-    height: 100px;
-    background-image: url('../images/misc/purpleStrip.jpg');
-    background-repeat: repeat-x;
-    background-size: cover;
-    background-position: center center;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2%;
+  width: 100vw;
+  height: 100px;
+  background-image: url('../images/misc/purpleStrip.jpg');
+  background-repeat: repeat-x;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.siteTitle  {
-    color: #f1ede9;
-    align-self: center;
-    font-family: 'Luminari-Regular';
-    font-size: 2.3em;
-    margin: 10px;
-    padding: 0;
-    text-decoration: none;
-    width: 40%
-  }
-  
-  
+.activeBurgerHeaderContainer{
+  background-image: none;
+  background-color: #8991c2;
+}
+/* of vw < 450, this is just the title */
+.titleANDwideNav {
+  width: 200px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
 
-.navContainer {
-    color: #f1ede9;
-    width: 45%;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    padding-right: 5%;
-    margin-top: 25px;
+.siteTitle {
+  color: #f1ede9;
+  align-self: center;
+  font-family: 'Luminari-Regular';
+  font-size: 2.5rem;
+  margin-top: 0.5rem;
+  padding: 0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+
+/* only visible over 450px */
+.wideNavContainer {
+  color: #f1ede9;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: auto;
+  height: 2rem;
+}
+
+.wideNav {
+  width: 350px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
 }
 
 .navItem {
-    color: #f1ede9;
-    font-size: 1.25em;
-    transition: all 200ms;
-    text-decoration: none;
-    margin: 3px;
+  color: #f1ede9;
+  font-size: 1.25em;
+  transition: all 200ms;
+  text-decoration: none;
+  margin: 3px;
 }
 
-
-
 .activeNav {
-    color: #ffffff;
-    font-size: 1.35em;
-    border-bottom: 2px solid #ffffff;
-    position: relative;
-    bottom: 2px;
+  color: #ffffff;
+  font-size: 1.35em;
+  border-bottom: 2px solid #ffffff;
+  position: relative;
+  bottom: 2px;
 }
 
 ul {
-    list-style: none;
-    padding: unset;
-    margin: unset;
+  list-style: none;
+  padding: unset;
+  margin: unset;
+}
+
+Link {
+  padding: 14px;
+  transition: all linear 0.3s;
+}
+
+li:hover {
+  background: gray;
+  cursor: pointer;
+  color: #fff;
+}
+
+.dropdown-menu {
+  background: #fff;
+  box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.05);
+  transition: all linear 0.3s;
+}
+
+
+/* ------------------------------------------MEDIA QUERIES ------------------------------------------ */
+
+
+@media (min-width: 350px) {}
+
+
+/* THIS IS WHEN BURGER MENU BECOMES CLASSIC MENU */
+@media (min-width: 450px) {
+  .headerContainer {
+    width: 100vw;
+    height: 100px;
+    justify-content: center;
   }
-  
-  Link {
-    padding: 14px;
-    transition: all linear 0.3s;
+.titleANDwideNav {
+  width: 900px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+}
+
+@media (min-width: 1000px) {
+  .headerContainer {
+    width: 100vw;
+    height: 135px;
   }
-  
-  li:hover {
-    background: gray;
-    cursor: pointer;
-    color: #fff;
+
+  .siteTitle {
+    font-size: 4rem;
   }
-  
-  .dropdown-menu {
-    background: #fff;
-    box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.05);
-    transition: all linear 0.3s;
+
+  .navItem {
+    font-size: 1.35em;
   }
-  
+
+  .activeNav {
+    font-size: 1.40em;
+  }
+}

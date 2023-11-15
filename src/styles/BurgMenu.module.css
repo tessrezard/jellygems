@@ -1,0 +1,30 @@
+
+
+/* ------------------------MENU------------------------ */
+
+.bergMenuContainer {
+    background-color: #8991c2;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 10;
+    animation: smoothBergMenu 1s ease-in-out ;
+    transition: all 200ms ;
+}
+@keyframes smoothBergMenu {
+    0% {
+        height: 0vh;
+    }
+    100% {
+        height: 100vh;
+    }
+}
+
+
+.dropdownMenuContainer{
+    width: 200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    background-color: #ffff;
+}

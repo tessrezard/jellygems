@@ -2,21 +2,39 @@ import React from "react";
 import styles from '../styles/DropdownMenu.module.css';
 import { Link } from "react-router-dom";
 
-const DropdownMenu = () => {
+const DropdownMenu = ({setActiveBurger}) => {
+
+  const handleClick = () => {
+    setActiveBurger(prev => !prev);
+  };
+
   return (
     <div className={styles.dropdownMenu}>
       <ul>
+      <li>
+          <Link
+            to={'/products'}
+            className={styles.dropItem}
+            onClick={handleClick}
+          >
+            <strong>View All</strong>
+          </Link>
+        </li>
         <li>
           <Link
             to={'product-details-page/:Amber'}
             className={styles.dropItem}
-          >Amber
+            onClick={handleClick}
+          >
+            Amber
           </Link>
         </li>
         <li>
           <Link
             to={'product-details-page/:Amethyst'}
             className={styles.dropItem}
+            onClick={handleClick}
+
           >Amethysts
           </Link>
         </li>
@@ -24,37 +42,43 @@ const DropdownMenu = () => {
           <Link
             to={'product-details-page/:Emerald'}
             className={styles.dropItem}
-          >Emeralds
+            onClick={handleClick}
+
+          >
+            Emeralds
           </Link>
         </li>
         <li>
           <Link
             to={'product-details-page/:Sapphire'}
             className={styles.dropItem}
-          >Sapphires
+            onClick={handleClick}
+
+          >
+            Sapphires
           </Link>
         </li>
         <li>
           <Link
             to={'product-details-page/:Ruby'}
             className={styles.dropItem}
-          >Rubies
+            onClick={handleClick}
+
+          >
+            Rubies
           </Link>
         </li>
         <li>
           <Link
             to={'product-details-page/:Quartz'}
             className={styles.dropItem}
-          >Rose Quartz
+            onClick={handleClick}
+
+          >
+            Rose Quartz
           </Link>
         </li>
-        <li>
-          <Link
-            to={'/products'}
-            className={styles.dropItem}
-          >View All
-          </Link>
-        </li>
+
       </ul>
     </div>
   );

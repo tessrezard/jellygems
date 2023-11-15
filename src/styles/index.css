@@ -2,7 +2,7 @@
   font-family: 'Luminari-Regular';
   src: 
     local('Luminari-Regular'), 
-    url(./fonts/Luminari-Regular.ttf) format('ttf'),
+    url(../fonts/Luminari-Regular.ttf) format('ttf'),
 }
 
 
