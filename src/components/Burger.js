@@ -1,13 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { NavLink, Link, useLocation } from "react-router-dom";
-import { useMyContext } from '../MyContext';
-import styled, { keyframes } from 'styled-components';
-
-import InBasketIcon from "./InBasketIcon";
-import DropdownMenu from "./DropdownMenu";
+import React from "react";
 
 import styles from '../styles/Burger.module.css';
-import headerStyles from '../styles/Header.module.css';
 
 // BergMenu is the menu that appears when Berger is clicked on mobile screens
 // Styled components for the button and animations
