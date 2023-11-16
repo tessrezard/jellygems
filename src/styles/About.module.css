@@ -1,27 +1,30 @@
 .aboutPageContainer {
-    height: 150vh;
+    height: 195vh;
     width: 100vw;
 }
 
-/* --------------------------------------------------- */
-    /* HINT infoIcon and pick a pill */
-        .pickAPill {
-            /* position: relative; */
-            margin-bottom: 1px;
-            margin-top: 0px;
+/* Pill colors -------- */
+.BluePillColor {
+    background-color: #8bbcfc;
+}
+.RedPillColor {
+    background-color: #fc8b8b;
+}
 
+
+/* -----------HINT infoIcon and pick a pill---------- */
+/* --------------------------------------------------- */
+        .pickAPill {
+            margin-bottom: 0.25rem;
+            margin-top: 1rem;
             margin-left: 40px;
             z-index: 10;
             display: flex;
             align-items: baseline;
         }
-
-
         .pickAPillHint {
             margin: 0;
             margin-bottom: 5px;
-
-            /* width: 150px; */
             margin-left: 2%;
             margin-top: auto;
             margin-bottom: auto;
@@ -33,7 +36,6 @@
             padding: 5px;
             font-size: 0.75em;
         }
-
         .littlePill {
             width: 30px;
             height: 15px;
@@ -41,77 +43,68 @@
             margin-left: 10px;
             border-radius: 10px;
         }
-
-        .littleBluePill {
-            background-color: #8bbcfc;
-        }
-
-        .littleRedPill {
-            background-color: #fc8b8b;
-        }
 /* --------------------------------------------------- */
 
 
+
+/* ------------------------ blue & red page POSITIONING --------------------------- */
+    /* this is the blue & red page positioning and  */
+    /* i used % to get consistent centered positioning */
+    /* this might seem clunky to have the two pill pages have different positioning classes,
+    but i made this decision because it makes for more smooth toggling/clicking between red and blue pages */
 .pillPageBlue {
     position: absolute;
-    /* top: 110px; */
     left: 3.5%;
-}
+    left: 0.5%;
 
+}
 .pillPageRed {
     position: absolute;
-    /* bottom: 43px; */
     left: 3.5%;
+    left: 0.5%;
+
 }
 
 
-/* to offset the pills, so we can see both when the containers overlap */
-.BluePillPosition {
-    left: 100px;
-}
-.RedPillPosition {
-    left: 200px;
-}
-
-
-
-/* The actual pills shapes */
+/* ------The actual pill shapes PILLS -------------------------*/
 .pill {
     width: 90px;
-    height: 43px;
+    height: 37px;
     position: relative;
-    top: 0;
-    border-radius: 20px 20px 20px 20px;
+    border-radius: 18px 18px 18px 18px;
 }
-
-/* Pill colours  */
-.BluePillColor {
-    background-color: #8bbcfc;
+/* to offset the pills, so we can see both when the containers overlap */
+/* added z-index or pills need to be >90px over because there is an undefined div(?) that messes with clicking ???? */
+.BluePillPosition {
+    left: 3rem;
+    z-index: 1;
 }
-.RedPillColor {
-    background-color: #fc8b8b;
+.RedPillPosition {
+    left: 9rem;
+
 }
+/* ------ -------------------------*/
 
-
+/* ------------------------------------------*/
 /* structure of the space in pill window  */
+/* insidePillContainer is what controls the WIDTH OF PILL PAGE */
 .insidePillContainer {
     padding: 10px;
     height: fit-content;
-    width: 90vw;
-    height: 138vh;
     position: absolute;
     top: 35px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 18px;
+    width: 90vw;
+    height: 138vh;
 }
 
-
-/* background colour of insidePillContainer */
+/* background color of insidePillContainer */
 .blueGradient{
-    background-image: linear-gradient(#8bbcfc, #f1ede9);
+    background-image: linear-gradient(#8bbcfc, #f6f4f2);
 }
 .redGradient{
-    background-image: linear-gradient(#fc8b8b, #f1ede9);
+    background-image: linear-gradient(#fc8b8b, #f6f4f2);
 }
 
 
@@ -145,4 +138,217 @@
     .info{
         /* width: 700px; */
     }
+/* --------------------------------------------------- */
+
+@media (min-width: 300px) {
+    .BluePillPosition {
+        left: 4rem;
+        z-index: 1;
+    }
+    .RedPillPosition {
+        left: 10rem;
+    }
+}
+
+
+@media (min-width: 330px) {
+    .pillPageBlue {
+        left: 2.5%;
+    }
+    .pillPageRed {
+        left: 2.5%;
+    }
+}
+
+
+@media (min-width: 700px) {
+    .pillPageBlue {
+        left: 3.5%;
+    }
+    .pillPageRed {
+        left: 3.5%;
+    }
+}
+
+@media (min-width: 1050px){
+    .pillPage {
+        /* width: 900px; */
+        /* max-width: 980px; */
+        position: absolute;
+    }
+    .pillPageBlue {
+        left: 4.5%;
+    }
+    .pillPageRed {
+        left: 4.5%;
+    }
+
+    /* structure of the space in pill window  */
+.insidePillContainer {
+    width: 90vw;
+    height: 138vh;
+    padding: 10px;
+    height: fit-content;
+    height: 138vh;
+    position: absolute;
+    top: 35px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+}
+
+
+
+
+/* --------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* --------------------------------------------------- */
+/* --------------------------------------------------- */
+/* --------------------------------------------------- */
+/* --------------------------------------------------- */
+/* --------------------------------------------------- */
+/* --------------------------------------------------- */
+/* --------------------------------------------------- */
+/* -----------------------OLD OLD OLD ---------------------------- */
+
+/* .aboutPageContainer {
+    height: 150vh;
+    width: 100vw;
+} */
+
+/* --------------------------------------------------- */
+    /* HINT infoIcon and pick a pill */
+        /* .pickAPill {
+            margin-bottom: 1px;
+            margin-top: 0px;
+            margin-left: 40px;
+            z-index: 10;
+            display: flex;
+            align-items: baseline;
+        } */
+
+/* 
+        .pickAPillHint {
+            margin: 0;
+            margin-bottom: 5px;
+            margin-left: 2%;
+            margin-top: auto;
+            margin-bottom: auto;
+            border: 2px solid #acb1e5;
+            background-color: #d3d6f7;
+            border-radius: 10px;
+            display: flex;
+            flex-flow: row;
+            padding: 5px;
+            font-size: 0.75em;
+        } */
+/* 
+        .littlePill {
+            width: 30px;
+            height: 15px;
+            margin: auto;
+            margin-left: 10px;
+            border-radius: 10px;
+        } */
+
+        /* .littleBluePill {
+            background-color: #8bbcfc;
+        }
+
+        .littleRedPill {
+            background-color: #fc8b8b;
+        } */
+/* --------------------------------------------------- */
+
+/* 
+.pillPageBlue {
+    position: absolute;
+    left: 3.5%;
+}
+
+.pillPageRed {
+    position: absolute;
+    left: 3.5%;
+} */
+
+
+/* to offset the pills, so we can see both when the containers overlap */
+/* .BluePillPosition {
+    left: 100px;
+}
+.RedPillPosition {
+    left: 200px;
+} */
+
+
+
+/* The actual pills shapes */
+/* .pill {
+    width: 90px;
+    height: 43px;
+    position: relative;
+    top: 0;
+    border-radius: 20px 20px 20px 20px;
+} */
+
+/* Pill colours  */
+/* .BluePillColor {
+    background-color: #8bbcfc;
+}
+.RedPillColor {
+    background-color: #fc8b8b;
+} */
+
+
+/* structure of the space in pill window  */
+/* .insidePillContainer {
+    padding: 10px;
+    height: fit-content;
+    width: 90vw;
+    height: 138vh;
+    position: absolute;
+    top: 35px;
+    object-fit: cover;
+    border-radius: 10px;
+} */
+
+
+/* background colour of insidePillContainer */
+/* .blueGradient{
+    background-image: linear-gradient(#8bbcfc, #f1ede9);
+}
+.redGradient{
+    background-image: linear-gradient(#fc8b8b, #f1ede9);
+} */
+
+
+/* --------------------------------------------------- */
+/* Red Pill content note styling  */
+    /* .contentInfoContainer{
+        border: 3px outset #a4abe0;
+        border-radius: 30px;
+        background-color: hsl(231, 100%, 92%);
+        margin: auto;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+        width: clamp( 150px, 70%, 700px);
+        font-size: 15px;
+        transition: all;
+    }
+    .contentInfoHeaders{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .contentInfoIconContainer{
+        display: flex;
+        margin: 0;
+        margin-left: 10px;
+    }
+    .info{
+    } */
 /* --------------------------------------------------- */

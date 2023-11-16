@@ -45,14 +45,12 @@ function About() {
                         {pillInfo ? (<>
                             <div className={styles.pickAPillHint}>
                                 Pick a pill
-                                <div className={` ${styles.littlePill} ${styles.littleBluePill} `}></div>
-                                <div className={` ${styles.littlePill} ${styles.littleRedPill} `}></div>
+                                <div className={` ${styles.littlePill} ${styles.BluePillColor} `}></div>
+                                <div className={` ${styles.littlePill} ${styles.RedPillColor} `}></div>
                             </div>
                         </>) : (<></>)}
                     </div>
 
-
-                    <div>
 
                         {pill === 'blue' ? (
                             <>
@@ -75,7 +73,6 @@ function About() {
                             )
                         }
 
-                    </div>
                 </div>
             </main>
         </>
