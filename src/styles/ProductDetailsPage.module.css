@@ -8,50 +8,44 @@
 
 }
 
-.heroImgContainer{
-    width: 35vw;
+
+.heroImgContainer {
+    width: 255px;
+    padding-top: 3%;
+    margin: auto;
+    margin-top: 2rem;
     padding-right: 1%;
     padding-left: 1%;
     padding: 3%;
-    height: 55vw;
-    background-color: #949ac6 ;
-    border-radius: 25px;
-    display: flex;
+    border: 3px solid #bdc3f0;
+    background-color: #949ac6;
     align-items: center;
     justify-content: center;
 }
 
-
-
-.heroImg{
+.heroImg {
     width: 100%;
     height: 100%;
 }
+
 .infoContainer {
-    width: 48vw;
+    width: 100vw;
     display: flex;
     flex-flow: column;
     justify-content: center;
 }
 
+.info p {
+    font-size: 1rem;
+    margin: 2rem;
+    color: #3a4078;
 
-@media (max-width: 700px) {
-    .heroImgContainer{
-        padding-top: 3%;
-        width: 375px;
-        margin: auto;
-        height: 560px;
-    }
-    .infoContainer {
-        width: 100vw;
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-    }
 }
 
-
-
+h1 {
+    margin-top: 0;
+    color: #3a4078;
+}
 
 h2 {
     font-family: 'Luminari-Regular';
@@ -64,21 +58,50 @@ h2 {
 }
 
 
-.pairsWellWithContainer{
+.pairsWellWithContainer {
     margin: 5%;
-
 }
-.pairImgContainer{
 
-}
 .pairImg {
     width: 80%;
     margin: 1%;
     height: 95%;
 }
 
-.AddToBasketContainer{
+.AddToBasketContainer {
     display: flex;
     justify-content: center;
     padding: 2%;
+}
+
+
+/* -------------------- Media Queries -------------------- */
+@media (min-width: 450px) {
+    .heroImgContainer {
+        width: 375px;
+        /* height: 560px; */
+    }
+}
+
+
+@media (min-width: 700px) {
+    .heroImgContainer {
+        width: 35vw;
+        /* height: 55vw; */
+    }
+    .infoContainer {
+        width: 48vw;
+    }
+}
+
+
+
+@media (min-width: 1200px) {
+    .infoContainer {
+        width: 48vw;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+    }
+    
 }

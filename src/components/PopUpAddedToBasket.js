@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import styles from '../styles/PopUpAddedToBasket.module.css';
 
 
-function PopUpAddedToBasket({ name, quantityAdded }) {
+function PopUpAddedToBasket({ name, quantityAdded, popUp, setPopUp, setJustAdded, justAdded }) {
 
     const [isVisible, setIsVisible] = useState(true);
 
     function handleX() {
         setIsVisible(false);
+        if (popUp){
+            setPopUp(false);
+            setJustAdded(false);
+        }
     }
 
 

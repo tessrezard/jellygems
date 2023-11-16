@@ -20,11 +20,23 @@
     }
 }
 
-
+/* This if for the dropdown of products, 
+list of the different flavours */
 .dropdownMenuContainer{
     width: 200px;
     margin: auto;
     display: flex;
     justify-content: center;
     background-color: #ffff;
+}
+
+.navItem{
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 3rem;
+}
+
+.activeNav{
+    font-size: 1.95rem;
+    font-weight: 700;
 }

@@ -69,10 +69,10 @@
 
 .navItem {
   color: #f1ede9;
-  font-size: 1.25em;
+  font-size: 1.25rem;
   transition: all 200ms;
   text-decoration: none;
-  margin: 3px;
+  margin: 0.5rem;
 }
 
 .activeNav {

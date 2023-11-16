@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from '../styles/AddToBasket.module.css';
 import PopUpAddedToBasket from "./PopUpAddedToBasket";
 import { useMyContext } from '../MyContext';
@@ -10,13 +10,40 @@ const AddToBasket = ({ name }) => {
     const [currency, setCurrency] = useState('Wish');
     const [justAdded, setJustAdded] = useState(false);
     const [currencyInfo, setCurrencyInfo] = useState(false);
+    const [popUp, setPopUp] = useState(false);
+    const timeoutIDRef = useRef(null);
 
-    //automatically close pop-up window after 5 seconds
-    if (justAdded) {
-        setTimeout(() => setJustAdded(false), 2000)
-    }
+    // //automatically close pop-up window after 5 seconds
+    // if (popUp) {
+    //     if (justAdded) {
+    //         setTimeoutID(setTimeout(() => {
+    //             setJustAdded(false);
+    //             if (popUp) {
+    //                 setPopUp(false);
+    //             }
+    //         }, 2000))
+    //     } else {
+    //         setJustAdded(false);
+    //     }
+    // } 
 
-    const [chosenQuantity, setChosenQuanity] = useState(1);
+    useEffect(() => {
+
+        if (popUp) {
+          // Set a timeout for 2 seconds
+          timeoutIDRef.current = setTimeout(() => {
+            setPopUp(false);
+            setJustAdded(false);
+          }, 2000);
+        }
+    
+        // Clean up the timeout on component unmount or when popUp changes
+        return () => clearTimeout(timeoutIDRef.current);
+      }, [popUp]);
+    
+
+
+    const [chosenQuantity, setChosenQuantity] = useState(1);
     const { quantity, setQuantity,
         emeraldQuant, setEmeraldQuant,
         rubyQuant, setRubyQuant,
@@ -51,16 +78,18 @@ const AddToBasket = ({ name }) => {
 
     function handleSettingQuantity(e) {
         e.preventDefault();
-        setChosenQuanity(parseInt(e.target.value));
+        setChosenQuantity(parseInt(e.target.value));
         // console.log('typeof chosenQuantity',typeof chosenQuantity);
     }
 
     function handleSubmit(e) {
+        clearTimeout(timeoutIDRef.current);
+
         e.preventDefault();
         //add to total quantity count
         const newQuantity = quantity + chosenQuantity;
         setQuantity(newQuantity);
-        //add to specific curreny count
+        //add to specific currency count
         switch (currency) {
             case ('Wish'):
                 const newWishes = wishesTotal + chosenQuantity;
@@ -103,6 +132,7 @@ const AddToBasket = ({ name }) => {
                 break;
         };
         // Just added triggers to pop up window - confirmation
+        setPopUp(true);
         setJustAdded(true);
     }
 
@@ -120,10 +150,10 @@ const AddToBasket = ({ name }) => {
                 <div className={styles.priceContainer}>
 
                     <div className={styles.priceHeader}>
-                        <p>Price : </p>
+                        <p>Price per Item : </p>
                     </div>
                     <div className={styles.price}>
-                        <p className={styles.currency}> 1 </p>
+                        <p className={`${styles.currency} ${styles.priceNumber}`}> 1 </p>
                         <p className={styles.currency}> {currency} ✨ </p>
                     </div>
                     <p className={styles.pricePerGram}>(0.5714 {currency}/ 100g)</p>
@@ -147,9 +177,9 @@ const AddToBasket = ({ name }) => {
                             <InfoIcon />
                             {currencyInfo ? (<div className={styles.currencyAdjustmentInfo}>
                                 Currencies:
-                                The currecies we trade in are wishes, secrets and promises.
-                                Unfortunately we are unable to accept any other currecies at this time.
-                                Know we are working towards brigning new currencies to our company,
+                                The currencies we trade in are wishes, secrets and promises.
+                                Unfortunately we are unable to accept any other currencies at this time.
+                                Know we are working towards bringing new currencies to our company,
                                 including gossip and firstborns. Sadly the brexit red tape has been slowing this process.
                             </div>) : (<></>)}
                         </div>
@@ -171,7 +201,14 @@ const AddToBasket = ({ name }) => {
                             Add to Basket
                         </p>
                     </div>
-                    {justAdded ? <PopUpAddedToBasket name={name} quantityAdded={chosenQuantity} /> : <></>}
+                    {justAdded && popUp ? 
+                    <PopUpAddedToBasket 
+                        name={name} 
+                        quantityAdded={chosenQuantity} 
+                        popUp={popUp} setPopUp={setPopUp} 
+                        setJustAdded={setJustAdded}
+                        justAdded={justAdded}
+                        /> : <></>}
 
                 </div>
 

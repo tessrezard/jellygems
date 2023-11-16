@@ -39,6 +39,8 @@ body, html {
 .App-main {
   background-color: #cbc7ec;
   background-color: #f1ede9;
+  background-color: #f6f4f2;
+
   min-height: 75vh;
   display: flex;
   flex-direction: column;

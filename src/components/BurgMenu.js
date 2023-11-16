@@ -18,7 +18,7 @@ function BergMenu({setActiveBurger}) {
         setActiveBurger(prev => !prev);
     };
 
-    const handleProjsClick = () => {
+    const handleProductsClick = () => {
         setDropdownVisible(prev => !prev);
 
     }
@@ -36,7 +36,9 @@ function BergMenu({setActiveBurger}) {
                         <div>
                             <NavLink
                                 to="/home"
-                                className={`${headerStyles.navItem} ${location.pathname === '/home' ? headerStyles.activeNav : ''}`}
+                                className={`${headerStyles.navItem}
+                                     ${location.pathname === '/home' ? headerStyles.activeNav : ''} 
+                                        ${styles.navItem}  ${location.pathname === '/home' ? styles.activeNav : ''}`}
                                 onClick={handleNavLinkClick}
                             >
                                 Home
@@ -47,8 +49,9 @@ function BergMenu({setActiveBurger}) {
                             >
                             <NavLink
                                 to="/products"
-                                className={`${headerStyles.navItem} ${location.pathname === '/products' ? headerStyles.activeNav : ''}`}
-                                onClick={handleProjsClick}
+                                className={`${headerStyles.navItem} ${location.pathname === '/products' ? headerStyles.activeNav : ''}  
+                                    ${styles.navItem} ${location.pathname === '/products' ? styles.activeNav : ''}`}
+                                onClick={handleProductsClick}
                             >
                                 Products
                             </NavLink>
@@ -59,7 +62,8 @@ function BergMenu({setActiveBurger}) {
                         <div>
                             <NavLink
                                 to="/basket"
-                                className={`${headerStyles.navItem} ${location.pathname === '/basket' ? headerStyles.activeNav : ''}`}
+                                className={`${headerStyles.navItem} ${location.pathname === '/basket' ? headerStyles.activeNav : ''}  
+                                    ${styles.navItem} ${location.pathname === '/basket' ? styles.activeNav : ''}`}
                                 onClick={handleNavLinkClick}
                             >
                                 Basket
@@ -70,7 +74,8 @@ function BergMenu({setActiveBurger}) {
                         <div>
                             <NavLink
                                 to="/about"
-                                className={`${headerStyles.navItem} ${location.pathname === '/about' ? headerStyles.activeNav : ''}`}
+                                className={`${headerStyles.navItem} ${location.pathname === '/about' ? headerStyles.activeNav : ''}  
+                                    ${styles.navItem} ${location.pathname === '/about' ? styles.activeNav : ''} `}
                                 onClick={handleNavLinkClick}
                             >
                                 About

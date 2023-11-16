@@ -4,35 +4,36 @@
     width: 100%;
 }
 
-
-
 .priceContainer{
-    width: 500px;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
-    padding-left: 3%;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1em;
     color: #646da2;
 }
 
-.priceHeader{
+.priceHeader p{
     font-family: 'Luminari-Regular';
     font-size: smaller;
-    margin-right: 8px;
-    margin-top: 4px;
-    width: 3em;
-
+    margin-right: 1rem;
+    text-align: start;  
+    margin: 0;  
 }
 
 .price{
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
     justify-content: center;
-
+    align-items: center;
 }
+
+/* 1 + currency */
 .currency {
     font-family: 'Luminari-Regular';
-    margin-right: 7px;
+    margin: 0;  
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
 }
 
 .pricePerGram{
@@ -41,19 +42,17 @@
     margin-bottom: 2px;
 }
 
-
 .formContainer{
-    margin-left: 1em;
-    
-
+    /* margin-left: 1em; */
 }
-
 
 .shoppingChoices{
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
     text-align: left;
+    margin-left: 1em;
+
 }
 
 .formLabel{
@@ -61,18 +60,16 @@
     padding: 1px;;
 }
 
+/* choose a currency */
 .select{
     border: 2px solid #949ac6;
     background-color: #f1ede9;
     border-radius: 3px;
     width: 130px;
-    /* margin: auto; */
     margin-bottom: 3%;
     font-family: 'Luminari-Regular';
     font-size: 0.75em;
-
 }
-
 .select:focus{
     outline: 1px solid rgba(194, 141, 255, 0.806);
     border-radius: 3px;
@@ -96,25 +93,51 @@
 
 .submitButton{
     background-color: #949ac6;
-    border: 5px outset #c4c9f1;
+    border: 5px outset #bdc3f0;
     font-size: 1em;
-    margin: 3%;
-    height: 50px;
+    margin: auto;
+    margin-top: 1rem;
+    height: 2rem;
+    max-width: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .submitText{
-    margin-top: 1.5%;
-    margin-bottom: 1%;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #f5f6fe;
 }
 
 .submitButton:active{
     background-color: #848bba;
 }
+
+/* 'more info' about currencies */
 .currencyAdjustmentInfo{
+    width: 72vw;
     position: relative;
     left: 30px;
-    bottom: 40px;
+    bottom: 17px;
     border: 2px solid #8d92bc;
     background-color: #e7e9fd;
     padding: 2%;
+    font-size: 1rem;
+}
+
+
+/* ---------------------------------- Media Queries ---------------------------------- */
+/* when past 700px, the img and add to basket become row rather than col */
+@media (min-width: 700px){
+    .currencyAdjustmentInfo{
+        width: 300px;
+    }
+}
+
+@media (min-width: 900px){
+    .currencyAdjustmentInfo{
+        width: 380px;
+    }
 }

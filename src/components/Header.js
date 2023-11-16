@@ -31,7 +31,6 @@ function Header() {
             setScreenWidth(window.innerWidth);
             if (screenWidth > 450){
                 setDropdownVisible(false);
-
             }
         };
         // Add event listener for window resize
@@ -46,7 +45,7 @@ function Header() {
         <>
             <header>
 
-                <div className={`${styles.headerContainer}  ${activeBurger? styles.activeBurgerHeaderContainer : ''}`}>
+                <div className={`${styles.headerContainer}  ${activeBurger && (screenWidth < 450)? styles.activeBurgerHeaderContainer : ''}`}>
                     <div className={styles.titleANDwideNav}>
 
                         <Link to="/home" className={styles.siteTitle} style={{ textDecoration: 'none' }}>
@@ -73,7 +72,7 @@ function Header() {
                                         >
                                             Products
                                         </NavLink>
-                                        {isDropdownVisible && <DropdownMenu />}
+                                        {isDropdownVisible && <DropdownMenu setActiveBurger={setActiveBurger}  />}
                                     </div>
                                     <div>
                                         <NavLink
