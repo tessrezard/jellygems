@@ -13,7 +13,7 @@
     width: 255px;
     padding-top: 3%;
     margin: auto;
-    margin-top: 2rem;
+    margin-top: 1rem;
     padding-right: 1%;
     padding-left: 1%;
     padding: 3%;
@@ -91,6 +91,10 @@ h2 {
     }
     .infoContainer {
         width: 48vw;
+        margin-top: 1.5rem;
+    }
+    .heroImgContainer {
+        margin-top: 1.5rem;
     }
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from '../styles/Products.module.css';
+import styles from '../styles/Banner.module.css';
 
 function Banner () {
 

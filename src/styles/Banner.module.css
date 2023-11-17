@@ -1,0 +1,57 @@
+.bannerContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.banner {
+    width: 95vw;
+    height: 150px;
+    background-image: url('../images/mockups/lineup-shorter-tall.jpg');
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-position: center center;
+}
+
+
+
+@media (min-width: 400px) {
+    .banner {
+        height: 200px;
+    }
+}
+
+@media (min-width: 500px) {
+    .banner {
+        height: 250px;
+    }
+}
+
+@media (min-width: 600px) {
+    .banner {
+        height: 300px;
+    }
+}
+
+@media (min-width: 700px) {
+    .bannerContainer{
+        margin-top: 1.5rem;
+    }
+    .banner {
+        height: 350px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .banner {
+        height: 400px;
+    }
+}
+
+
+@media (min-width: 1500px) {
+    .banner {
+        height: 450px;
+    }
+}

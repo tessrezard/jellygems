@@ -27,7 +27,6 @@ function Products() {
                         <Link
                             key={stone}
                             to={`/product-details-page/${stone}`}
-                            className="pet"
                             style={{ textDecoration: 'none' }}
                         >
                             <GridProduct
