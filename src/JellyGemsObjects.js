@@ -47,7 +47,7 @@ const jellyGemsObj  = {
             name: 'Sapphires',
             id: 'Sapphire',
             description: 'The sapphire stone represents faithfulness and sincerity. It is also tied to prosperity and is thought to bring about the fulfillment of dreams.', 
-            brief: 'Symbol faithfulness and sincerity, and wishes granted.',
+            brief: 'Symbol of faithfulness and sincerity, and wishes granted.',
             keyWords: ['faithfulness', 'sincerity', 'success', 'fulfillment of dreams', 'wishes'],
             heroImg: '/static/media/Sapphire.035398a4fa5e1051ac0d.jpg',
             pairImg: '/static/media/closeUp-pairImg-sapphire-quartz.8aa45a074f4ec6ddb930.jpg',
