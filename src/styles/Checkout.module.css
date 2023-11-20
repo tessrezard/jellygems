@@ -143,28 +143,29 @@
 
 
 .formSubmitButton {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    color: #3a4078;
-    font-size: 22px;
-    border: 5px outset #c4c9f1;
-    background-color: #d4d9ff;
     width: 200px;
     height: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 2%;
-    transition: all 200ms;
     position: relative;
     top: 1px;
     left: 1px;
-
+    color: #3a4078;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: 5px outset #c4c9f1;
+    border-radius: 5px;
+    background-color: #d4d9ff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    transition: all 200ms;
 }
 
 .formSubmitButton:hover {
     color: #f5f6ff;
-    background-color: #a0a6d4;
-    padding: 2%;
+    background-color: #8991cb;
+    border: 5px outset #aeb3df;
 }
 
 .formSubmitButton:active {

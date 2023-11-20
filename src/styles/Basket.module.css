@@ -132,6 +132,7 @@
     position: relative;
     bottom: 0.5px;
     left: 1px;
+    
 }
 .button:active {
     background-color: #8d92bc;
@@ -141,6 +142,7 @@
     top: 0.25rem;
     left: 0.25rem;
     transition: all 200ms;
+    
 }
 .buttonText {
     margin: 0;
@@ -221,7 +223,7 @@ li:hover {
 }
 
 .proceedToCheckout {
-    margin-top: 10px;
+    /* margin-top: 10px;
     margin-bottom: 20px;
     color: #3a4078;
     border: 5px outset #c4c9f1;
@@ -232,16 +234,36 @@ li:hover {
     max-width: 300px;
     padding: 5px;
     transition: all 520ms;
-    font-size: 1rem;
+    font-size: 1rem; */
+    position: relative;
+    top: 1px;
+    left: 1px;
+    color: #3a4078;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: 5px outset #c4c9f1;
+    border-radius: 5px;
+    background-color: #d4d9ff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    transition: all 200ms;
+
 }
 
 .proceedToCheckout:hover {
-    color: #f5f6ff;
+    /* color: #f5f6ff;
     background-color: #a0a6d4;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
-    padding: 2%;
+    padding: 2%; */
+    color: #f5f6ff;
+    background-color: #8991cb;
+    border: 5px outset #aeb3df;
+    padding: 5px;
 }
 
 .bigMistakeContainer{
@@ -259,26 +281,41 @@ li:hover {
 }
 
 .goShoppingNow{
-    width: 180px;
-    font-size: 1.25rem;
-    font-weight: 700;
+    width: 190px;
+
+    position: relative;
+    top: 1px;
+    left: 1px;
+
     font-family: 'Luminari-regular';
     margin-top: 10px;
     margin-bottom: 20px;
-    color: #3a4078;
-    border: 5px outset #c4c9f1;
-    background-color: #d4d9ff;
-    transition: all 300ms;
     margin: auto;
     display: flex;
     align-content: center;
+    color: #3a4078;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border: 5px outset #c4c9f1;
+    border-radius: 5px;
+    background-color: #d4d9ff;
+    transition: all 300ms;
 }
 
-.goShoppingNow:active{
-    width: 160px;
-    font-size: 1rem;
-    font-weight: 700;
+.goShoppingNow:hover {
+    /* color: #f5f6ff;
+    background-color: #a0a6d4;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2%; */
+    color: #f5f6ff;
+    background-color: #8991cb;
+    border: 5px outset #aeb3df;
+    padding: 5px;
 }
+
+
 .goShoppingNow p{
     margin: 0.1rem;
 }
