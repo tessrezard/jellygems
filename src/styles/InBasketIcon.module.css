@@ -1,22 +1,65 @@
 
 .iconContainer{
-    position: relative;
-    bottom: 30px;
-    left: 65px;
-    display: flex;
-    border: 1px solid white;
+    /* position: relative; */
+    /* bottom: 30px;
+    left: 70px; */
+    /* display: flex; */
+    /* border: 1px solid white;
     border-radius: 50%;
     width: fit-content;
-    height: 20px;
+    height: 20px; */
 }
 
 .icon {
-    text-align: center;
-    position: relative;
-    bottom: 14px;
+    /* color: white;
+    text-align: center; */
+    /* position: relative; */
+    /* bottom: 14px; */
     /* left: 7.5px; */
-    font-size: 14px;
+    /* font-size: 14px;
     font-weight: 700px;
     margin-left: 7px;
-    margin-right: 7px;
+    margin-right: 7px; */
+}
+
+.iconContainer{
+    /* height: 50px; */
+    width: 50px;
+    margin: auto;
+}
+
+.icon {
+    color: white;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    font-size: 20px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    font-weight: 700;
+
+}
+
+@media (min-width: 450px){
+
+    .iconContainer{
+        /* height: 50px; */
+        width: 30px;
+        margin: auto;
+    }
+    
+    .icon {
+        width: 22px;
+        height: 23px;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 3px;
+    }
 }

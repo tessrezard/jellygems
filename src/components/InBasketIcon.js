@@ -7,7 +7,11 @@ function InBasketIcon () {
 
     return (
         <div className={styles.iconContainer}>
-            <p className={styles.icon}>{quantity}</p>
+            <div className={styles.icon}>
+                <div>
+                    {quantity}
+                </div>
+                </div>
         </div>
     )
 };

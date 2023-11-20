@@ -59,16 +59,22 @@ function BergMenu({setActiveBurger}) {
                             {isDropdownVisible && <DropdownMenu setActiveBurger={setActiveBurger} />}
                             </div>) : <></>}
                         </div>
-                        <div>
+
+                        <div  style={{height:48, display:'flex', flexFlow: 'row', justifyContent: 'center', alignItems: 'center'}}>
                             <NavLink
                                 to="/basket"
                                 className={`${headerStyles.navItem} ${location.pathname === '/basket' ? headerStyles.activeNav : ''}  
                                     ${styles.navItem} ${location.pathname === '/basket' ? styles.activeNav : ''}`}
                                 onClick={handleNavLinkClick}
-                            >
-                                Basket
+                            >   
+                                    {quantity ? 
+                                        <div style={{display:'flex', flexFlow: 'row', position: 'relative', right: 25, margin: 'auto', alignItems: 'center'}}>
+                                        <InBasketIcon/>
+                                        Basket 
+                                        </div>
+                                      : <>Basket</>}
+                                
                             </NavLink>
-                            {quantity ? <InBasketIcon /> : <></>}
                         </div>
 
                         <div>

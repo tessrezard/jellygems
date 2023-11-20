@@ -74,14 +74,16 @@ function Header() {
                                         </NavLink>
                                         {isDropdownVisible && <DropdownMenu setActiveBurger={setActiveBurger}  />}
                                     </div>
-                                    <div>
+                                    <div >
                                         <NavLink
                                             to="/basket"
                                             className={`${styles.navItem} ${location.pathname === '/basket' ? styles.activeNav : ''}`}
                                         >
-                                            Basket
+                                            Basket  
                                         </NavLink>
+                                        <div style={{position: 'relative', bottom: 30, left: 55}}>
                                         {quantity ? <InBasketIcon /> : <></>}
+                                        </div>
                                     </div>
                                     <div>
                                         <NavLink

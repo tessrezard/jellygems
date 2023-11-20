@@ -36,6 +36,11 @@ list of the different flavours */
     line-height: 3rem;
 }
 
+.bergMenuBasketNavItem{
+    display: flex;
+    flex-flow: row;
+
+}
 .activeNav{
     font-size: 1.95rem;
     font-weight: 700;
