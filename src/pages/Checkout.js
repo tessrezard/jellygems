@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useMyContext } from '../MyContext';
 import InfoIcon from '../components/InfoIcon';
 import styles from '../styles/Checkout.module.css'
-import { Link } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import DeliveryInfo from '../components/DeliveryInfo';
 import ReturnsInfo from '../components/ReturnsInfo';
 import InputWish from '../components/InputWish';
@@ -82,6 +82,13 @@ function Checkout() {
         }
     }
 
+
+    if (!quantity){
+        return <Navigate to='/basket'/>
+    }
+
+
+
     return (
         <>
             <main>
@@ -160,6 +167,8 @@ function Checkout() {
 
                                 </div>
                             </>)}
+                        
+
                 </div>
 
             </main>

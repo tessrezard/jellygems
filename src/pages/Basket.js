@@ -194,14 +194,15 @@ function Basket() {
                                     <p>Total items : {quantity}</p>
                                     <ul className={styles.listInBasket}>
 
-                                        {/* I should definitely make the items in basket a component with lots of props. This is way to repetitive.
+                                        {/* I should definitely make the items in basket a component with props (too many props?). This is way to repetitive.
                                     make an array with only the stoneQuants that are true, map over and make item in basket component */}
-
                                         {amberQuant ? (
 
                                             <div className={styles.liContainer}>
                                                 <div className={styles.stoneImgContainer}>
-                                                    <img src={amb} className={styles.stoneImg} />
+                                                    <Link to={`/product-details-page/amber`}>
+                                                        <img src={amb} className={styles.stoneImg} />
+                                                    </Link>
                                                 </div>
                                                 <li className={styles.itemLi}>
                                                     <p className={styles.itemName} >Amber Jelly Gems </p>
@@ -237,7 +238,9 @@ function Basket() {
                                         {amethystQuant ? (
                                             <div className={styles.liContainer}>
                                                 <div className={styles.stoneImgContainer}>
-                                                    <img src={ame} className={styles.stoneImg} />
+                                                    <Link to={`/product-details-page/amethyst`}>
+                                                        <img src={ame} className={styles.stoneImg} />
+                                                    </Link>
                                                 </div>
                                                 <li className={styles.itemLi}>
                                                     <p className={styles.itemName} >Amethyst Jelly Gems </p>
@@ -272,7 +275,9 @@ function Basket() {
                                         {emeraldQuant ? (
                                             <div className={styles.liContainer}>
                                                 <div className={styles.stoneImgContainer}>
-                                                    <img src={eme} className={styles.stoneImg} />
+                                                    <Link to={`/product-details-page/emerald`}>
+                                                        <img src={eme} className={styles.stoneImg} />
+                                                    </Link>
                                                 </div>
                                                 <li className={styles.itemLi}>
                                                     <p className={styles.itemName} >Emerald Jelly Gems </p>
@@ -307,7 +312,10 @@ function Basket() {
                                         {rubyQuant ? (
                                             <div className={styles.liContainer}>
                                                 <div className={styles.stoneImgContainer}>
-                                                    <img src={rub} className={styles.stoneImg} />
+                                                    <Link to={`/product-details-page/ruby`}>
+                                                        <img src={rub} className={styles.stoneImg} />
+                                                    </Link>
+
                                                 </div>
                                                 <li className={styles.itemLi}>
                                                     <p className={styles.itemName} >Ruby Jelly Gems </p>
@@ -342,7 +350,10 @@ function Basket() {
                                         {sapphireQuant ? (
                                             <div className={styles.liContainer}>
                                                 <div className={styles.stoneImgContainer}>
+                                                    <Link to={`/product-details-page/sapphire`}>
                                                     <img src={sapp} className={styles.stoneImg} />
+                                                                                                        </Link>
+
                                                 </div>
                                                 <li className={styles.itemLi}>
                                                     <p className={styles.itemName} >Sapphire Jelly Gems </p>
@@ -377,7 +388,11 @@ function Basket() {
                                         {quartzQuant ? (
                                             <div className={styles.liContainer}>
                                                 <div className={styles.stoneImgContainer}>
+                                                    <Link to={`/product-details-page/quartz`}>
+
                                                     <img src={quart} className={styles.stoneImg} />
+                                                    </Link>
+
                                                 </div>
                                                 <li className={styles.itemLi}>
                                                     <p className={styles.itemName} >Rose Quartz Jelly Gems </p>
