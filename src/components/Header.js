@@ -3,9 +3,11 @@ import { NavLink, Link, useLocation } from "react-router-dom";
 import styles from '../styles/Header.module.css';
 import DropdownMenu from "./DropdownMenu";
 import InBasketIcon from "./InBasketIcon";
-import { useMyContext } from '../MyContext';
 import BergMenu from "./BurgMenu";
 import Berger from "./Burger";
+import { useMyContext } from '../MyContext';
+
+
 
 
 function Header() {
