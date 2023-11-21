@@ -201,7 +201,7 @@ function Basket() {
                                             <div className={styles.liContainer}>
                                                 <div className={styles.stoneImgContainer}>
                                                     <Link to={`/product-details-page/amber`}>
-                                                        <img src={amb} className={styles.stoneImg} />
+                                                        <img src={amb} className={styles.stoneImg} alt={`Amber packaging artwork, it is in a soft yellow and amber color scheme.`} />
                                                     </Link>
                                                 </div>
                                                 <li className={styles.itemLi}>
@@ -239,7 +239,7 @@ function Basket() {
                                             <div className={styles.liContainer}>
                                                 <div className={styles.stoneImgContainer}>
                                                     <Link to={`/product-details-page/amethyst`}>
-                                                        <img src={ame} className={styles.stoneImg} />
+                                                        <img src={ame} className={styles.stoneImg} alt={`Amethysts packaging artwork, it is in a mauve and violet color scheme.`}/>
                                                     </Link>
                                                 </div>
                                                 <li className={styles.itemLi}>
@@ -276,7 +276,7 @@ function Basket() {
                                             <div className={styles.liContainer}>
                                                 <div className={styles.stoneImgContainer}>
                                                     <Link to={`/product-details-page/emerald`}>
-                                                        <img src={eme} className={styles.stoneImg} />
+                                                        <img src={eme} className={styles.stoneImg} alt={`Emeralds packaging artwork, it is in a seafoam and forest green color scheme.`}/>
                                                     </Link>
                                                 </div>
                                                 <li className={styles.itemLi}>
@@ -313,7 +313,7 @@ function Basket() {
                                             <div className={styles.liContainer}>
                                                 <div className={styles.stoneImgContainer}>
                                                     <Link to={`/product-details-page/ruby`}>
-                                                        <img src={rub} className={styles.stoneImg} />
+                                                        <img src={rub} className={styles.stoneImg} alt={`Rubies packaging artwork, it is in a peach and red color scheme.`}/>
                                                     </Link>
 
                                                 </div>
@@ -351,8 +351,8 @@ function Basket() {
                                             <div className={styles.liContainer}>
                                                 <div className={styles.stoneImgContainer}>
                                                     <Link to={`/product-details-page/sapphire`}>
-                                                    <img src={sapp} className={styles.stoneImg} />
-                                                                                                        </Link>
+                                                        <img src={sapp} className={styles.stoneImg} alt={`Sapphires packaging artwork, it is in a pale and Oxford blue color scheme.`}/>
+                                                    </Link>
 
                                                 </div>
                                                 <li className={styles.itemLi}>
@@ -389,8 +389,7 @@ function Basket() {
                                             <div className={styles.liContainer}>
                                                 <div className={styles.stoneImgContainer}>
                                                     <Link to={`/product-details-page/quartz`}>
-
-                                                    <img src={quart} className={styles.stoneImg} />
+                                                        <img src={quart} className={styles.stoneImg} alt={`Rose Quartz packaging artwork, it is in a dusty pink color scheme.`} />
                                                     </Link>
 
                                                 </div>

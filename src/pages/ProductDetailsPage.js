@@ -61,7 +61,7 @@ function ProductDetailsPage() {
                 <div>
                     <div className={styles.container}>
                         <div className={styles.heroImgContainer}>
-                            <img src={artworkImg()} className={styles.heroImg} />
+                            <img src={artworkImg()} className={styles.heroImg} alt={`${stoneName} packaging artwork.`}/>
                         </div>
 
                         <div className={styles.infoContainer}>
@@ -80,7 +80,7 @@ function ProductDetailsPage() {
                     <div className={styles.pairsWellWithContainer}>
                         <h2>Pairs well with : </h2>
                         <div className={styles.pairImgContainer}>
-                            <img src={stonePairImg} className={styles.pairImg} />
+                            <img src={stonePairImg} className={styles.pairImg}  alt={`A mockup of the packaging for ${stoneName}.`}/>
                         </div>
 
                     </div>
