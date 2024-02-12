@@ -18,7 +18,7 @@ function HowToInfo({ howtoInfo }) {
 
                 {howtoInfo ? (<div className={styles.info}>
                     <p>
-                        Here are Jelly Gems,
+                        Here at are Jelly Gems,
                         we are transparent and open with our customers about what they will received for their hard earned spending power:
                         only the imaginary. <br />
                         <br />

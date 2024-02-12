@@ -19,7 +19,6 @@ const Root = () => {
         { path: 'about', element: <About /> },
         { path: 'basket', element: <Basket /> },
         { path: 'checkout', element: <Checkout /> },
-        // Add more route configurations as needed
       ];
     const routeElement = useRoutes(routes);
 
